@@ -27,6 +27,7 @@
 <style>
   .actions-wrapper {
     display: flex;
+    flex-direction: column;
     height: 500px;
     justify-content: space-around;
     align-items: center;
@@ -50,13 +51,19 @@
     margin-left: 10px;
   }
 
-  .contact,
-  .sign-up {
+  .contact {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 35px;
     margin-top: 20px;
+  }
+
+  .sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .contact-img {
@@ -68,6 +75,7 @@
     background: #d8faff;
     margin: 0;
     width: 250px;
+    margin: 20px 0;
   }
 
   .submit {
@@ -89,6 +97,21 @@
 
   .success {
     color: #333333;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .actions-wrapper {
+      flex-direction: row;
+    }
+
+    .sign-up {
+      flex-direction: row;
+      margin-top: 20px;
+    }
+
+    .wait-list {
+      margin: 0;
+    }
   }
 </style>
 

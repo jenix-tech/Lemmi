@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
+    margin: 0 0 50px 0;
   }
 
   .logo {
@@ -46,14 +46,14 @@
   }
 
   .subtitle {
-    font-size: 3rem;
-    margin-top: 20px;
+    font-size: 2.25rem;
+    margin: 20px 0;
     font-weight: 500;
   }
 
   .description {
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     width: 65%;
     text-align: center;
   }
@@ -87,6 +87,19 @@
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .hero {
+      margin: 50px 0;
+    }
+    .description {
+      font-size: 1.5rem;
+    }
+    .subtitle {
+      font-size: 3rem;
+      margin: 20px 0 0 0;
+    }
   }
 </style>
 
