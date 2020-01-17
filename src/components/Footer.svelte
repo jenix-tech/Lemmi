@@ -10,6 +10,10 @@
     margin: 0 10px;
   }
 
+  .credits a {
+    margin: 0 5px;
+  }
+
   .copywrite {
     font-size: 12px;
   }
@@ -48,21 +52,19 @@
     <p class="memorial">In loving memory of N. Lemmikki Hyry</p>
     <div class="credits-wrapper">
       <div class="credits">
-        Icons made by
+        Icons by
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
         </a>
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </a>
-      </div>
-      <div class="credits">
-        Icons made by
         <a
           href="https://www.flaticon.com/authors/those-icons"
           title="Those Icons">
           Those Icons
+        </a>
+        <a
+          href="https://www.flaticon.com/authors/roundicons"
+          title="Roundicons">
+          Roundicons
         </a>
         from
         <a href="https://www.flaticon.com/" title="Flaticon">

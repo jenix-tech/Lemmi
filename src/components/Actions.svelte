@@ -1,6 +1,6 @@
 <script>
-  import { actions } from "./strings.js";
-  const { contact, waitlist } = actions;
+  import { actions, links } from "../strings.js";
+  const { contact, waitlist, social } = actions;
   let email;
   let successMsg = waitlist.success;
   let errorMsg;
@@ -34,8 +34,8 @@
   }
 
   .contact-wrapper,
-  .sign-up-wrapper {
-    height: 360px;
+  .sign-up-wrapper,
+  .social-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +49,7 @@
   .email {
     font-size: 1.5rem;
     margin-left: 10px;
+    color: #304e87;
   }
 
   .contact {
@@ -99,6 +100,16 @@
     color: #333333;
   }
 
+  .social-links {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .social-icon {
+    width: 30px;
+    cursor: pointer;
+  }
+
   @media only screen and (min-width: 600px) {
     .actions-wrapper {
       flex-direction: row;
@@ -144,5 +155,13 @@
         </button>
       </div>
     {/if}
+  </div>
+  <div class="social-wrapper">
+    <p class="heading">{social.heading}</p>
+    <div class="social-links">
+      <a href={links.twitter} rel="noopener" target="_blank">
+        <img class="social-icon" src="images/twitter.svg" alt="social-icon" />
+      </a>
+    </div>
   </div>
 </div>
