@@ -62,6 +62,10 @@
     margin-bottom: 60px;
   }
 
+  .store-icons img {
+    cursor: pointer;
+  }
+
   .app-icon {
     height: 65px;
     flex-shrink: 1;

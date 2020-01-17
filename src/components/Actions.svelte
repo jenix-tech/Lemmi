@@ -52,6 +52,10 @@
     color: #304e87;
   }
 
+  .email:hover {
+    text-decoration: none;
+  }
+
   .contact {
     display: flex;
     align-items: center;
@@ -87,6 +91,7 @@
     background: #0c9caf;
     border-radius: 5px;
     width: 100px;
+    cursor: pointer;
   }
 
   .message {
