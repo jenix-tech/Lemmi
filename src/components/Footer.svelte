@@ -1,17 +1,17 @@
 <style>
-  .credits,
+  .navigation,
   .copywrite {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .credits {
-    font-size: 5px;
+  .navigation {
+    font-size: 10px;
     margin: 0 10px;
   }
 
-  .credits a {
-    margin: 0 5px;
+  .navigation a {
+    margin: 0 10px;
   }
 
   .copywrite {
@@ -39,7 +39,7 @@
     align-items: center;
   }
 
-  .credits-wrapper {
+  .navigation-wrapper {
     display: flex;
   }
 </style>
@@ -50,26 +50,10 @@
       <p>&copy; LemmiChat 2020</p>
     </div>
     <p class="memorial">In loving memory of N. Lemmikki Hyry</p>
-    <div class="credits-wrapper">
-      <div class="credits">
-        Icons by
-        <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-          Freepik
-        </a>
-        <a
-          href="https://www.flaticon.com/authors/those-icons"
-          title="Those Icons">
-          Those Icons
-        </a>
-        <a
-          href="https://www.flaticon.com/authors/roundicons"
-          title="Roundicons">
-          Roundicons
-        </a>
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </a>
+    <div class="navigation-wrapper">
+      <div class="navigation">
+        <a href="/credits">Credits</a>
+        <a href="/privacy-policy">Privacy Policy</a>
       </div>
     </div>
 

@@ -1,11 +1,6 @@
 <script>
-  import Nav from "./components/Nav.svelte";
   import Lemmi from "./components/Lemmi.svelte";
   import Footer from "./components/Footer.svelte";
-
-  function changePage(page) {
-    activePage = page;
-  }
 </script>
 
 <style>
@@ -20,5 +15,4 @@
 <main>
   <Lemmi />
 </main>
-
-<Footer {changePage} />
+<Footer />

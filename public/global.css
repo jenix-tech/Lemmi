@@ -69,3 +69,35 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+.privacy-policy, .credits-page {
+  padding: 0 10px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 60px auto 0 auto;
+}
+
+.privacy-policy h2, .credits-page h2 {
+  margin: 0 0 20px 0;
+}
+
+.privacy-policy p, .credits-page p {
+  margin-bottom: 20px;
+}
+
+.privacy-policy .credit {
+  font-size: 10px;
+}
+
+.credits-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .privacy-policy, .credits-page {
+    margin: 40px auto 140px auto;
+  }
+}
