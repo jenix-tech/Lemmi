@@ -50,6 +50,8 @@
     font-size: 1.5rem;
     margin-left: 10px;
     color: #304e87;
+    display: flex;
+    align-items: center;
   }
 
   .email:hover {
@@ -73,6 +75,7 @@
 
   .contact-img {
     width: 30px;
+    margin-right: 5px;
   }
 
   .wait-list {
@@ -112,6 +115,7 @@
 
   .social-icon {
     width: 30px;
+    margin: 0 10px;
     cursor: pointer;
   }
 
@@ -135,11 +139,11 @@
   <div class="contact-wrapper">
     <p class="heading">{contact.heading}</p>
     <div class="contact">
-      <img class="contact-img" src="images/mail.svg" alt="contact icon" />
       <a
         class="email"
         href="mailto:lemmichat@gmail.com?subject=Contact from Website">
-        {contact.link}
+        <img class="contact-img" src="images/mail.svg" alt="contact icon" />
+        <p>{contact.link}</p>
       </a>
     </div>
   </div>
