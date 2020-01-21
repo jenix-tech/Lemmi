@@ -46,4 +46,6 @@ export const actions = {
 
 export const links = {
   twitter: "https://twitter.com/lemmichat",
+  facebook: "https://www.facebook.com/lemmichat",
+  instagram: "https://www.instagram.com/lemmichat"
 }

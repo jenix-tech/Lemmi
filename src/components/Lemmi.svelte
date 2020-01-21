@@ -86,7 +86,7 @@
 
   @media only screen and (min-width: 600px) {
     .hero {
-      margin: 50px 0 150px;
+      margin: 150px 0 150px;
     }
     .description {
       font-size: 1.5rem;
@@ -95,6 +95,10 @@
       font-size: 3rem;
       margin: 20px 0 0 0;
     }
+    /* .coming-soon {
+      font-size: 1rem;
+      margin-bottom: 160px;
+    } */
   }
 </style>
 
@@ -106,15 +110,15 @@
   <p class="subtitle">{hero.subtitle}</p>
   <p class="description">{hero.description}</p>
   <div class="store-icons">
-    <!-- <p class="coming-soon">Coming soon to Android and iOS.</p> -->
-    <img
+    <p class="coming-soon">Coming soon to Android and iOS.</p>
+    <!-- <img
       class="app-icon"
       src="images/appStore.svg"
       alt="Download on App Store" />
     <img
       class="play-icon"
       src="images/playStore.svg"
-      alt="Download on Play Store" />
+      alt="Download on Play Store" /> -->
   </div>
 </div>
 <div class="features">

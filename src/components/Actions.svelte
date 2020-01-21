@@ -167,6 +167,12 @@
       <a href={links.twitter} rel="noopener" target="_blank">
         <img class="social-icon" src="images/twitter.svg" alt="social-icon" />
       </a>
+      <a href={links.instagram} rel="noopener" target="_blank">
+        <img class="social-icon" src="images/instagram.svg" alt="social-icon" />
+      </a>
+      <a href={links.facebook} rel="noopener" target="_blank">
+        <img class="social-icon" src="images/facebook.svg" alt="social-icon" />
+      </a>
     </div>
   </div>
 </div>
