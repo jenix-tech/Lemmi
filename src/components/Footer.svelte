@@ -52,8 +52,8 @@
     <p class="memorial">In loving memory of N. Lemmikki Hyry</p>
     <div class="navigation-wrapper">
       <div class="navigation">
-        <a href="/credits">Credits</a>
-        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/credits.html">Credits</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
 
