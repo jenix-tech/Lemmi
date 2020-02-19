@@ -4,3 +4,5 @@ Allow: /
 Allow: /privacy-policy.html
 Allow: /credits.html
 Allow: /terms-of-service.html
+
+Sitemap: https://www.lemmichat.com/sitemap.xml
