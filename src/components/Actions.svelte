@@ -91,7 +91,7 @@
     margin: 0 0 0 10px;
     color: #ffffff;
     font-weight: 500;
-    background: #0c9caf;
+    background: #304e87;
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
