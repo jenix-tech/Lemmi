@@ -153,12 +153,12 @@
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
     {:else}
       <div class="sign-up">
-        <label for="wait-list" />
         <input
           id="wait-list"
           class="wait-list"
           name="wait-list"
           type="email"
+          aria-label="Wait List Sign Up"
           bind:value={email} />
         <button id="submit" class="submit" on:click={handleSubmit}>
           {waitlist.button}
