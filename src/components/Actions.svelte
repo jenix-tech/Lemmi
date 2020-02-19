@@ -153,6 +153,7 @@
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
     {:else}
       <div class="sign-up">
+        <label for="wait-list" />
         <input
           id="wait-list"
           class="wait-list"
