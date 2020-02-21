@@ -141,7 +141,7 @@
     <div class="contact">
       <a
         class="email"
-        href="mailto:lemmichat@gmail.com?subject=Contact from Website">
+        href="mailto:info@lemmichat.com?subject=Contact from Website">
         <img class="contact-img" src="images/mail.svg" alt="contact icon" />
         <p>{contact.link}</p>
       </a>
