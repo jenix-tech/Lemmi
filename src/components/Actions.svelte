@@ -43,7 +43,7 @@
   }
 
   .heading {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
   }
 
   .email {
@@ -137,7 +137,7 @@
 
 <div class="actions-wrapper">
   <div class="contact-wrapper">
-    <p class="heading">{contact.heading}</p>
+    <h1 class="heading">{contact.heading}</h1>
     <div class="contact">
       <a
         class="email"
@@ -148,7 +148,7 @@
     </div>
   </div>
   <div class="sign-up-wrapper">
-    <p class="heading">{waitlist.heading}</p>
+    <h1 class="heading">{waitlist.heading}</h1>
     {#if waitlistMsg}
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
     {:else}
@@ -167,7 +167,7 @@
     {/if}
   </div>
   <div class="social-wrapper">
-    <p class="heading">{social.heading}</p>
+    <h1 class="heading">{social.heading}</h1>
     <div class="social-links">
       <a href={links.twitter} rel="noopener" target="_blank">
         <img class="social-icon" src="images/twitter.svg" alt="social-icon" />

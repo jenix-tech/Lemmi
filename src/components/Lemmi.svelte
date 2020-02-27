@@ -106,8 +106,8 @@
   <div class="logo">
     <img src="images/appIcon.svg" alt="Lemmi Logo" />
   </div>
-  <p class="title">{hero.title}</p>
-  <p class="subtitle">{hero.subtitle}</p>
+  <h1 class="title">{hero.title}</h1>
+  <h3 class="subtitle">{hero.subtitle}</h3>
   <p class="description">{hero.description}</p>
   <div class="store-icons">
     <p class="coming-soon">Coming soon to Android and iOS.</p>

@@ -71,7 +71,7 @@
 <div class="feature" class:right={index % 2 !== 0}>
   <img class="feature-image" src="images/{image}.png" alt="{title} image" />
   <div class="text-wrapper">
-    <p class="feature-title">{title}</p>
+    <h3 class="feature-title">{title}</h3>
     <p class="feature-description">{description}</p>
   </div>
 </div>
