@@ -110,15 +110,15 @@
   <h3 class="subtitle">{hero.subtitle}</h3>
   <p class="description">{hero.description}</p>
   <div class="store-icons">
-    <p class="coming-soon">Coming soon to Android and iOS.</p>
-    <!-- <img
+    <!-- <p class="coming-soon">Coming soon to Android and iOS.</p> -->
+    <img
       class="app-icon"
       src="images/appStore.svg"
       alt="Download on App Store" />
     <img
       class="play-icon"
       src="images/playStore.svg"
-      alt="Download on Play Store" /> -->
+      alt="Download on Play Store" />
   </div>
 </div>
 <div class="features">
