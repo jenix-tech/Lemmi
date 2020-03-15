@@ -70,22 +70,35 @@ button:focus {
 	border-color: #666;
 }
 
-.privacy-policy, .credits-page {
+.privacy-policy, .credits-page, .terms-of-service {
   padding: 0 10px;
-  text-align: center;
   max-width: 1000px;
   margin: 60px auto 0 auto;
 }
 
-.privacy-policy h2, .credits-page h2 {
-  margin: 0 0 20px 0;
+.privacy-policy, .credits-page {
+  text-align: center;
 }
 
-.privacy-policy p, .credits-page p {
+.privacy-policy h2, .credits-page h2, .terms-of-service h2 {
   margin-bottom: 20px;
 }
 
-.privacy-policy .credit {
+.terms-of-service h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.terms-of-service h2 {
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+.privacy-policy p, .credits-page p, .terms-of-service p {
+  margin-bottom: 20px;
+}
+
+.privacy-policy .credit .terms-of-service {
   font-size: 10px;
 }
 

@@ -1018,21 +1018,17 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let div2;
     	let div0;
-    	let img0;
-    	let img0_src_value;
+    	let img;
+    	let img_src_value;
     	let t0;
     	let h1;
     	let t2;
     	let h3;
     	let t4;
-    	let p;
+    	let p0;
     	let t6;
     	let div1;
-    	let img1;
-    	let img1_src_value;
-    	let t7;
-    	let img2;
-    	let img2_src_value;
+    	let p1;
     	let t8;
     	let div3;
     	let t9;
@@ -1054,7 +1050,7 @@ var app = (function () {
     		c: function create() {
     			div2 = element("div");
     			div0 = element("div");
-    			img0 = element("img");
+    			img = element("img");
     			t0 = space();
     			h1 = element("h1");
     			h1.textContent = `${hero.title}`;
@@ -1062,13 +1058,12 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = `${hero.subtitle}`;
     			t4 = space();
-    			p = element("p");
-    			p.textContent = `${hero.description}`;
+    			p0 = element("p");
+    			p0.textContent = `${hero.description}`;
     			t6 = space();
     			div1 = element("div");
-    			img1 = element("img");
-    			t7 = space();
-    			img2 = element("img");
+    			p1 = element("p");
+    			p1.textContent = "Coming soon to Android and iOS.";
     			t8 = space();
     			div3 = element("div");
 
@@ -1078,26 +1073,20 @@ var app = (function () {
 
     			t9 = space();
     			create_component(actions.$$.fragment);
-    			if (img0.src !== (img0_src_value = "images/appIcon.svg")) attr_dev(img0, "src", img0_src_value);
-    			attr_dev(img0, "alt", "Lemmi Logo");
-    			attr_dev(img0, "class", "svelte-1dsy75b");
-    			add_location(img0, file$2, 106, 4, 1701);
+    			if (img.src !== (img_src_value = "images/appIcon.svg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "Lemmi Logo");
+    			attr_dev(img, "class", "svelte-1dsy75b");
+    			add_location(img, file$2, 106, 4, 1701);
     			attr_dev(div0, "class", "logo svelte-1dsy75b");
     			add_location(div0, file$2, 105, 2, 1678);
     			attr_dev(h1, "class", "title svelte-1dsy75b");
     			add_location(h1, file$2, 108, 2, 1762);
     			attr_dev(h3, "class", "subtitle svelte-1dsy75b");
     			add_location(h3, file$2, 109, 2, 1800);
-    			attr_dev(p, "class", "description svelte-1dsy75b");
-    			add_location(p, file$2, 110, 2, 1844);
-    			attr_dev(img1, "class", "app-icon svelte-1dsy75b");
-    			if (img1.src !== (img1_src_value = "images/appStore.svg")) attr_dev(img1, "src", img1_src_value);
-    			attr_dev(img1, "alt", "Download on App Store");
-    			add_location(img1, file$2, 113, 4, 1994);
-    			attr_dev(img2, "class", "play-icon svelte-1dsy75b");
-    			if (img2.src !== (img2_src_value = "images/playStore.svg")) attr_dev(img2, "src", img2_src_value);
-    			attr_dev(img2, "alt", "Download on Play Store");
-    			add_location(img2, file$2, 117, 4, 2095);
+    			attr_dev(p0, "class", "description svelte-1dsy75b");
+    			add_location(p0, file$2, 110, 2, 1844);
+    			attr_dev(p1, "class", "coming-soon svelte-1dsy75b");
+    			add_location(p1, file$2, 112, 4, 1922);
     			attr_dev(div1, "class", "store-icons svelte-1dsy75b");
     			add_location(div1, file$2, 111, 2, 1892);
     			attr_dev(div2, "class", "hero svelte-1dsy75b");
@@ -1111,18 +1100,16 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div0);
-    			append_dev(div0, img0);
+    			append_dev(div0, img);
     			append_dev(div2, t0);
     			append_dev(div2, h1);
     			append_dev(div2, t2);
     			append_dev(div2, h3);
     			append_dev(div2, t4);
-    			append_dev(div2, p);
+    			append_dev(div2, p0);
     			append_dev(div2, t6);
     			append_dev(div2, div1);
-    			append_dev(div1, img1);
-    			append_dev(div1, t7);
-    			append_dev(div1, img2);
+    			append_dev(div1, p1);
     			insert_dev(target, t8, anchor);
     			insert_dev(target, div3, anchor);
 
