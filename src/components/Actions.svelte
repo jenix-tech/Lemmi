@@ -152,6 +152,10 @@
     {#if waitlistMsg}
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
     {:else}
+      <p class="message">
+        We don't believe in flooding your inbox, so we'll only email you with
+        the most important Lemmi news
+      </p>
       <div class="sign-up">
         <input
           id="wait-list"
