@@ -147,7 +147,7 @@
       </a>
     </div>
   </div>
-  <div class="sign-up-wrapper">
+  <div id="sign-up" class="sign-up-wrapper">
     <h1 class="heading">{waitlist.heading}</h1>
     {#if waitlistMsg}
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
