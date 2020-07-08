@@ -3,7 +3,6 @@
   const { contact, waitlist, social } = actions;
   let email;
   let successMsg = waitlist.success;
-  let errorMsg;
   let waitlistSuccess = false;
   let waitlistMsg;
   async function handleSubmit() {
@@ -18,8 +17,17 @@
       waitlistSuccess = true;
       waitlistMsg = successMsg;
     } else {
+      const body = JSON.parse(response.body);
       waitlistSuccess = false;
-      waitlistMsg = errorMsg;
+      waitlistMsg = body.message;
+    }
+  }
+  function onInputChange(e) {
+    if (!waitlistMsg) {
+      return;
+    }
+    if (e.target.value === "" && waitlistMsg) {
+      waitlistMsg = null;
     }
   }
 </script>
@@ -99,9 +107,14 @@
 
   .message {
     margin-top: 20px;
-    font-weight: 500px;
     font-size: 1rem;
     color: #fb394a;
+  }
+
+  .sign-up-message {
+    width: 50%;
+    font-size: 0.75rem;
+    color: #333333;
   }
 
   .success {
@@ -149,13 +162,12 @@
   </div>
   <div id="sign-up" class="sign-up-wrapper">
     <h1 class="heading">{waitlist.heading}</h1>
-    {#if waitlistMsg}
+    {#if waitlistMsg && waitlistSuccess}
       <p class="message" class:success={waitlistSuccess}>{waitlistMsg}</p>
     {:else}
-      <p class="message">
-        We don't believe in flooding your inbox, so we'll only email you with
-        the most important Lemmi news
-      </p>
+      {#if waitlistMsg && !waitlistSuccess}
+        <p class="message">{waitlistMsg}</p>
+      {/if}
       <div class="sign-up">
         <input
           id="wait-list"
@@ -163,11 +175,16 @@
           name="wait-list"
           type="email"
           aria-label="Wait List Sign Up"
-          bind:value={email} />
+          bind:value={email}
+          on:input={onInputChange} />
         <button id="submit" class="submit" on:click={handleSubmit}>
           {waitlist.button}
         </button>
       </div>
+      <p class="message sign-up-message">
+        We don't believe in flooding your inbox, so we'll only email you with
+        the most important Lemmi news
+      </p>
     {/if}
   </div>
   <div class="social-wrapper">
