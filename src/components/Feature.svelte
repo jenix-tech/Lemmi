@@ -69,7 +69,7 @@
 </style>
 
 <div class="feature" class:right={index % 2 !== 0}>
-  <img class="feature-image" src="images/{image}.png" alt="{title} image" />
+  <img class="feature-image" src="images/{image}.gif" alt="{title} image" />
   <div class="text-wrapper">
     <h3 class="feature-title">{title}</h3>
     <p class="feature-description">{description}</p>

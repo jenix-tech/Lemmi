@@ -373,7 +373,7 @@ var app = (function () {
     			p = element("p");
     			t3 = text(/*description*/ ctx[2]);
     			attr_dev(img, "class", "feature-image svelte-1j8q67s");
-    			if (img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".png")) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "" + (/*title*/ ctx[1] + " image"));
     			add_location(img, file, 71, 2, 1124);
     			attr_dev(h3, "class", "feature-title svelte-1j8q67s");
@@ -401,7 +401,7 @@ var app = (function () {
     			append_dev(p, t3);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*image*/ 1 && img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".png")) {
+    			if (dirty & /*image*/ 1 && img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".gif")) {
     				attr_dev(img, "src", img_src_value);
     			}
 
