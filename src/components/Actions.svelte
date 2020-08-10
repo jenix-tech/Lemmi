@@ -39,6 +39,7 @@
     height: 500px;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
   }
 
   .contact-wrapper,
@@ -182,8 +183,9 @@
         </button>
       </div>
       <p class="message sign-up-message">
-        We don't believe in flooding your inbox, so we'll only email you with
-        the most important Lemmi news
+        We will only email to let you know when Lemmi is released, and to keep
+        you up-to-date with the latest Lemmi updates and special offers. (Max. 4
+        times a year)
       </p>
     {/if}
   </div>

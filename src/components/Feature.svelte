@@ -13,11 +13,15 @@
     align-items: center;
     margin-bottom: 80px;
   }
+  .customisable {
+    height: 500px !important;
+  }
 
   .feature-image {
     width: 300px;
     flex-direction: column;
     margin-bottom: 30px;
+    border-radius: 90px;
   }
 
   .text-wrapper {
@@ -69,7 +73,10 @@
 </style>
 
 <div class="feature" class:right={index % 2 !== 0}>
-  <img class="feature-image" src="images/{image}.gif" alt="{title} image" />
+  <img
+    class={`feature-image ${image === 'customisable' ? 'customisable' : ''}`}
+    src="images/{image}.gif"
+    alt="{title} image" />
   <div class="text-wrapper">
     <h3 class="feature-title">{title}</h3>
     <p class="feature-description">{description}</p>

@@ -14,8 +14,8 @@
   }
 
   .logo {
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -31,8 +31,7 @@
 
   .title {
     margin-top: 15px;
-    text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
   }
 
@@ -43,8 +42,8 @@
   }
 
   .description {
-    margin-top: 10px;
-    font-size: 1.25rem;
+    margin-top: 25px;
+    font-size: 1rem;
     width: 65%;
     text-align: center;
   }
@@ -89,10 +88,10 @@
       margin: 50px 0 150px;
     }
     .description {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
     .subtitle {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 20px 0 0 0;
     }
     /* .coming-soon {

@@ -1,30 +1,30 @@
 export const hero = {
-  title: "LEMMI",
+  title: "Lemmi",
   subtitle: "The app that lets you chat!",
-  description: "Lemmi helps people who have difficulty with speech communicate with ease, and re-connect with others.",
+  description: "Discover a world of possibilities with this customisable speech app that gives you the independence to take part in conversations wherever you are, with or without a network connection.",
 };
 
 export const features = [
   {
     title: "Mobile",
-    description: "Lemmi is available on iOS and Android devices and is accessible anywhere. Once downloaded, it works with or without a network connection."
+    description: "Use your smart device to build your own sentences from over 700 words that Lemmi will repeat out loud for you, wherever you are."
   },
   {
     title: "Simple",
-    description: "The app's text, navigation and layout are clear and easy to use, making it appropriate for all ages and abilities."
+    description: "Our user-friendly design includes a clear menu, easy navigation and simple graphics, making it appropriate for all ages and abilities."
   },
   {
     title: "Personal",
-    description: "Personalise the app to everyday life by adding personal words, phrases and photos to Lemmi's custom dictionary."
-  },
-  {
-    title: "Customisable",
-    description: "Select a voice, language, and colour scheme to suit the users needs. iOS users can add additional voices via the device's accessibility settings."
+    description: "Create your own vocabulary by adding words, phrases and photos to your private 'Word Book'. Lemmi will back-up and sync these personalisations across multiple devices with a valid iCloud or Google account."
   },
   {
     title: "Intuitive",
-    description: "Text prediction facilitates faster communication by creating quick access to the most commonly used words."
-  }
+    description: "Suggested words will appear underneath the Speech Bar. Lemmi bases these off of words you’ve previously used in succession, and enable you to keep up with flowing conversations."
+  },
+  {
+    title: "Customisable",
+    description: "Match your personality by choosing Lemmi’s voice from a range of options in the in-app settings."
+  },
 ];
 
 export const actions = {
