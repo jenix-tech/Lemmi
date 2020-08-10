@@ -23,7 +23,7 @@ export const features = [
   },
   {
     title: "Customisable",
-    description: "Match your personality by choosing Lemmi’s voice from a range of options in the in-app settings."
+    description: "Match your personality by choosing Lemmi’s voice from a range of options in the in-app settings. Lemmi currently supports English-speaking voices with support for additional languages coming soon!"
   },
 ];
 
