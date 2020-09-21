@@ -80,6 +80,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 50vw;
   }
 
   .contact-img {
@@ -113,7 +114,6 @@
   }
 
   .sign-up-message {
-    width: 50%;
     font-size: 0.75rem;
     color: #333333;
   }
