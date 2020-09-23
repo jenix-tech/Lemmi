@@ -1,6 +1,6 @@
 export const hero = {
   title: "Lemmi",
-  subtitle: "The app that lets you chat!",
+  subtitle: "The assistive app that lets you chat!",
   description: "Discover a world of possibilities with this customisable speech app that gives you the independence to take part in conversations wherever you are, with or without a network connection.",
 };
 
