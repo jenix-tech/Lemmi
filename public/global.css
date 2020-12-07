@@ -76,10 +76,6 @@ button:focus {
   margin: 60px auto 0 auto;
 }
 
-.privacy-policy, .credits-page {
-  text-align: center;
-}
-
 .privacy-policy h2, .credits-page h2, .terms-of-service h2 {
   margin-bottom: 20px;
 }
