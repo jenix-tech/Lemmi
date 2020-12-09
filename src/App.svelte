@@ -1,6 +1,22 @@
 <script>
+  import Header from "./components/Header.svelte";
   import Lemmi from "./components/Lemmi.svelte";
   import Footer from "./components/Footer.svelte";
+  import { pages } from "./strings";
+
+  const components = {
+    // [pages.home]: Home,
+    [pages.app]: Lemmi,
+    // [pages.about]: About,
+    // [pages.pricing]: Pricing,
+    // [pages.faqs]: FAQS,
+    // [pages.contact]: Contact
+  };
+
+  let page = pages.home;
+  let handleClickNavigation = (selected) => {
+    page = selected;
+  };
 </script>
 
 <style>
@@ -8,11 +24,11 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px 0 0 0;
-    text-align: center;
   }
 </style>
 
+<Header {page} {handleClickNavigation} />
 <main>
-  <Lemmi />
+  <svelte:component this={components[page]} />
 </main>
 <Footer />

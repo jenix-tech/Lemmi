@@ -49,3 +49,12 @@ export const links = {
   facebook: "https://www.facebook.com/lemmichat",
   instagram: "https://www.instagram.com/lemmichat"
 }
+
+export const pages = {
+  home: 'Home',
+  app: 'App',
+  about: 'About',
+  pricing: 'Pricing',
+  faqs: 'FAQs',
+  contact: 'Contact'
+}

@@ -5,36 +5,23 @@
     align-items: center;
     justify-content: center;
   }
-  .navigation {
-    font-size: 10px;
-    margin: 0 10px;
+  
+  .memorial {
+    margin: 0 15px;
   }
 
   .navigation a {
-    margin: 0 10px;
     color: #304e87;
-  }
-
-  .copywrite {
-    font-size: 12px;
-  }
-
-  .memorial {
-    font-size: 10px;
-    margin: 1px 0 3px 0;
-  }
-
-  footer {
-    background-color: #aee3ea;
+    margin: 0 5px;
   }
 
   .footer-content {
     display: flex;
-    flex-direction: column;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
+    font-size: 10px;
     justify-content: center;
     height: 50px;
     align-items: center;
@@ -48,15 +35,14 @@
 <footer>
   <div class="footer-content">
     <div class="copywrite">
-      <p>&copy; LemmiChat 2020</p>
+      <p>&copy; 2020 Jenix Technologies LTD</p>
     </div>
     <p class="memorial">In loving memory of N. Lemmikki Hyry</p>
     <div class="navigation-wrapper">
       <div class="navigation">
-        <a href="/credits.html">Credits</a>
         <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
       </div>
     </div>
-
   </div>
 </footer>
