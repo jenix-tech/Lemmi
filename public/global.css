@@ -13,8 +13,16 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-h1, p {
+h1, h2, p {
   margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 a {
@@ -53,9 +61,11 @@ input[type="range"] {
 }
 
 button {
-	color: #333;
 	background-color: #f4f4f4;
-	outline: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 button:disabled {
@@ -70,7 +80,7 @@ button:focus {
 	border-color: #666;
 }
 
-.privacy-policy, .credits-page, .terms-of-service {
+.privacy-policy, .terms-of-service {
   padding: 0 10px;
   max-width: 1000px;
   margin: 60px auto 0 auto;
@@ -90,7 +100,7 @@ button:focus {
   font-size: 16px;
 }
 
-.privacy-policy p, .credits-page p, .terms-of-service p {
+.privacy-policy p, .terms-of-service p {
   margin-bottom: 20px;
 }
 
@@ -98,15 +108,8 @@ button:focus {
   font-size: 10px;
 }
 
-.credits-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 @media only screen and (min-width: 600px) {
-  .privacy-policy, .credits-page {
+  .privacy-policy {
     margin: 40px auto 140px auto;
   }
 }

@@ -45,31 +45,6 @@
   .right {
     flex-flow: column;
   }
-
-  @media only screen and (min-width: 600px) {
-    .feature {
-      flex-direction: row;
-      margin-bottom: 0;
-    }
-
-    .feature-image {
-      height: 700px;
-      width: auto;
-      margin-bottom: 0;
-    }
-
-    .feature-title {
-      margin-bottom: 0;
-    }
-
-    .feature-description {
-      font-size: 1.5rem;
-    }
-
-    .right {
-      flex-flow: row-reverse;
-    }
-  }
 </style>
 
 <div class="feature" class:right={index % 2 !== 0}>

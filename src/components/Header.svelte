@@ -63,10 +63,17 @@
     margin-bottom: 60px;
   }
 
-  .store-icons img {
+  .store-icons button {
     cursor: pointer;
+    width: 150px;
+    padding: 0;
+    background: none;
+    border: none;
   }
-
+  
+  .store-icons button:hover img {
+    opacity: 0.8;
+  }
   nav {
     width: 100%;
     display: flex;
@@ -102,8 +109,8 @@
       margin: 0;
     }
     .app-icon {
-    height: 45px;
-    margin: 0 10px 0 0;
+      height: 45px;
+      margin: 0 10px 0 0;
     }
 
     .play-icon {
@@ -113,7 +120,7 @@
   }
 </style>
 
-<div class="hero">
+<header class="hero">
   <!-- <div class="logo">
     <img src="images/appIcon.svg" alt="Lemmi Logo" />
   </div> -->
@@ -122,21 +129,26 @@
     src="images/hero-image.png"
     alt="Lemmi shown on an iPad and iPhone"
   />
-  <div class="hero-info">
+  <section class="hero-info">
     <h1 class="title">{hero.title}</h1>
     <h3 class="subtitle">{hero.subtitle}</h3>
     <div class="store-icons">
-      <img
-        class="app-icon"
-        src="images/app-store.png"
-        alt="Download on the App Store" />
-      <img
-        class="play-icon"
-        src="images/play-store.png"
-        alt="Download on the Play Store" />
+      <button>
+        <img
+          class="app-icon"
+          src="images/app-store.png"
+          alt="Download on the App Store" />
+      </button>
+      <button>
+        <img
+          class="play-icon"
+          src="images/play-store.png"
+          alt="Download on the Play Store" />
+      </button>
+     
     </div>
-  </div>
-</div>
+  </section>
+</header>
 <nav>
   <ul>
     {#each Object.values(pages) as pageTitle}
