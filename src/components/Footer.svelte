@@ -1,4 +1,87 @@
+<script>
+  import { actions, links } from "../strings.js";
+  const { newsletter } = actions;
+  let email;
+  let successMsg = newsletter.success;
+  let newsletterSuccess = false;
+  let newsletterMsg;
+  async function handleSubmit() {
+    const url =
+      "https://bize978r9h.execute-api.us-east-2.amazonaws.com/Production/join-newsletter";
+    const res = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({ email })
+    });
+    const response = await res.json();
+    if (response.statusCode && response.statusCode === 200) {
+      newsletterSuccess = true;
+      newsletterMsg = successMsg;
+    } else {
+      const body = JSON.parse(response.body);
+      newsletterSuccess = false;
+      newsletterMsg = body.message;
+    }
+  }
+  function onInputChange(e) {
+    if (!newsletterMsg) {
+      return;
+    }
+    if (e.target.value === "" && newsletterMsg) {
+      newsletterMsg = null;
+    }
+  }
+</script>
+
 <style>
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    height: 15vh;
+    margin: 0 auto;
+    padding: 15px 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subscribe-wrapper {
+    margin-top: auto;
+  }
+
+  .subscribe {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .subscribe input {
+    border: none;
+    margin-right: 10px;
+    width: 25vw;
+    height: 35px;
+    background-color: #D8F9FE;
+  }
+  
+  .subscribe button {
+    background: #25548C;
+    color: #ffffff;
+    padding: 0 10px;
+  }
+
+  .social-links {
+    margin-bottom: 5px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+
+  .social-icon:hover {
+    opacity: 0.8;
+  }
+  
   .navigation,
   .copywrite {
     display: flex;
@@ -15,18 +98,13 @@
     margin: 0 5px;
   }
 
-  .footer-content {
-    display: flex;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
+  .small-print {
     display: flex;
     font-size: 10px;
     justify-content: center;
-    height: 50px;
     align-items: center;
+    margin-top: auto;
   }
-
   .navigation-wrapper {
     display: flex;
   }
@@ -34,6 +112,43 @@
 
 <footer>
   <div class="footer-content">
+    <div class="subscribe-wrapper">
+      <p class="heading">{newsletter.heading}</p>
+      {#if newsletterMsg && newsletterSuccess}
+        <p class="message" class:success={newsletterSuccess}>{newsletterMsg}</p>
+      {:else}
+      {#if newsletterMsg && !newsletterSuccess}
+        <p class="message">{newsletterMsg}</p>
+      {/if}
+      <div class="subscribe">
+        <input
+          id="newletter"
+          name="newletter"
+          type="email"
+          aria-label="Wait List Sign Up"
+          bind:value={email}
+          on:input={onInputChange} />
+        <button id="submit" class="submit" on:click={handleSubmit}>
+          {newsletter.button.toUpperCase()}
+        </button>
+      </div>
+    {/if}
+  </div>
+  <div class="social-links">
+    <a href={links.email} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/email.svg" alt="social-icon" />
+    </a>
+    <a href={links.twitter} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/twitter.svg" alt="social-icon" />
+    </a>
+    <a href={links.facebook} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/facebook.svg" alt="social-icon" />
+    </a>
+    <a href={links.instagram} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/instagram.svg" alt="social-icon" />
+    </a>
+  </div>
+  <div class="small-print">
     <div class="copywrite">
       <p>&copy; 2020 Jenix Technologies LTD</p>
     </div>
@@ -44,5 +159,6 @@
         <a href="/terms-of-service.html">Terms of Service</a>
       </div>
     </div>
+  </div>
   </div>
 </footer>

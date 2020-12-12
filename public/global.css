@@ -49,7 +49,8 @@ input, button, select, textarea {
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
 	border: 1px solid #ccc;
-	border-radius: 2px;
+  border-radius: 2px;
+  margin: 0;
 }
 
 input:disabled {
@@ -66,6 +67,11 @@ button {
   border: none;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 button:disabled {

@@ -31,12 +31,44 @@ export const home = {
         description: "Suggested word prompts are shown to help keep your conversations flowing.",
       },
       {
-        image: '/images/no-connection-necessary.svg',
+        image: '/images/no-wifi.svg',
         title: "No connection necessary",
         description: "Once downloaded, Lemmi does not require an internet connection for you to communicate with others.",
       },
     ]
-  }
+  },
+  anatomy: [
+    {
+      title: "Predictive Words",
+      desciption: "Suggested words appear to help you form phrases faster",
+      image: "/images/predictive.svg"
+    },
+    {
+      title: "Word Book",
+      desciption: "Access word categories and add custom entries",
+      image: "/images/book.svg"
+    },
+    {
+      title: "Settings",
+      desciption: "Customise the app, manage your subscription, and get help",
+      image: "/images/settings.svg"
+    },
+    {
+      title: "Connectivity",
+      desciption: "Once downloaded, available anytime, anywhere",
+      image: "/images/no-wifi.svg"
+    },
+    {
+      title: "Play",
+      desciption: "Tap for the text in the speech bar to be read aloud",
+      image: "/images/play.svg"
+    },
+    {
+      title: "Core Words",
+      desciption: "Quick access core words such as 'Yes' and 'Please'",
+      image: "/images/plus.svg"
+    },
+  ]
 }
 
 export const features = [
@@ -63,23 +95,16 @@ export const features = [
 ];
 
 export const actions = {
-  contact: {
-    heading: "Have a question?",
-    link: "Get in touch"
-  },
-  waitlist: {
-    heading: "Join the Waitlist",
-    subheading: "Be the first to know when Lemmi is released.",
-    button: "Submit",
-    success: "Success! We'll email you again when Lemmi prepares to launch.",
-    error: "We were unable to sign you up. Please check your email and try again. If you continue to have difficulties, please get in touch."
-  },
-  social: {
-    heading: "Follow Us"
+  newsletter: {
+    heading: "Keep up to date with Lemmi's latest updates and offers",
+    button: "Subscribe",
+    success: "You have been successfully subscribed!",
+    error: "Something went wrong - please check your email and try again. If you continue to have difficulties, please reach out on our contact page."
   }
 };
 
 export const links = {
+  email: "mailto:info@lemmichat.com?subject=New Contact from Website",
   twitter: "https://twitter.com/lemmichat",
   facebook: "https://www.facebook.com/lemmichat",
   instagram: "https://www.instagram.com/lemmichat"

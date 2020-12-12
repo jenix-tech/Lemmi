@@ -1,6 +1,5 @@
 <script>
   import Feature from "../components/Feature.svelte";
-  import Actions from "../components/Actions.svelte";
   import { features } from "../strings.js";
 </script>
 
@@ -9,4 +8,3 @@
     <Feature image={title.toLowerCase()} {title} {description} {index} />
   {/each}
 </div>
-<Actions />

@@ -1,6 +1,7 @@
 <script>
-  import { home, pages } from '../strings';
-  const { freetrial, blurb, help } = home;
+  import { each } from 'svelte/internal';
+import { home, pages } from '../strings';
+  const { freetrial, blurb, help, anatomy } = home;
 
   let carouselIndex = 0
 
@@ -194,6 +195,62 @@
     font-size: 0.75rem;
   }
 
+  .anatomy {
+    height: 50vh;
+    font-size: 19px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+  }
+
+  .wrapper {
+    max-width: 1000px;
+  }
+
+  .wrapper img {
+    height: 100%;
+  }
+
+  .mock-up-wrapper, .anatomy-wrapper {
+    width: 30vw;
+  }
+
+  .mock-up {
+    height: 50vh;
+  }
+
+  .anatomy-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+  }
+
+  .anatomy-item {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .anatomy-item.reversed {
+    flex-direction: row-reverse;
+    text-align: right
+  }
+
+  .anatomy-item img {
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  .anatomy-text {
+    font-size: 0.8rem;
+  }
+
 </style>
 
 <section class="home-freetrial">
@@ -241,4 +298,33 @@
     {/each}
   </div>
 </section>
-<section class="anatomy"></section>
+<section class="anatomy">
+  <div class="wrapper">
+    <img src="images/test.png" alt="test">
+    <!-- <div class="anatomy-wrapper">
+      {#each anatomy.slice(0, 3) as item}
+        <div class="anatomy-item reversed">
+          <img src={item.image} alt={item.title} />
+          <div class="anatomy-text">
+            <p>{item.title.toUpperCase()}</p>
+            <p>{item.desciption}</p>
+          </div>
+        </div>
+      {/each}
+    </div>
+    <div class="mock-up-wrapper">
+      <img class="mock-up" src="/images/save-time.png" alt="Lemmi showing the phrase 'I want to go to the'"/>
+    </div>
+    <div class="anatomy-wrapper">
+      {#each anatomy.slice(3, anatomy.length) as item}
+        <div class="anatomy-item">
+          <img src={item.image} alt={item.title} />
+          <div class="anatomy-text">
+            <p>{item.title.toUpperCase()}</p>
+            <p>{item.desciption}</p>
+          </div>
+        </div>
+      {/each}
+    </div> -->
+  </div>
+</section>
