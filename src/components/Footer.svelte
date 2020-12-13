@@ -58,13 +58,10 @@
   }
 
   .subscribe input {
-    border: none;
     margin-right: 10px;
     width: 25vw;
     height: 35px;
     font-size: 0.80rem;
-    padding: 0 10px;
-    background-color: #e0e0e0;
   }
 
   .subscribe input::placeholder {
@@ -136,7 +133,8 @@
           name="newletter"
           type="email"
           placeholder="EMAIL ADDRESS"
-          aria-label="Wait List Sign Up"
+          aria-label="Newsletter Sign Up"
+          required
           bind:value={email}
           on:input={onInputChange} />
         <button id="submit" class="submit" on:click={handleSubmit}>

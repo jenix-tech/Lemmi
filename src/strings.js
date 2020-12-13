@@ -105,6 +105,16 @@ export const about = {
   }
 }
 
+export const contact = {
+  title: "Contact Us",
+  instructions: "Lemmi is continually being revised in response to customer's feedback, so please do not hesitate to get in touch with any questions or to let us know of any ways you think the app could be improved further.",
+  form: "Get in touch",
+  notes: "We greate appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas.",
+  submit: "Submit",
+  success: "Your form has been submitted!",
+  error: "There was an issue submitting your form. Please try again or email as: info@lemmichat.com"
+}
+
 export const features = [
   {
     title: "Chat",
