@@ -515,28 +515,36 @@ var app = (function () {
       error: "There was an issue submitting your form. Please try again or email as: info@lemmichat.com"
     };
 
-    const features = [
-      {
-        title: "Chat",
-        description: "Use your smart device to build your own sentences from over 700 words that Lemmi will repeat out loud for you, wherever you are."
-      },
-      {
-        title: "Personalise",
-        description: "Our user-friendly design includes a clear menu, easy navigation and simple graphics, making it appropriate for all ages and abilities."
-      },
-      {
-        title: "Save time",
-        description: "Create your own vocabulary by adding words, phrases and photos to your private 'Word Book'. Lemmi will back-up and sync these personalisations across multiple devices with a valid iCloud or Google account."
-      },
-      {
-        title: "Simple to use",
-        description: "Suggested words will appear underneath the Speech Bar. Lemmi bases these off of words you’ve previously used in succession, and enable you to keep up with flowing conversations."
-      },
-      {
-        title: "Customise",
-        description: "Match your personality by choosing Lemmi’s voice from a range of options in the in-app settings. Lemmi currently supports English-speaking voices with support for additional languages coming soon!"
-      },
-    ];
+    const app = {
+      header: "Lemmi offers users a range of exciting functions and personalised possibilities",
+      features: [
+        {
+          title: "Chat",
+          description: "Users can type their own words or select from over 600+ words and phrases which the app will read aloud.",
+          image: "images/chat.png"
+        },
+        {
+          title: "Personalise",
+          description: "Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
+          image: "images/personalise.png"
+        },
+        {
+          title: "Save time",
+          description: "Suggested word prompts are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
+          image: "images/save-time.png"
+        },
+        {
+          title: "Simple to use",
+          description: "The app has a user friendly design (including a clear menu, easy navigation, and simple graphics) making it suitable for all ages and abilities.",
+          image: "images/simple-to-use.png"
+        },
+        {
+          title: "Customise",
+          description: "The app can be adapted to suit individual needs by changing the setting options (e.g. tone of voice, colour theme, and more).",
+          image: "images/customise.png"
+        },
+      ]
+    };
 
     const actions = {
       newsletter: {
@@ -898,8 +906,8 @@ var app = (function () {
     			img = element("img");
     			if (img.src !== (img_src_value = /*photo*/ ctx[11])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Screenshot of Lemmi running on iOS");
-    			attr_dev(img, "class", "svelte-1fe3737");
-    			add_location(img, file$1, 269, 12, 5051);
+    			attr_dev(img, "class", "svelte-14tnicj");
+    			add_location(img, file$1, 269, 12, 5047);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -997,16 +1005,16 @@ var app = (function () {
     			t4 = space();
     			if (img.src !== (img_src_value = /*usp*/ ctx[8].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[8].title);
-    			attr_dev(img, "class", "svelte-1fe3737");
-    			add_location(img, file$1, 291, 10, 5682);
-    			attr_dev(div0, "class", "usp-image-wrapper svelte-1fe3737");
-    			add_location(div0, file$1, 290, 8, 5640);
-    			attr_dev(p0, "class", "usp-title svelte-1fe3737");
-    			add_location(p0, file$1, 293, 8, 5745);
-    			attr_dev(p1, "class", "usp-description svelte-1fe3737");
-    			add_location(p1, file$1, 294, 8, 5804);
-    			attr_dev(div1, "class", "usp svelte-1fe3737");
-    			add_location(div1, file$1, 289, 6, 5614);
+    			attr_dev(img, "class", "svelte-14tnicj");
+    			add_location(img, file$1, 291, 10, 5678);
+    			attr_dev(div0, "class", "usp-image-wrapper svelte-14tnicj");
+    			add_location(div0, file$1, 290, 8, 5636);
+    			attr_dev(p0, "class", "usp-title svelte-14tnicj");
+    			add_location(p0, file$1, 293, 8, 5741);
+    			attr_dev(p1, "class", "usp-description svelte-14tnicj");
+    			add_location(p1, file$1, 294, 8, 5800);
+    			attr_dev(div1, "class", "usp svelte-14tnicj");
+    			add_location(div1, file$1, 289, 6, 5610);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1149,58 +1157,58 @@ var app = (function () {
     			section3 = element("section");
     			div5 = element("div");
     			img2 = element("img");
-    			attr_dev(h2, "class", "svelte-1fe3737");
-    			add_location(h2, file$1, 257, 6, 4485);
-    			attr_dev(p0, "class", "svelte-1fe3737");
-    			add_location(p0, file$1, 258, 6, 4518);
-    			attr_dev(button0, "class", "svelte-1fe3737");
-    			add_location(button0, file$1, 259, 6, 4552);
-    			attr_dev(p1, "class", "home-freetrial__smallprint svelte-1fe3737");
-    			add_location(p1, file$1, 260, 6, 4639);
-    			attr_dev(div0, "class", "home-freetrial__text svelte-1fe3737");
-    			add_location(div0, file$1, 256, 4, 4444);
+    			attr_dev(h2, "class", "svelte-14tnicj");
+    			add_location(h2, file$1, 257, 6, 4481);
+    			attr_dev(p0, "class", "svelte-14tnicj");
+    			add_location(p0, file$1, 258, 6, 4514);
+    			attr_dev(button0, "class", "svelte-14tnicj");
+    			add_location(button0, file$1, 259, 6, 4548);
+    			attr_dev(p1, "class", "home-freetrial__smallprint svelte-14tnicj");
+    			add_location(p1, file$1, 260, 6, 4635);
+    			attr_dev(div0, "class", "home-freetrial__text svelte-14tnicj");
+    			add_location(div0, file$1, 256, 4, 4440);
     			if (img0.src !== (img0_src_value = "./images/chevron-left.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "View previous screenshot");
-    			attr_dev(img0, "class", "svelte-1fe3737");
-    			add_location(img0, file$1, 265, 10, 4862);
-    			attr_dev(button1, "class", "carousel_prev svelte-1fe3737");
-    			add_location(button1, file$1, 264, 8, 4801);
+    			attr_dev(img0, "class", "svelte-14tnicj");
+    			add_location(img0, file$1, 265, 10, 4858);
+    			attr_dev(button1, "class", "carousel_prev svelte-14tnicj");
+    			add_location(button1, file$1, 264, 8, 4797);
     			if (img1.src !== (img1_src_value = "./images/chevron-right.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "View next screenshot");
-    			attr_dev(img1, "class", "svelte-1fe3737");
-    			add_location(img1, file$1, 273, 10, 5209);
-    			attr_dev(button2, "class", "carousel_next svelte-1fe3737");
-    			add_location(button2, file$1, 272, 8, 5152);
-    			attr_dev(div1, "class", "carousel_image svelte-1fe3737");
-    			add_location(div1, file$1, 263, 6, 4764);
-    			attr_dev(div2, "class", "home-freetrial__carousel svelte-1fe3737");
-    			add_location(div2, file$1, 262, 4, 4719);
-    			attr_dev(div3, "class", "wrapper svelte-1fe3737");
-    			add_location(div3, file$1, 255, 2, 4418);
-    			attr_dev(section0, "class", "home-freetrial svelte-1fe3737");
-    			add_location(section0, file$1, 254, 0, 4383);
-    			attr_dev(p2, "class", "svelte-1fe3737");
-    			add_location(p2, file$1, 280, 2, 5365);
-    			attr_dev(p3, "class", "svelte-1fe3737");
-    			add_location(p3, file$1, 281, 2, 5388);
-    			attr_dev(button3, "class", "svelte-1fe3737");
-    			add_location(button3, file$1, 282, 2, 5411);
-    			attr_dev(section1, "class", "blurb svelte-1fe3737");
-    			add_location(section1, file$1, 279, 0, 5339);
-    			attr_dev(h3, "class", "svelte-1fe3737");
-    			add_location(h3, file$1, 286, 2, 5529);
-    			attr_dev(div4, "class", "usp-wrapper svelte-1fe3737");
-    			add_location(div4, file$1, 287, 2, 5553);
-    			attr_dev(section2, "class", "help svelte-1fe3737");
-    			add_location(section2, file$1, 285, 0, 5504);
+    			attr_dev(img1, "class", "svelte-14tnicj");
+    			add_location(img1, file$1, 273, 10, 5205);
+    			attr_dev(button2, "class", "carousel_next svelte-14tnicj");
+    			add_location(button2, file$1, 272, 8, 5148);
+    			attr_dev(div1, "class", "carousel_image svelte-14tnicj");
+    			add_location(div1, file$1, 263, 6, 4760);
+    			attr_dev(div2, "class", "home-freetrial__carousel svelte-14tnicj");
+    			add_location(div2, file$1, 262, 4, 4715);
+    			attr_dev(div3, "class", "wrapper svelte-14tnicj");
+    			add_location(div3, file$1, 255, 2, 4414);
+    			attr_dev(section0, "class", "home-freetrial svelte-14tnicj");
+    			add_location(section0, file$1, 254, 0, 4379);
+    			attr_dev(p2, "class", "svelte-14tnicj");
+    			add_location(p2, file$1, 280, 2, 5361);
+    			attr_dev(p3, "class", "svelte-14tnicj");
+    			add_location(p3, file$1, 281, 2, 5384);
+    			attr_dev(button3, "class", "svelte-14tnicj");
+    			add_location(button3, file$1, 282, 2, 5407);
+    			attr_dev(section1, "class", "blurb svelte-14tnicj");
+    			add_location(section1, file$1, 279, 0, 5335);
+    			attr_dev(h3, "class", "svelte-14tnicj");
+    			add_location(h3, file$1, 286, 2, 5525);
+    			attr_dev(div4, "class", "usp-wrapper svelte-14tnicj");
+    			add_location(div4, file$1, 287, 2, 5549);
+    			attr_dev(section2, "class", "help svelte-14tnicj");
+    			add_location(section2, file$1, 285, 0, 5500);
     			if (img2.src !== (img2_src_value = "images/anatomy.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "test");
-    			attr_dev(img2, "class", "svelte-1fe3737");
-    			add_location(img2, file$1, 301, 4, 5952);
-    			attr_dev(div5, "class", "wrapper svelte-1fe3737");
-    			add_location(div5, file$1, 300, 2, 5926);
-    			attr_dev(section3, "class", "anatomy svelte-1fe3737");
-    			add_location(section3, file$1, 299, 0, 5898);
+    			attr_dev(img2, "class", "svelte-14tnicj");
+    			add_location(img2, file$1, 301, 4, 5948);
+    			attr_dev(div5, "class", "wrapper svelte-14tnicj");
+    			add_location(div5, file$1, 300, 2, 5922);
+    			attr_dev(section3, "class", "anatomy svelte-14tnicj");
+    			add_location(section3, file$1, 299, 0, 5894);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1440,7 +1448,6 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let div1;
     	let img;
-    	let img_class_value;
     	let img_src_value;
     	let img_alt_value;
     	let t0;
@@ -1462,23 +1469,19 @@ var app = (function () {
     			t2 = space();
     			p = element("p");
     			t3 = text(/*description*/ ctx[2]);
-
-    			attr_dev(img, "class", img_class_value = "" + (null_to_empty(`feature-image ${/*image*/ ctx[0] === "customisable"
-			? "customisable"
-			: ""}`) + " svelte-6i0wxl"));
-
-    			if (img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".gif")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "feature-image svelte-18ufaed");
+    			if (img.src !== (img_src_value = /*image*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "" + (/*title*/ ctx[1] + " image"));
-    			add_location(img, file$2, 50, 2, 825);
-    			attr_dev(h3, "class", "feature-title svelte-6i0wxl");
-    			add_location(h3, file$2, 55, 4, 997);
-    			attr_dev(p, "class", "feature-description svelte-6i0wxl");
-    			add_location(p, file$2, 56, 4, 1040);
-    			attr_dev(div0, "class", "text-wrapper svelte-6i0wxl");
-    			add_location(div0, file$2, 54, 2, 966);
-    			attr_dev(div1, "class", "feature svelte-6i0wxl");
+    			add_location(img, file$2, 47, 2, 766);
+    			attr_dev(h3, "class", "feature-title svelte-18ufaed");
+    			add_location(h3, file$2, 52, 4, 873);
+    			attr_dev(p, "class", "feature-description svelte-18ufaed");
+    			add_location(p, file$2, 53, 4, 916);
+    			attr_dev(div0, "class", "text-wrapper svelte-18ufaed");
+    			add_location(div0, file$2, 51, 2, 842);
+    			attr_dev(div1, "class", "feature svelte-18ufaed");
     			toggle_class(div1, "right", /*index*/ ctx[3] % 2 !== 0);
-    			add_location(div1, file$2, 49, 0, 771);
+    			add_location(div1, file$2, 46, 0, 712);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1495,13 +1498,7 @@ var app = (function () {
     			append_dev(p, t3);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*image*/ 1 && img_class_value !== (img_class_value = "" + (null_to_empty(`feature-image ${/*image*/ ctx[0] === "customisable"
-			? "customisable"
-			: ""}`) + " svelte-6i0wxl"))) {
-    				attr_dev(img, "class", img_class_value);
-    			}
-
-    			if (dirty & /*image*/ 1 && img.src !== (img_src_value = "images/" + /*image*/ ctx[0] + ".gif")) {
+    			if (dirty & /*image*/ 1 && img.src !== (img_src_value = /*image*/ ctx[0])) {
     				attr_dev(img, "src", img_src_value);
     			}
 
@@ -1648,21 +1645,22 @@ var app = (function () {
     	const child_ctx = ctx.slice();
     	child_ctx[0] = list[i].title;
     	child_ctx[1] = list[i].description;
-    	child_ctx[3] = i;
+    	child_ctx[2] = list[i].image;
+    	child_ctx[4] = i;
     	return child_ctx;
     }
 
-    // (7:2) {#each features as { title, description }
+    // (32:2) {#each app.features as { title, description, image }
     function create_each_block$2(ctx) {
     	let feature;
     	let current;
 
     	feature = new Feature({
     			props: {
-    				image: /*title*/ ctx[0].toLowerCase(),
     				title: /*title*/ ctx[0],
     				description: /*description*/ ctx[1],
-    				index: /*index*/ ctx[3]
+    				index: /*index*/ ctx[4],
+    				image: /*image*/ ctx[2]
     			},
     			$$inline: true
     		});
@@ -1694,7 +1692,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(7:2) {#each features as { title, description }",
+    		source: "(32:2) {#each app.features as { title, description, image }",
     		ctx
     	});
 
@@ -1703,8 +1701,11 @@ var app = (function () {
 
     function create_fragment$3(ctx) {
     	let div;
+    	let h3;
+    	let t1;
+    	let section;
     	let current;
-    	let each_value = features;
+    	let each_value = app.features;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -1719,29 +1720,40 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
+    			h3 = element("h3");
+    			h3.textContent = `${app.header.toUpperCase()}`;
+    			t1 = space();
+    			section = element("section");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "features");
-    			add_location(div, file$3, 5, 0, 118);
+    			attr_dev(h3, "class", "svelte-w8fbvk");
+    			add_location(h3, file$3, 28, 2, 516);
+    			attr_dev(div, "class", "lemmi-title svelte-w8fbvk");
+    			add_location(div, file$3, 27, 0, 488);
+    			attr_dev(section, "class", "features svelte-w8fbvk");
+    			add_location(section, file$3, 30, 0, 559);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
+    			append_dev(div, h3);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, section, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div, null);
+    				each_blocks[i].m(section, null);
     			}
 
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*features*/ 0) {
-    				each_value = features;
+    			if (dirty & /*app*/ 0) {
+    				each_value = app.features;
     				validate_each_argument(each_value);
     				let i;
 
@@ -1755,7 +1767,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block$2(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div, null);
+    						each_blocks[i].m(section, null);
     					}
     				}
 
@@ -1788,6 +1800,8 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(section);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -1812,7 +1826,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Lemmi> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ Feature, features });
+    	$$self.$capture_state = () => ({ Feature, app });
     	return [];
     }
 
@@ -3178,7 +3192,7 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file$7, 28, 0, 690);
+    			add_location(main, file$7, 28, 0, 686);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3270,7 +3284,7 @@ var app = (function () {
     		[pages.contact]: Contact
     	};
 
-    	let page = pages.contact;
+    	let page = pages.app;
 
     	let handleClickNavigation = selected => {
     		$$invalidate(0, page = selected);
@@ -3321,11 +3335,11 @@ var app = (function () {
     	}
     }
 
-    const app = new App({
+    const app$1 = new App({
       target: document.body
     });
 
-    return app;
+    return app$1;
 
 }());
 //# sourceMappingURL=bundle.js.map

@@ -8,49 +8,46 @@
 <style>
   .feature {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
-  }
-  .customisable {
-    height: 500px !important;
+    margin-bottom: 50px;
   }
 
   .feature-image {
-    width: 300px;
+    width: 150px;
     flex-direction: column;
     margin-bottom: 30px;
-    border-radius: 90px;
   }
 
   .text-wrapper {
     justify-content: center;
     align-items: center;
     display: flex;
+    text-align: center;
     flex-direction: column;
     padding: 0 30px;
   }
 
   .feature-title {
-    font-weight: 500;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-weight: 700;
+    color: #25548c;
   }
 
   .feature-description {
     font-size: 1.25rem;
+    margin: 0;
   }
 
   .right {
-    flex-flow: column;
+    flex-direction: row-reverse;
   }
 </style>
 
 <div class="feature" class:right={index % 2 !== 0}>
   <img
-    class={`feature-image ${image === 'customisable' ? 'customisable' : ''}`}
-    src="images/{image}.gif"
+    class="feature-image"
+    src={image}
     alt="{title} image" />
   <div class="text-wrapper">
     <h3 class="feature-title">{title}</h3>

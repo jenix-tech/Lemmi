@@ -16,7 +16,7 @@
     [pages.contact]: Contact
   };
 
-  let page = pages.contact;
+  let page = pages.app;
   let handleClickNavigation = (selected) => {
     page = selected;
   };

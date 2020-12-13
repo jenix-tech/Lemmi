@@ -150,7 +150,7 @@ import { home, pages } from '../strings';
   }
 
   .help h3 {
-    margin: 0 0 20px 0;
+    margin: 20px 0;
     text-align: center;
   }
 

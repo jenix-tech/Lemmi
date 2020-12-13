@@ -115,28 +115,36 @@ export const contact = {
   error: "There was an issue submitting your form. Please try again or email as: info@lemmichat.com"
 }
 
-export const features = [
-  {
-    title: "Chat",
-    description: "Use your smart device to build your own sentences from over 700 words that Lemmi will repeat out loud for you, wherever you are."
-  },
-  {
-    title: "Personalise",
-    description: "Our user-friendly design includes a clear menu, easy navigation and simple graphics, making it appropriate for all ages and abilities."
-  },
-  {
-    title: "Save time",
-    description: "Create your own vocabulary by adding words, phrases and photos to your private 'Word Book'. Lemmi will back-up and sync these personalisations across multiple devices with a valid iCloud or Google account."
-  },
-  {
-    title: "Simple to use",
-    description: "Suggested words will appear underneath the Speech Bar. Lemmi bases these off of words you’ve previously used in succession, and enable you to keep up with flowing conversations."
-  },
-  {
-    title: "Customise",
-    description: "Match your personality by choosing Lemmi’s voice from a range of options in the in-app settings. Lemmi currently supports English-speaking voices with support for additional languages coming soon!"
-  },
-];
+export const app = {
+  header: "Lemmi offers users a range of exciting functions and personalised possibilities",
+  features: [
+    {
+      title: "Chat",
+      description: "Users can type their own words or select from over 600+ words and phrases which the app will read aloud.",
+      image: "images/chat.png"
+    },
+    {
+      title: "Personalise",
+      description: "Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
+      image: "images/personalise.png"
+    },
+    {
+      title: "Save time",
+      description: "Suggested word prompts are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
+      image: "images/save-time.png"
+    },
+    {
+      title: "Simple to use",
+      description: "The app has a user friendly design (including a clear menu, easy navigation, and simple graphics) making it suitable for all ages and abilities.",
+      image: "images/simple-to-use.png"
+    },
+    {
+      title: "Customise",
+      description: "The app can be adapted to suit individual needs by changing the setting options (e.g. tone of voice, colour theme, and more).",
+      image: "images/customise.png"
+    },
+  ]
+}
 
 export const actions = {
   newsletter: {
