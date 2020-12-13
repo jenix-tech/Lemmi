@@ -96,7 +96,7 @@
     border: none;
     font-size: 1.75rem;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 20px;
   }
 
   nav button:hover, nav button.selected {

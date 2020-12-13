@@ -2,19 +2,21 @@
   import Header from "./components/Header.svelte";
   import Home from "./pages/Home.svelte";
   import Lemmi from "./pages/Lemmi.svelte";
+  import About from "./pages/About.svelte";
+  import Contact from "./pages/Contact.svelte";
   import Footer from "./components/Footer.svelte";
   import { pages } from "./strings";
 
   const components = {
     [pages.home]: Home,
     [pages.app]: Lemmi,
-    // [pages.about]: About,
+    [pages.about]: About,
     // [pages.pricing]: Pricing,
     // [pages.faqs]: FAQS,
-    // [pages.contact]: Contact
+    [pages.contact]: Contact
   };
 
-  let page = pages.home;
+  let page = pages.contact;
   let handleClickNavigation = (selected) => {
     page = selected;
   };

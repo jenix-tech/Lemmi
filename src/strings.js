@@ -71,6 +71,40 @@ export const home = {
   ]
 }
 
+export const about = {
+  story: {
+    title: "The Story of Lemmi",
+    heading: "Our goal is to give users a voice; to help build their confidence and independence, and to keep them connected.",
+    sections: [
+      [
+        "The original idea for Lemmi arose after, co-founder, Jemma helped care for a loved one who developed aphasia after suffering a serious stroke.",
+        "Having witnessed, first-hand, the devastating impact that a speech impairment can have on an individual’s confidence and overall well-being, Jemma set out to create an accessible and user-friendly resource that could help others who might, for any reason, struggle to xpress themselves verbally.",
+        "Following a conversation with Will (Jemma's close friend and software developer), the idea of developing of an assistive app took shape."
+      ],
+      [
+        "Together, Jemma and Will spent the next few years learning about the world of AAC, researching what potential users would find most helpful. Their vision was to develop the best all-round communication app available for anyone with any form of aphasia or speech impairment.",
+        "After years of perfecting the design, their newly created app - Lemmi - is now available on iOS and Android."
+      ],
+      [
+        "Lemmi has been a passion project for both co-founders, who hope that it will provide a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.",
+        "The Lemmi app is continually being updated in response to customer's feedback, so please do not hesitate to let us know of any ways you think the app could be improved further. We greatly appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas."
+      ]
+    ]
+  },
+  team: {
+    title: "The Team",
+    people: [{
+      name: "Jemma Grace",
+      image: "images/jemma-bowles.jpg",
+      role: "Co-founder"
+    }, {
+      name: "Will Nixon",
+      image: "images/will-nixon.jpg",
+      role: "Co-founder"
+    }]
+  }
+}
+
 export const features = [
   {
     title: "Chat",

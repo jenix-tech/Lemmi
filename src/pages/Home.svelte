@@ -46,10 +46,7 @@ import { home, pages } from '../strings';
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-  }
-
-  .home-freetrial__text button:hover {
-    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 
   .home-freetrial__smallprint {
@@ -161,6 +158,7 @@ import { home, pages } from '../strings';
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
+    max-width: 1010px;
   }
 
   .usp {
@@ -179,6 +177,7 @@ import { home, pages } from '../strings';
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
 
   .usp-image-wrapper img {
@@ -216,7 +215,7 @@ import { home, pages } from '../strings';
     height: 100%;
   }
 
-  .mock-up-wrapper, .anatomy-wrapper {
+  /* .mock-up-wrapper, .anatomy-wrapper {
     width: 30vw;
   }
 
@@ -249,7 +248,7 @@ import { home, pages } from '../strings';
 
   .anatomy-text {
     font-size: 0.8rem;
-  }
+  } */
 
 </style>
 
@@ -300,7 +299,7 @@ import { home, pages } from '../strings';
 </section>
 <section class="anatomy">
   <div class="wrapper">
-    <img src="images/test.png" alt="test">
+    <img src="images/anatomy.png" alt="test">
     <!-- <div class="anatomy-wrapper">
       {#each anatomy.slice(0, 3) as item}
         <div class="anatomy-item reversed">

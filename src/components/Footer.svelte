@@ -33,6 +33,9 @@
 </script>
 
 <style>
+  footer {
+    background-color: #ffffff;
+  }
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -59,7 +62,14 @@
     margin-right: 10px;
     width: 25vw;
     height: 35px;
-    background-color: #D8F9FE;
+    font-size: 0.80rem;
+    padding: 0 10px;
+    background-color: #e0e0e0;
+  }
+
+  .subscribe input::placeholder {
+    padding: 0;
+    margin: 0;
   }
   
   .subscribe button {
@@ -125,6 +135,7 @@
           id="newletter"
           name="newletter"
           type="email"
+          placeholder="EMAIL ADDRESS"
           aria-label="Wait List Sign Up"
           bind:value={email}
           on:input={onInputChange} />
