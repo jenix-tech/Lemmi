@@ -146,6 +146,36 @@ export const app = {
   ]
 }
 
+export const pricing = {
+  title: "Pricing",
+  subscription: "We offer two subscription plans:",
+  plans: [
+    {
+      title: "Monthly",
+      price: "£4.49 per month",
+    },
+    {
+      title: "Yearly",
+      price: "£41.99 per year",
+      perMonth: "(Just £3.50 per month!)",
+      save: "Save 22%",
+      popular: "Most Popular"
+    }
+  ],
+  billing: "Billed after 7 day FREE trial",
+  whatsIncluded: "What's included?",
+  included: [
+    "Available offline - once downloaded, Lemmi does not require an internet connection",
+    "Extensive word options - over 600+ words and phrases included",
+    "Personalised - users can add unlimited personal words and images",
+    "Private - bespoke entries are stored privately on the user's private account",
+    "Phone calls - Lemmi can be used during phone conversations (iOS 13+ only)",
+    "Language options - English with additional languages coming soon",
+    "Regular updated - including new features, words, phrases, and icons"
+  ],
+  available: "Available on iOS and Android devices"
+}
+
 export const actions = {
   newsletter: {
     heading: "Keep up to date with Lemmi's latest updates and offers",

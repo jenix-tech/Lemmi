@@ -40,7 +40,6 @@
     display: flex;
     flex-direction: column;
     max-width: 1100px;
-    height: 15vh;
     margin: 0 auto;
     padding: 15px 40px;
     justify-content: center;
@@ -76,7 +75,7 @@
   }
 
   .social-links {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   .social-icon {
@@ -94,6 +93,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .copywrite p {
+    margin: 0;
   }
   
   .memorial {

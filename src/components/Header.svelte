@@ -2,6 +2,14 @@
   import { hero, pages } from "../strings.js";
   export let page;
   export let handleClickNavigation;
+
+  const openStore = (store) => {
+    if (store === 'app') {
+      console.log('app')
+    } else {
+      console.log('play')
+    }
+  }
 </script>
 
 <style>
@@ -58,11 +66,6 @@
     flex-wrap: wrap;
   }
 
-  .coming-soon {
-    font-size: 1rem;
-    margin-bottom: 60px;
-  }
-
   .store-icons button {
     cursor: pointer;
     width: 150px;
@@ -74,6 +77,17 @@
   .store-icons button:hover img {
     opacity: 0.8;
   }
+
+  .app-icon {
+    height: 45px;
+    margin: 0 10px 0 0;
+  }
+
+  .play-icon {
+    height: 47px;
+    margin: -1px 5px 0 0;
+  }
+
   nav {
     width: 100%;
     display: flex;
@@ -102,22 +116,6 @@
   nav button:hover, nav button.selected {
     color: #25548c
   }
-
-  @media only screen and (min-width: 600px) {
-    .subtitle {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .app-icon {
-      height: 45px;
-      margin: 0 10px 0 0;
-    }
-
-    .play-icon {
-      height: 47px;
-      margin: -1px 5px 0 0;
-    }
-  }
 </style>
 
 <header class="hero">
@@ -133,19 +131,22 @@
     <h1 class="title">{hero.title}</h1>
     <h3 class="subtitle">{hero.subtitle}</h3>
     <div class="store-icons">
-      <button>
+      <button
+        on:click={() => openStore('app')}
+      >
         <img
           class="app-icon"
           src="images/app-store.png"
           alt="Download on the App Store" />
       </button>
-      <button>
+      <button
+        on:click={() => openStore('play')}
+      >
         <img
           class="play-icon"
           src="images/play-store.png"
           alt="Download on the Play Store" />
       </button>
-     
     </div>
   </section>
 </header>
