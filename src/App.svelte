@@ -4,6 +4,7 @@
   import Lemmi from "./pages/Lemmi.svelte";
   import About from "./pages/About.svelte";
   import Pricing from "./pages/Pricing.svelte";
+  import FAQs from "./pages/FAQs.svelte";
   import Contact from "./pages/Contact.svelte";
   import Footer from "./components/Footer.svelte";
   import { pages } from "./strings";
@@ -13,11 +14,11 @@
     [pages.app]: Lemmi,
     [pages.about]: About,
     [pages.pricing]: Pricing,
-    // [pages.faqs]: FAQS,
+    [pages.faqs]: FAQs,
     [pages.contact]: Contact
   };
 
-  let page = pages.pricing;
+  let page = pages.faqs;
   let handleClickNavigation = (selected) => {
     page = selected;
   };

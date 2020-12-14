@@ -120,7 +120,7 @@
   }
 </style>
 
-<footer>
+<footer id="footer">
   <div class="footer-content">
     <div class="subscribe-wrapper">
       <p class="heading">{newsletter.heading}</p>
