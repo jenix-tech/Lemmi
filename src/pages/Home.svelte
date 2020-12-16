@@ -273,7 +273,7 @@
   }
 
   .mock-up {
-    height: auto;
+    height: 100%;
     width: 100%;
   }
 
@@ -311,6 +311,10 @@
 
     .carousel_image {
       top: 45px;
+    }
+
+    .mock-up {
+      height: auto;
     }
   }
 
