@@ -13,6 +13,82 @@
 
 </script>
 
+<section class="home-freetrial">
+  <div class="wrapper">
+    <div class="home-freetrial__text">
+      <h2>{freetrial.title}</h2>
+      <p>{freetrial.subtitle}</p>
+      <button on:click={handleClickNavigation(pages.pricing)}>Get 1 week free</button>
+      <p class="home-freetrial__smallprint">{freetrial.desciption}</p>
+    </div>
+    <div class="home-freetrial__carousel">
+      <div class="carousel_image">
+        <button class="carousel_prev" on:click={previous}>
+          <img src="./images/chevron-left.svg" alt="View previous screenshot" />
+        </button>
+        {#each freetrial.images as photo, index}
+          {#if index == carouselIndex}
+            <img src={photo} alt="Screenshot of Lemmi running on iOS" />
+          {/if}
+        {/each}
+        <button class="carousel_next" on:click={next}>
+          <img src="./images/chevron-right.svg" alt="View next screenshot" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="blurb">
+  <p>{blurb.text1}</p>
+  <p>{blurb.text2}</p>
+  <button 
+    on:click={handleClickNavigation(pages.faqs)}>{blurb.action}</button>
+</section>
+<section class="help">
+  <h3>{help.title}</h3>
+  <div class="usp-wrapper">
+    {#each help.usps as usp}
+      <div class="usp">
+        <div class="usp-image-wrapper">
+          <img src={usp.image} alt={usp.title} />
+        </div>
+        <p class="usp-title">{usp.title.toUpperCase()}</p>
+        <p class="usp-description">{usp.description}</p>
+      </div>
+    {/each}
+  </div>
+</section>
+<section class="anatomy">
+  <div class="wrapper">
+    <img src="images/anatomy.png" alt="Anatomy of the Lemmi app">
+    <div class="anatomy-wrapper">
+      {#each anatomy.slice(0, 3) as item}
+        <div class="anatomy-item reversed">
+          <img src={item.image} alt={item.title} />
+          <div class="anatomy-text">
+            <p>{item.title.toUpperCase()}</p>
+            <p>{item.desciption}</p>
+          </div>
+        </div>
+      {/each}
+    </div>
+    <div class="mock-up-wrapper">
+      <img class="mock-up" src="/images/save-time.png" alt="Lemmi showing the phrase 'I want to go to the'"/>
+    </div>
+    <div class="anatomy-wrapper">
+      {#each anatomy.slice(3, anatomy.length) as item}
+        <div class="anatomy-item">
+          <img src={item.image} alt={item.title} />
+          <div class="anatomy-text">
+            <p>{item.title.toUpperCase()}</p>
+            <p>{item.desciption}</p>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
 <style>
   .home-freetrial {
     height: 40vh;
@@ -285,83 +361,84 @@
     }
   }
 
-  /* @media only screen and (max-width: 620px) {
+    /* @media only screen and (max-width: 936px) {
+    .hero-info {
+      width: 45%;
+    }
+  }
 
+  @media only screen and (max-width: 767px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .hero-info {
+      margin-left: 0px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .store-icons {
+      justify-content: space-around;
+    }
+
+    .store-icons button {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 674px) {
+    .nav-bar {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+      background-color: #ffffff;
+      height: 6vh;
+    }
+
+    .mobile-nav ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .mobile-nav li {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 619px) {
+    .mobile-hero-image {
+      display: flex;
+    }
+
+    .hero-image {
+      display: none;
+    }
+
+    .app-icon {
+      height: 35px;
+      margin: 0;
+    }
+
+    .play-icon {
+      height: 35px;
+      margin: 0;
+    }
+
+    .mobile-nav button {
+      font-size: 1.15rem;
+    }
   } */
 </style>
-
-<section class="home-freetrial">
-  <div class="wrapper">
-    <div class="home-freetrial__text">
-      <h2>{freetrial.title}</h2>
-      <p>{freetrial.subtitle}</p>
-      <button on:click={handleClickNavigation(pages.pricing)}>Get 1 week free</button>
-      <p class="home-freetrial__smallprint">{freetrial.desciption}</p>
-    </div>
-    <div class="home-freetrial__carousel">
-      <div class="carousel_image">
-        <button class="carousel_prev" on:click={previous}>
-          <img src="./images/chevron-left.svg" alt="View previous screenshot" />
-        </button>
-        {#each freetrial.images as photo, index}
-          {#if index == carouselIndex}
-            <img src={photo} alt="Screenshot of Lemmi running on iOS" />
-          {/if}
-        {/each}
-        <button class="carousel_next" on:click={next}>
-          <img src="./images/chevron-right.svg" alt="View next screenshot" />
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="blurb">
-  <p>{blurb.text1}</p>
-  <p>{blurb.text2}</p>
-  <button 
-    on:click={handleClickNavigation(pages.faqs)}>{blurb.action}</button>
-</section>
-<section class="help">
-  <h3>{help.title}</h3>
-  <div class="usp-wrapper">
-    {#each help.usps as usp}
-      <div class="usp">
-        <div class="usp-image-wrapper">
-          <img src={usp.image} alt={usp.title} />
-        </div>
-        <p class="usp-title">{usp.title.toUpperCase()}</p>
-        <p class="usp-description">{usp.description}</p>
-      </div>
-    {/each}
-  </div>
-</section>
-<section class="anatomy">
-  <div class="wrapper">
-    <img src="images/anatomy.png" alt="Anatomy of the Lemmi app">
-    <div class="anatomy-wrapper">
-      {#each anatomy.slice(0, 3) as item}
-        <div class="anatomy-item reversed">
-          <img src={item.image} alt={item.title} />
-          <div class="anatomy-text">
-            <p>{item.title.toUpperCase()}</p>
-            <p>{item.desciption}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
-    <div class="mock-up-wrapper">
-      <img class="mock-up" src="/images/save-time.png" alt="Lemmi showing the phrase 'I want to go to the'"/>
-    </div>
-    <div class="anatomy-wrapper">
-      {#each anatomy.slice(3, anatomy.length) as item}
-        <div class="anatomy-item">
-          <img src={item.image} alt={item.title} />
-          <div class="anatomy-text">
-            <p>{item.title.toUpperCase()}</p>
-            <p>{item.desciption}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-</section>

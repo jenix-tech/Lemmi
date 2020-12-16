@@ -108,7 +108,6 @@
   .store-icons {
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
   }
 
   .store-icons button {
@@ -150,7 +149,7 @@
     display: flex;
   }
 
-  button {
+  .nav-bar button, .mobile-nav button {
     margin: 0;
     background: none;
     border: none;
@@ -159,7 +158,7 @@
     margin: 0 20px;
   }
 
-  button:hover, button.selected {
+  .nav-bar button:hover, .mobile-nav button:hover, .nav-bar button.selected, .mobile-nav button.selected {
     color: #25548c
   }
 
