@@ -635,7 +635,7 @@ var app = (function () {
 
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-fi00bi"));
+			: ""}`) + " svelte-akbgba"));
 
     			add_location(button, file, 48, 8, 1137);
     			add_location(li, file, 47, 6, 1124);
@@ -656,7 +656,7 @@ var app = (function () {
 
     			if (dirty & /*page*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-fi00bi"))) {
+			: ""}`) + " svelte-akbgba"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -702,9 +702,10 @@ var app = (function () {
 
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-fi00bi"));
+			: ""}`) + " svelte-akbgba"));
 
     			add_location(button, file, 60, 8, 1431);
+    			attr_dev(li, "class", "svelte-akbgba");
     			add_location(li, file, 59, 6, 1418);
     		},
     		m: function mount(target, anchor) {
@@ -723,7 +724,7 @@ var app = (function () {
 
     			if (dirty & /*page*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-fi00bi"))) {
+			: ""}`) + " svelte-akbgba"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -826,42 +827,43 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "mobile-hero-image svelte-fi00bi");
+    			attr_dev(img0, "class", "mobile-hero-image svelte-akbgba");
     			if (img0.src !== (img0_src_value = "images/appIcon.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Lemmi Logo");
     			add_location(img0, file, 15, 2, 268);
-    			attr_dev(img1, "class", "hero-image svelte-fi00bi");
+    			attr_dev(img1, "class", "hero-image svelte-akbgba");
     			if (img1.src !== (img1_src_value = "images/hero-image.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Lemmi shown on an iPad and iPhone");
     			add_location(img1, file, 16, 2, 346);
-    			attr_dev(h1, "class", "title svelte-fi00bi");
+    			attr_dev(h1, "class", "title svelte-akbgba");
     			add_location(h1, file, 22, 4, 489);
-    			attr_dev(h3, "class", "subtitle svelte-fi00bi");
+    			attr_dev(h3, "class", "subtitle svelte-akbgba");
     			add_location(h3, file, 23, 4, 529);
-    			attr_dev(img2, "class", "app-icon svelte-fi00bi");
+    			attr_dev(img2, "class", "app-icon svelte-akbgba");
     			if (img2.src !== (img2_src_value = "images/app-store.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Download on the App Store");
     			add_location(img2, file, 28, 8, 673);
-    			attr_dev(button0, "class", "svelte-fi00bi");
+    			attr_dev(button0, "class", "svelte-akbgba");
     			add_location(button0, file, 25, 6, 607);
-    			attr_dev(img3, "class", "play-icon svelte-fi00bi");
+    			attr_dev(img3, "class", "play-icon svelte-akbgba");
     			if (img3.src !== (img3_src_value = "images/play-store.png")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "Download on the Play Store");
     			add_location(img3, file, 36, 8, 876);
-    			attr_dev(button1, "class", "svelte-fi00bi");
+    			attr_dev(button1, "class", "svelte-akbgba");
     			add_location(button1, file, 33, 6, 809);
-    			attr_dev(div, "class", "store-icons svelte-fi00bi");
+    			attr_dev(div, "class", "store-icons svelte-akbgba");
     			add_location(div, file, 24, 4, 575);
-    			attr_dev(section, "class", "hero-info svelte-fi00bi");
+    			attr_dev(section, "class", "hero-info svelte-akbgba");
     			add_location(section, file, 21, 2, 457);
-    			attr_dev(header, "class", "svelte-fi00bi");
+    			attr_dev(header, "class", "svelte-akbgba");
     			add_location(header, file, 14, 0, 257);
-    			attr_dev(ul0, "class", "svelte-fi00bi");
+    			attr_dev(ul0, "class", "svelte-akbgba");
     			add_location(ul0, file, 45, 2, 1067);
-    			attr_dev(nav0, "class", "nav-bar svelte-fi00bi");
+    			attr_dev(nav0, "class", "nav-bar svelte-akbgba");
     			add_location(nav0, file, 44, 0, 1043);
+    			attr_dev(ul1, "class", "svelte-akbgba");
     			add_location(ul1, file, 57, 2, 1361);
-    			attr_dev(nav1, "class", "mobile-nav svelte-fi00bi");
+    			attr_dev(nav1, "class", "mobile-nav svelte-akbgba");
     			add_location(nav1, file, 56, 0, 1334);
     		},
     		l: function claim(nodes) {

@@ -147,13 +147,10 @@
   }
 
   .nav-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
   }
 
-  .nav-bar button {
+  button {
     margin: 0;
     background: none;
     border: none;
@@ -162,7 +159,7 @@
     margin: 0 20px;
   }
 
-  .nav-bar button:hover, .nav-bar button.selected {
+  button:hover, button.selected {
     color: #25548c
   }
 
@@ -205,7 +202,21 @@
 
     .mobile-nav {
       display: flex;
-      background: #ABE0E8;
+      background-color: #ffffff;
+      height: 6vh;
+    }
+
+    .mobile-nav ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .mobile-nav li {
+      height: 30px;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -226,6 +237,10 @@
     .play-icon {
       height: 35px;
       margin: 0;
+    }
+
+    .mobile-nav button {
+      font-size: 1.15rem;
     }
   }
 </style>
