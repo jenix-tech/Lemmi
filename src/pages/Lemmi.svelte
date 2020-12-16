@@ -58,6 +58,16 @@
   .right {
     flex-direction: row-reverse;
   }
+
+  @media only screen and (max-width: 619px) {
+    .feature {
+      flex-direction: column;
+    }
+
+    .lemmi-title h3 {
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <div class="lemmi-title">

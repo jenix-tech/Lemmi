@@ -60,25 +60,11 @@
 </section>
 <section class="anatomy">
   <div class="wrapper">
-    <img src="images/anatomy.png" alt="Anatomy of the Lemmi app">
+    <img class="mock-up" src="images/anatomy.png" alt="Anatomy of the Lemmi app">
     <div class="anatomy-wrapper">
-      {#each anatomy.slice(0, 3) as item}
+      {#each anatomy as item}
         <div class="anatomy-item reversed">
-          <img src={item.image} alt={item.title} />
-          <div class="anatomy-text">
-            <p>{item.title.toUpperCase()}</p>
-            <p>{item.desciption}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
-    <div class="mock-up-wrapper">
-      <img class="mock-up" src="/images/save-time.png" alt="Lemmi showing the phrase 'I want to go to the'"/>
-    </div>
-    <div class="anatomy-wrapper">
-      {#each anatomy.slice(3, anatomy.length) as item}
-        <div class="anatomy-item">
-          <img src={item.image} alt={item.title} />
+          <img class="anatomy-icon" src={item.image} alt={item.title} />
           <div class="anatomy-text">
             <p>{item.title.toUpperCase()}</p>
             <p>{item.desciption}</p>
@@ -286,30 +272,23 @@
     max-width: 1000px;
   }
 
-  .wrapper img {
-    height: 100%;
-  }
-
   .mock-up {
-    height: 50vh;
+    height: auto;
+    width: 100%;
   }
 
   .anatomy-wrapper {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 80%;
+    margin: 20px 0;
   }
 
   .anatomy-item {
     display: flex;
     flex-direction: row;
     text-align: left;
-  }
-  
-  .anatomy-item.reversed {
-    flex-direction: row-reverse;
-    text-align: right
   }
 
   .anatomy-item img {
@@ -318,20 +297,16 @@
   }
 
   .anatomy-text {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
-  .mock-up-wrapper, .anatomy-wrapper {
-    display: none;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .anatomy img {
-      height: 80%;
+  @media only screen and (max-width: 936px) {
+    .home-freetrial__carousel {
+      width: 35%;
     }
 
     .home-freetrial__text {
-      width: 55%;
+      width: 40%;
     }
 
     .carousel_image {
@@ -340,7 +315,6 @@
   }
 
   @media only screen and (max-width: 767px) {
-
     .home-freetrial {
       height: 65vh;
     }
@@ -355,90 +329,32 @@
     .blurb {
       padding: 25px;
     }
-    
-    .anatomy .wrapper img {
-      display: none;
+  
+    .carousel_image button {
+      top: 40%;
     }
   }
-
-    /* @media only screen and (max-width: 936px) {
-    .hero-info {
-      width: 45%;
-    }
-  }
-
-  @media only screen and (max-width: 767px) {
-    header {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 15px;
-    }
-
-    .hero-info {
-      margin-left: 0px;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .store-icons {
-      justify-content: space-around;
-    }
-
-    .store-icons button {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-    }
-  }
-
   @media only screen and (max-width: 674px) {
-    .nav-bar {
+    .mock-up {
       display: none;
     }
 
-    .mobile-nav {
+    .anatomy-wrapper {
       display: flex;
-      background-color: #ffffff;
-      height: 6vh;
     }
 
-    .mobile-nav ul {
-      width: 100%;
-      display: flex;
+
+    .help {
+      height: 80vh;
+    }
+    .usp-wrapper {
       flex-direction: column;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .mobile-nav li {
-      height: 30px;
-      display: flex;
-      justify-content: center;
+    .usp {
+      margin: 20px 0;
+      width: 80%;
     }
   }
-
-  @media only screen and (max-width: 619px) {
-    .mobile-hero-image {
-      display: flex;
-    }
-
-    .hero-image {
-      display: none;
-    }
-
-    .app-icon {
-      height: 35px;
-      margin: 0;
-    }
-
-    .play-icon {
-      height: 35px;
-      margin: 0;
-    }
-
-    .mobile-nav button {
-      font-size: 1.15rem;
-    }
-  } */
 </style>

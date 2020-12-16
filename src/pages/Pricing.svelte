@@ -10,6 +10,56 @@
   }
 </script>
 
+<div class="pricing-title">
+  <h2>{pricing.title.toUpperCase()}</h2>
+</div>
+<section class="subscriptions">
+  <h2>{pricing.subscription}</h2>
+  <div class="plans-wrapper">
+    {#each pricing.plans as plan}
+      <div class="plan">
+        {#if plan.popular}
+          <h3 class="popular">{plan.popular}</h3>
+        {/if}
+        <h1 class="title">{plan.title}</h1>
+        <h2 class="price">{plan.price}</h2>
+        {#if plan.perMonth}
+          <p class="perMonth">{plan.perMonth}</p>
+        {/if}
+        <p class="billing">{pricing.billing}</p>
+        {#if plan.save}
+          <h5 class="saving">{plan.save.toUpperCase()}</h5>
+        {/if}
+      </div>
+    {/each}
+  </div>
+  <div class="included">
+    <h2>{pricing.whatsIncluded}</h2>
+    {#each pricing.included as included}
+      <p>{included}</p>
+    {/each}
+  </div>
+  <h4>{pricing.available}</h4>
+  <div class="store-icons">
+    <button
+      on:click={() => openStore('app')}
+    >
+      <img
+        class="app-icon"
+        src="images/app-store.png"
+        alt="Download on the App Store" />
+    </button>
+    <button
+      on:click={() => openStore('play')}
+    >
+      <img
+        class="play-icon"
+        src="images/play-store.png"
+        alt="Download on the Play Store" />
+    </button>
+  </div>
+</section>
+
 <style>
   .pricing-title {
     width: 100%;
@@ -159,59 +209,20 @@
     margin: -1px 5px 0 0;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-width: 619px) {
+    .subscriptions {
+      margin: 0 10px;
+    }
+    .plans-wrapper {
+      flex-direction: column;
+    }
     .plan {
-      height: 30vh;
+      width: 100%;
+      height: 25vh;
+      margin: 0 0 30px 0;
+    }
+    .store-icons {
+      flex-direction: column;
     }
   }
 </style>
-
-<div class="pricing-title">
-  <h2>{pricing.title.toUpperCase()}</h2>
-</div>
-<section class="subscriptions">
-  <h2>{pricing.subscription}</h2>
-  <div class="plans-wrapper">
-    {#each pricing.plans as plan}
-      <div class="plan">
-        {#if plan.popular}
-          <h3 class="popular">{plan.popular}</h3>
-        {/if}
-        <h1 class="title">{plan.title}</h1>
-        <h2 class="price">{plan.price}</h2>
-        {#if plan.perMonth}
-          <p class="perMonth">{plan.perMonth}</p>
-        {/if}
-        <p class="billing">{pricing.billing}</p>
-        {#if plan.save}
-          <h5 class="saving">{plan.save.toUpperCase()}</h5>
-        {/if}
-      </div>
-    {/each}
-  </div>
-  <div class="included">
-    <h2>{pricing.whatsIncluded}</h2>
-    {#each pricing.included as included}
-      <p>{included}</p>
-    {/each}
-  </div>
-  <h4>{pricing.available}</h4>
-  <div class="store-icons">
-    <button
-      on:click={() => openStore('app')}
-    >
-      <img
-        class="app-icon"
-        src="images/app-store.png"
-        alt="Download on the App Store" />
-    </button>
-    <button
-      on:click={() => openStore('play')}
-    >
-      <img
-        class="play-icon"
-        src="images/play-store.png"
-        alt="Download on the Play Store" />
-    </button>
-  </div>
-</section>

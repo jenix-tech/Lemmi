@@ -3,6 +3,38 @@
   const { story, team } = about;
 </script>
 
+<div class="about-title">
+  <h2>{story.title.toUpperCase()}</h2>
+</div>
+<article class="story">
+  <header>
+    <blockquote>
+        "{story.heading.toUpperCase()}"
+    </blockquote>
+  </header>
+  {#each story.sections as section}
+    <section>
+      {#each section as paragraph}
+        <p>{paragraph}</p>
+      {/each}
+    </section>
+  {/each}
+</article>
+<div class="about-title">
+  <h2>{team.title.toUpperCase()}</h2>
+</div>
+<article class="team">
+  <div class="team-wrapper">
+    {#each team.people as person}
+      <div class="team-member">
+        <img src={person.image} alt={`Picture of ${person.name}`}/>
+        <h3 class="team-name">{person.name}</h3>
+        <h3 class="team-role">{person.role}</h3>
+      </div>
+    {/each}
+  </div>
+</article>
+
 <style>
   .about-title {
     width: 100%;
@@ -80,36 +112,13 @@
   .team-role {
     color: #ffffff;
   }
-</style>
 
-<div class="about-title">
-  <h2>{story.title.toUpperCase()}</h2>
-</div>
-<article class="story">
-  <header>
-    <blockquote>
-        "{story.heading.toUpperCase()}"
-    </blockquote>
-  </header>
-  {#each story.sections as section}
-    <section>
-      {#each section as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </section>
-  {/each}
-</article>
-<div class="about-title">
-  <h2>{team.title.toUpperCase()}</h2>
-</div>
-<article class="team">
-  <div class="team-wrapper">
-    {#each team.people as person}
-      <div class="team-member">
-        <img src={person.image} alt={`Picture of ${person.name}`}/>
-        <h3 class="team-name">{person.name}</h3>
-        <h3 class="team-role">{person.role}</h3>
-      </div>
-    {/each}
-  </div>
-</article>
+  @media only screen and (max-width: 619px) {
+    article {
+      margin: 0 10px;
+    }
+    .team-wrapper {
+      flex-direction: column;
+    }
+  }
+</style>
