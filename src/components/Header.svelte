@@ -12,8 +12,63 @@
   }
 </script>
 
+<header>
+  <img class="mobile-hero-image" src="images/appIcon.svg" alt="Lemmi Logo" />
+  <img
+    class="hero-image"
+    src="images/hero-image.png"
+    alt="Lemmi shown on an iPad and iPhone"
+  />
+  <section class="hero-info">
+    <h1 class="title">{hero.title}</h1>
+    <h3 class="subtitle">{hero.subtitle}</h3>
+    <div class="store-icons">
+      <button
+        on:click={() => openStore('app')}
+      >
+        <img
+          class="app-icon"
+          src="images/app-store.png"
+          alt="Download on the App Store" />
+      </button>
+      <button
+        on:click={() => openStore('play')}
+      >
+        <img
+          class="play-icon"
+          src="images/play-store.png"
+          alt="Download on the Play Store" />
+      </button>
+    </div>
+  </section>
+</header>
+<nav class="nav-bar">
+  <ul>
+    {#each Object.values(pages) as pageTitle}
+      <li>
+        <button
+          on:click={() => handleClickNavigation(pageTitle)}
+          class={`${page === pageTitle ? 'selected' : ''}`}
+        >{pageTitle}</button>
+      </li>
+    {/each}
+  </ul>
+</nav>
+<nav class="mobile-nav">
+  <ul>
+    {#each Object.values(pages) as pageTitle}
+      <li>
+        <button
+          on:click={() => handleClickNavigation(pageTitle)}
+          class={`${page === pageTitle ? 'selected' : ''}`}
+        >{pageTitle}</button>
+      </li>
+    {/each}
+  </ul>
+</nav>
+
 <style>
-  .hero {
+  header {
     display: flex;
     justify-content: center;
     padding: 40px;
@@ -32,21 +87,11 @@
     max-width: 345px;
   }
 
-  /* .logo {
+  .mobile-hero-image {
     height: 120px;
     width: 120px;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #84c6d0;
-    margin: 0 auto;
+    display: none;
   }
-
-  .logo img {
-    height: 100%;
-  } */
 
   .title {
     margin-top: 15px;
@@ -88,7 +133,11 @@
     margin: -1px 5px 0 0;
   }
 
-  nav {
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-bar {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -97,14 +146,14 @@
     background-color: #ffffff;
   }
 
-  nav ul {
+  .nav-bar ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
 
-  nav button {
+  .nav-bar button {
     margin: 0;
     background: none;
     border: none;
@@ -113,52 +162,70 @@
     margin: 0 20px;
   }
 
-  nav button:hover, nav button.selected {
+  .nav-bar button:hover, .nav-bar button.selected {
     color: #25548c
   }
-</style>
 
-<header class="hero">
-  <!-- <div class="logo">
-    <img src="images/appIcon.svg" alt="Lemmi Logo" />
-  </div> -->
-  <img
-    class="hero-image"
-    src="images/hero-image.png"
-    alt="Lemmi shown on an iPad and iPhone"
-  />
-  <section class="hero-info">
-    <h1 class="title">{hero.title}</h1>
-    <h3 class="subtitle">{hero.subtitle}</h3>
-    <div class="store-icons">
-      <button
-        on:click={() => openStore('app')}
-      >
-        <img
-          class="app-icon"
-          src="images/app-store.png"
-          alt="Download on the App Store" />
-      </button>
-      <button
-        on:click={() => openStore('play')}
-      >
-        <img
-          class="play-icon"
-          src="images/play-store.png"
-          alt="Download on the Play Store" />
-      </button>
-    </div>
-  </section>
-</header>
-<nav>
-  <ul>
-    {#each Object.values(pages) as pageTitle}
-      <li>
-        <button
-          on:click={() => handleClickNavigation(pageTitle)}
-          class={`${page === pageTitle ? 'selected' : ''}`}
-        >{pageTitle}</button>
-      </li>
-    {/each}
-  </ul>
-</nav>
+  @media only screen and (max-width: 936px) {
+    .hero-info {
+      width: 45%;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .hero-info {
+      margin-left: 0px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .store-icons {
+      justify-content: space-around;
+    }
+
+    .store-icons button {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 674px) {
+    .nav-bar {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+      background: #ABE0E8;
+    }
+  }
+
+  @media only screen and (max-width: 619px) {
+    .mobile-hero-image {
+      display: flex;
+    }
+
+    .hero-image {
+      display: none;
+    }
+
+    .app-icon {
+      height: 35px;
+      margin: 0;
+    }
+
+    .play-icon {
+      height: 35px;
+      margin: 0;
+    }
+  }
+</style>

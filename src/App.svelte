@@ -18,14 +18,11 @@
     [pages.contact]: Contact
   };
 
-  let page = pages.faqs;
+  let page = pages.home;
   let handleClickNavigation = (selected) => {
     page = selected;
   };
 </script>
-
-<style>
-</style>
 
 <Header {page} {handleClickNavigation} />
 <main>

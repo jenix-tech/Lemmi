@@ -118,6 +118,47 @@
   .navigation-wrapper {
     display: flex;
   }
+
+  @media only screen and (max-width: 767px) { 
+    .footer-content {
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    .subscribe {
+      flex-direction: column;
+      max-width: 80vw;
+      margin: 15px auto 20px auto;
+    }
+
+    .subscribe input {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .subscribe button {
+      height: 40px;
+    }
+
+    .social-links {
+      width: 80vw;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .social-icon {
+      width: 30px;
+    }
+
+    .small-print {
+      flex-direction: column;
+    }
+
+    .navigation-wrapper {
+      margin-top: 10px;
+    }
+  }
 </style>
 
 <footer id="footer">

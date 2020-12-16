@@ -158,6 +158,12 @@
     height: 60px;
     margin: -1px 5px 0 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    .plan {
+      height: 30vh;
+    }
+  }
 </style>
 
 <div class="pricing-title">

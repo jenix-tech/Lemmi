@@ -122,6 +122,25 @@
     width: 125px;
     margin-top: 15px;
   }
+
+  @media only screen and (min-width: 768px) {
+    .contact {
+      max-width: 700px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .contact p {
+      padding: 0 20px;
+    }
+    .form-wrapper {
+      width: 90%;
+    }
+
+    .form input {
+      height: 40px;
+    }
+  }
 </style>
 
 <div class="contact-title">

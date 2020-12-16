@@ -72,6 +72,20 @@ import About from "./About.svelte";
     flex-direction: column;
   }
 
+  
+
+  @media only screen and (min-width: 768px) {
+    .faq-section {
+      max-width: 700px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .faq-section {
+      padding: 0 5px;
+    }
+  }
+
 </style>
 
 <div class="faq-title">

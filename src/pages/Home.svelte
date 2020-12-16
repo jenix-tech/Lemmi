@@ -1,6 +1,5 @@
 <script>
-  import { each } from 'svelte/internal';
-import { home, pages } from '../strings';
+  import { home, pages } from '../strings';
   const { freetrial, blurb, help, anatomy } = home;
 
   let carouselIndex = 0
@@ -215,10 +214,6 @@ import { home, pages } from '../strings';
     height: 100%;
   }
 
-  /* .mock-up-wrapper, .anatomy-wrapper {
-    width: 30vw;
-  }
-
   .mock-up {
     height: 50vh;
   }
@@ -248,8 +243,51 @@ import { home, pages } from '../strings';
 
   .anatomy-text {
     font-size: 0.8rem;
-  } */
+  }
 
+  .mock-up-wrapper, .anatomy-wrapper {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .anatomy img {
+      height: 80%;
+    }
+
+    .home-freetrial__text {
+      width: 55%;
+    }
+
+    .carousel_image {
+      top: 45px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+
+    .home-freetrial {
+      height: 65vh;
+    }
+    .wrapper {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .home-freetrial__carousel, .home-freetrial__text {
+      width: 100%;
+    }
+
+    .blurb {
+      padding: 25px;
+    }
+    
+    .anatomy .wrapper img {
+      display: none;
+    }
+  }
+
+  /* @media only screen and (max-width: 620px) {
+
+  } */
 </style>
 
 <section class="home-freetrial">
@@ -299,8 +337,8 @@ import { home, pages } from '../strings';
 </section>
 <section class="anatomy">
   <div class="wrapper">
-    <img src="images/anatomy.png" alt="test">
-    <!-- <div class="anatomy-wrapper">
+    <img src="images/anatomy.png" alt="Anatomy of the Lemmi app">
+    <div class="anatomy-wrapper">
       {#each anatomy.slice(0, 3) as item}
         <div class="anatomy-item reversed">
           <img src={item.image} alt={item.title} />
@@ -324,6 +362,6 @@ import { home, pages } from '../strings';
           </div>
         </div>
       {/each}
-    </div> -->
+    </div>
   </div>
 </section>
