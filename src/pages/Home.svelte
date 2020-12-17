@@ -42,7 +42,7 @@
   <p>{blurb.text1}</p>
   <p>{blurb.text2}</p>
   <button 
-    on:click={handleClickNavigation(pages.faqs)}>{blurb.action}</button>
+    on:click={handleClickNavigation(pages.app)}>{blurb.action}</button>
 </section>
 <section class="help">
   <h3>{help.title}</h3>
