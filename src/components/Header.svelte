@@ -1,5 +1,5 @@
 <script>
-  import { hero, pages } from "../strings.js";
+  import { hero, pages, mobilePages } from "../strings.js";
   export let page;
   export let handleClickNavigation;
 
@@ -56,7 +56,7 @@
 </nav>
 <nav class="mobile-nav">
   <ul>
-    {#each Object.values(pages) as pageTitle}
+    {#each Object.values(mobilePages) as pageTitle}
       <li>
         <button
           on:click={() => handleClickNavigation(pageTitle)}
