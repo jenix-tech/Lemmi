@@ -290,6 +290,8 @@
     background-color: #25548c;
     color: #ffffff;
     height: 40px;
+    display: flex;
+    align-items: center;
     padding: 0 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -332,5 +334,13 @@
     .faq-section {
       padding: 0 5px;
     }
+  }
+
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) and (display:flow-root) { 
+      .faq-section summary { 
+        display: block;
+      } 
+    } 
   }
 </style>
