@@ -1,93 +1,3 @@
-<script>
-import About from "./About.svelte";
-
-</script>
-<style>
-  .faq-title {
-    width: 100%;
-    background-color: #25548c;
-    color: #ffffff;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-
-  .faq-section {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-  }
-
-  .faq-section h3 {
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-
-  .faq-section details {
-    background-color: #ffffff;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
-  
-  .details-wrapper {
-    padding: 20px 20px 10px 20px;
-  }
-
-  .faq-section summary {
-    background-color: #25548c;
-    color: #ffffff;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-
-  .faq-section details p {
-    margin-bottom: 15px;
-  }
-
-  .iconed-text {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .iconed-text img {
-    height: 30px;
-    width: 30px;
-    margin-right: 10px;
-  }
-
-  .iconed-text p {
-    margin: 0 !important;
-  }
-
-  .iconed-text-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  
-
-  @media screen and (min-width: 768px) {
-    .faq-section {
-      max-width: 700px;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    .faq-section {
-      padding: 0 5px;
-    }
-  }
-
-</style>
-
 <div class="faq-title">
   <h2>FAQs</h2>
 </div>
@@ -148,19 +58,6 @@ import About from "./About.svelte";
         <div class="iconed-text-wrapper">
           <p>Tap on the Settings button.</p>
           <p>Here you can adjust a range of settings that will automatically update.</p>
-        </div>
-      </div>
-    </div>
-  </details>
-  <details>
-    <summary>How do I Submit Feedback?</summary>
-    <div class="details-wrapper">
-      <div class="iconed-text">
-        <img src="images/settings.png" alt="settings icon" />
-        <div class="iconed-text-wrapper">
-          <p>Tap on the Settings button.</p>
-          <p>On the Settings screen, scroll to the bottom and tap 'Submit Feedback'.</p>
-          <p>On the new screen, add your feedback and tap ‘Submit’.</p>
         </div>
       </div>
     </div>
@@ -330,3 +227,113 @@ import About from "./About.svelte";
     </div>
   </details>
 </section>
+<section class="faq-section">
+  <h3>4. Feedback and Contact</h3>
+  <details>
+    <summary>How do I Submit Feedback?</summary>
+    <div class="details-wrapper">
+      <div class="iconed-text">
+        <img src="images/settings.png" alt="settings icon" />
+        <div class="iconed-text-wrapper">
+          <p>Tap on the Settings button.</p>
+          <p>On the Settings screen, scroll to the bottom and tap 'Submit Feedback'.</p>
+          <p>On the new screen, add your feedback and tap ‘Submit’.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>Need further help?</summary>
+    <div class="details-wrapper">
+      <p>
+        Please contact us at <a href="mailto:info@lemmichat.com?subject='Contact from Website'">info@lemmichat.com</a>
+      </p>
+    </div>
+  </details>
+</section>
+
+<style>
+  .faq-title {
+    width: 100%;
+    background-color: #25548c;
+    color: #ffffff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+  }
+
+  .faq-section h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .faq-section details {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  
+  .details-wrapper {
+    padding: 20px 20px 10px 20px;
+  }
+
+  .faq-section summary {
+    background-color: #25548c;
+    color: #ffffff;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .faq-section details p {
+    margin-bottom: 15px;
+  }
+
+  .iconed-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .iconed-text img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .iconed-text p {
+    margin: 0 !important;
+  }
+
+  .iconed-text-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
+  @media screen and (min-width: 768px) {
+    .faq-section {
+      max-width: 700px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .faq-section {
+      padding: 0 5px;
+    }
+  }
+
+</style>
