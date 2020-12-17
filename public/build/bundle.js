@@ -55,9 +55,6 @@ var app = (function () {
     function space() {
         return text(' ');
     }
-    function empty() {
-        return text('');
-    }
     function listen(node, event, handler, options) {
         node.addEventListener(event, handler, options);
         return () => node.removeEventListener(event, handler, options);
@@ -86,6 +83,14 @@ var app = (function () {
     let current_component;
     function set_current_component(component) {
         current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error(`Function called outside component initialization`);
+        return current_component;
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
     }
 
     const dirty_components = [];
@@ -425,7 +430,7 @@ var app = (function () {
           },
           {
             image: '/images/no-wifi.svg',
-            title: "No connection necessary",
+            title: "Stay connected",
             description: "Once downloaded, Lemmi does not require an internet connection for you to communicate with others.",
           },
         ]
@@ -471,8 +476,8 @@ var app = (function () {
         sections: [
           [
             "The original idea for Lemmi arose after, co-founder, Jemma helped care for a loved one who developed aphasia after suffering a serious stroke.",
-            "Having witnessed, first-hand, the devastating impact that a speech impairment can have on an individual’s confidence and overall well-being, Jemma set out to create an accessible and user-friendly resource that could help others who might, for any reason, struggle to xpress themselves verbally.",
-            "Following a conversation with Will (Jemma's close friend and software developer), the idea of developing of an assistive app took shape."
+            "Having witnessed, first-hand, the devastating impact that a speech impairment can have on an individual’s confidence and overall well-being, Jemma set out to create an accessible and user-friendly resource that could help others who might, for any reason, struggle to express themselves verbally.",
+            "Following a conversation with Will (Jemma's close friend and software developer), the idea of developing an assistive app took shape."
           ],
           [
             "Together, Jemma and Will spent the next few years learning about the world of AAC, researching what potential users would find most helpful. Their vision was to develop the best all-round communication app available for anyone with any form of aphasia or speech impairment.",
@@ -480,7 +485,6 @@ var app = (function () {
           ],
           [
             "Lemmi has been a passion project for both co-founders, who hope that it will provide a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.",
-            "The Lemmi app is continually being updated in response to customer's feedback, so please do not hesitate to let us know of any ways you think the app could be improved further. We greatly appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas."
           ]
         ]
       },
@@ -502,7 +506,7 @@ var app = (function () {
       title: "Contact Us",
       instructions: "Lemmi is continually being revised in response to customer's feedback, so please do not hesitate to get in touch with any questions or to let us know of any ways you think the app could be improved further.",
       form: "Get in touch",
-      notes: "We greate appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas.",
+      notes: "We greatly appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas.",
       submit: "Submit",
       success: "Your form has been submitted!",
       error: "There was an issue submitting your form. Please try again or email as: info@lemmichat.com"
@@ -558,13 +562,13 @@ var app = (function () {
       billing: "Billed after 7 day FREE trial",
       whatsIncluded: "What's included?",
       included: [
-        "Available offline - once downloaded, Lemmi does not require an internet connection",
+        "Offline availability - once downloaded, Lemmi does not require an internet connection",
         "Extensive word options - over 600+ words and phrases included",
-        "Personalised - users can add unlimited personal words and images",
-        "Private - bespoke entries are stored privately on the user's private account",
+        "Personalisation - users can add unlimited personal words and images",
+        "Privacy - bespoke entries are stored privately on the user's private account",
         "Phone calls - Lemmi can be used during phone conversations (iOS 13+ only)",
         "Language options - English with additional languages coming soon",
-        "Regular updated - including new features, words, phrases, and icons"
+        "Regular updates - including new features, words, phrases, and icons"
       ],
       available: "Available on iOS and Android devices"
     };
@@ -589,6 +593,15 @@ var app = (function () {
       home: 'Home',
       app: 'App',
       about: 'About',
+      pricing: 'Pricing',
+      faqs: 'FAQs',
+      contact: 'Contact'
+    };
+
+    const mobilePages = {
+      home: 'Home',
+      about: 'About',
+      app: 'App',
       pricing: 'Pricing',
       faqs: 'FAQs',
       contact: 'Contact'
@@ -637,8 +650,8 @@ var app = (function () {
 			? "selected"
 			: ""}`) + " svelte-g0a1kx"));
 
-    			add_location(button, file, 48, 8, 1137);
-    			add_location(li, file, 47, 6, 1124);
+    			add_location(button, file, 48, 8, 1150);
+    			add_location(li, file, 47, 6, 1137);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -678,7 +691,7 @@ var app = (function () {
     	return block;
     }
 
-    // (59:4) {#each Object.values(pages) as pageTitle}
+    // (59:4) {#each Object.values(mobilePages) as pageTitle}
     function create_each_block(ctx) {
     	let li;
     	let button;
@@ -704,9 +717,9 @@ var app = (function () {
 			? "selected"
 			: ""}`) + " svelte-g0a1kx"));
 
-    			add_location(button, file, 60, 8, 1431);
+    			add_location(button, file, 60, 8, 1450);
     			attr_dev(li, "class", "svelte-g0a1kx");
-    			add_location(li, file, 59, 6, 1418);
+    			add_location(li, file, 59, 6, 1437);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -739,7 +752,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(59:4) {#each Object.values(pages) as pageTitle}",
+    		source: "(59:4) {#each Object.values(mobilePages) as pageTitle}",
     		ctx
     	});
 
@@ -783,7 +796,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let each_value = Object.values(pages);
+    	let each_value = Object.values(mobilePages);
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -830,41 +843,41 @@ var app = (function () {
     			attr_dev(img0, "class", "mobile-hero-image svelte-g0a1kx");
     			if (img0.src !== (img0_src_value = "images/appIcon.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Lemmi Logo");
-    			add_location(img0, file, 15, 2, 268);
+    			add_location(img0, file, 15, 2, 281);
     			attr_dev(img1, "class", "hero-image svelte-g0a1kx");
     			if (img1.src !== (img1_src_value = "images/hero-image.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Lemmi shown on an iPad and iPhone");
-    			add_location(img1, file, 16, 2, 346);
+    			add_location(img1, file, 16, 2, 359);
     			attr_dev(h1, "class", "title svelte-g0a1kx");
-    			add_location(h1, file, 22, 4, 489);
+    			add_location(h1, file, 22, 4, 502);
     			attr_dev(h3, "class", "subtitle svelte-g0a1kx");
-    			add_location(h3, file, 23, 4, 529);
+    			add_location(h3, file, 23, 4, 542);
     			attr_dev(img2, "class", "app-icon svelte-g0a1kx");
     			if (img2.src !== (img2_src_value = "images/app-store.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Download on the App Store");
-    			add_location(img2, file, 28, 8, 673);
+    			add_location(img2, file, 28, 8, 686);
     			attr_dev(button0, "class", "svelte-g0a1kx");
-    			add_location(button0, file, 25, 6, 607);
+    			add_location(button0, file, 25, 6, 620);
     			attr_dev(img3, "class", "play-icon svelte-g0a1kx");
     			if (img3.src !== (img3_src_value = "images/play-store.png")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "Download on the Play Store");
-    			add_location(img3, file, 36, 8, 876);
+    			add_location(img3, file, 36, 8, 889);
     			attr_dev(button1, "class", "svelte-g0a1kx");
-    			add_location(button1, file, 33, 6, 809);
+    			add_location(button1, file, 33, 6, 822);
     			attr_dev(div, "class", "store-icons svelte-g0a1kx");
-    			add_location(div, file, 24, 4, 575);
+    			add_location(div, file, 24, 4, 588);
     			attr_dev(section, "class", "hero-info svelte-g0a1kx");
-    			add_location(section, file, 21, 2, 457);
+    			add_location(section, file, 21, 2, 470);
     			attr_dev(header, "class", "svelte-g0a1kx");
-    			add_location(header, file, 14, 0, 257);
+    			add_location(header, file, 14, 0, 270);
     			attr_dev(ul0, "class", "svelte-g0a1kx");
-    			add_location(ul0, file, 45, 2, 1067);
+    			add_location(ul0, file, 45, 2, 1080);
     			attr_dev(nav0, "class", "nav-bar svelte-g0a1kx");
-    			add_location(nav0, file, 44, 0, 1043);
+    			add_location(nav0, file, 44, 0, 1056);
     			attr_dev(ul1, "class", "svelte-g0a1kx");
-    			add_location(ul1, file, 57, 2, 1361);
+    			add_location(ul1, file, 57, 2, 1374);
     			attr_dev(nav1, "class", "mobile-nav svelte-g0a1kx");
-    			add_location(nav1, file, 56, 0, 1334);
+    			add_location(nav1, file, 56, 0, 1347);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -936,8 +949,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*page, Object, pages, handleClickNavigation*/ 3) {
-    				each_value = Object.values(pages);
+    			if (dirty & /*page, Object, mobilePages, handleClickNavigation*/ 3) {
+    				each_value = Object.values(mobilePages);
     				validate_each_argument(each_value);
     				let i;
 
@@ -1019,6 +1032,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		hero,
     		pages,
+    		mobilePages,
     		page,
     		handleClickNavigation,
     		openStore
@@ -1090,35 +1104,34 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
+    	child_ctx[15] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
-    	child_ctx[16] = i;
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
-    // (30:10) {#if index == carouselIndex}
-    function create_if_block(ctx) {
+    // (64:10) {#each freetrial.images as src}
+    function create_each_block_2(ctx) {
     	let img;
     	let img_src_value;
 
     	const block = {
     		c: function create() {
     			img = element("img");
-    			if (img.src !== (img_src_value = /*photo*/ ctx[14])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "carousel-item svelte-1rhfp9x");
+    			if (img.src !== (img_src_value = /*src*/ ctx[18])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Screenshot of Lemmi running on iOS");
-    			attr_dev(img, "class", "svelte-1v7ziry");
-    			add_location(img, file$1, 30, 12, 1026);
+    			add_location(img, file$1, 64, 12, 2023);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1131,61 +1144,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(30:10) {#if index == carouselIndex}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (29:8) {#each freetrial.images as photo, index}
-    function create_each_block_2(ctx) {
-    	let if_block_anchor;
-    	let if_block = /*index*/ ctx[16] == /*carouselIndex*/ ctx[1] && create_if_block(ctx);
-
-    	const block = {
-    		c: function create() {
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
-    		},
-    		m: function mount(target, anchor) {
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (/*index*/ ctx[16] == /*carouselIndex*/ ctx[1]) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-    				} else {
-    					if_block = create_if_block(ctx);
-    					if_block.c();
-    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(29:8) {#each freetrial.images as photo, index}",
+    		source: "(64:10) {#each freetrial.images as src}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:4) {#each help.usps as usp}
+    // (84:4) {#each help.usps as usp}
     function create_each_block_1$1(ctx) {
     	let div1;
     	let div0;
@@ -1194,11 +1162,11 @@ var app = (function () {
     	let img_alt_value;
     	let t0;
     	let p0;
-    	let t1_value = /*usp*/ ctx[11].title.toUpperCase() + "";
+    	let t1_value = /*usp*/ ctx[15].title.toUpperCase() + "";
     	let t1;
     	let t2;
     	let p1;
-    	let t3_value = /*usp*/ ctx[11].description + "";
+    	let t3_value = /*usp*/ ctx[15].description + "";
     	let t3;
     	let t4;
 
@@ -1214,18 +1182,18 @@ var app = (function () {
     			p1 = element("p");
     			t3 = text(t3_value);
     			t4 = space();
-    			if (img.src !== (img_src_value = /*usp*/ ctx[11].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[11].title);
-    			attr_dev(img, "class", "svelte-1v7ziry");
-    			add_location(img, file$1, 52, 10, 1657);
-    			attr_dev(div0, "class", "usp-image-wrapper svelte-1v7ziry");
-    			add_location(div0, file$1, 51, 8, 1615);
-    			attr_dev(p0, "class", "usp-title svelte-1v7ziry");
-    			add_location(p0, file$1, 54, 8, 1720);
-    			attr_dev(p1, "class", "usp-description svelte-1v7ziry");
-    			add_location(p1, file$1, 55, 8, 1779);
-    			attr_dev(div1, "class", "usp svelte-1v7ziry");
-    			add_location(div1, file$1, 50, 6, 1589);
+    			if (img.src !== (img_src_value = /*usp*/ ctx[15].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[15].title);
+    			attr_dev(img, "class", "svelte-1rhfp9x");
+    			add_location(img, file$1, 86, 10, 2679);
+    			attr_dev(div0, "class", "usp-image-wrapper svelte-1rhfp9x");
+    			add_location(div0, file$1, 85, 8, 2637);
+    			attr_dev(p0, "class", "usp-title svelte-1rhfp9x");
+    			add_location(p0, file$1, 88, 8, 2742);
+    			attr_dev(p1, "class", "usp-description svelte-1rhfp9x");
+    			add_location(p1, file$1, 89, 8, 2801);
+    			attr_dev(div1, "class", "usp svelte-1rhfp9x");
+    			add_location(div1, file$1, 84, 6, 2611);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1249,14 +1217,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(50:4) {#each help.usps as usp}",
+    		source: "(84:4) {#each help.usps as usp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:6) {#each anatomy as item}
+    // (99:6) {#each anatomy as item}
     function create_each_block$1(ctx) {
     	let div1;
     	let img;
@@ -1265,11 +1233,11 @@ var app = (function () {
     	let t0;
     	let div0;
     	let p0;
-    	let t1_value = /*item*/ ctx[8].title.toUpperCase() + "";
+    	let t1_value = /*item*/ ctx[12].title.toUpperCase() + "";
     	let t1;
     	let t2;
     	let p1;
-    	let t3_value = /*item*/ ctx[8].desciption + "";
+    	let t3_value = /*item*/ ctx[12].desciption + "";
     	let t3;
     	let t4;
 
@@ -1285,16 +1253,16 @@ var app = (function () {
     			p1 = element("p");
     			t3 = text(t3_value);
     			t4 = space();
-    			attr_dev(img, "class", "anatomy-icon svelte-1v7ziry");
-    			if (img.src !== (img_src_value = /*item*/ ctx[8].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*item*/ ctx[8].title);
-    			add_location(img, file$1, 66, 10, 2123);
-    			add_location(p0, file$1, 68, 12, 2235);
-    			add_location(p1, file$1, 69, 12, 2281);
-    			attr_dev(div0, "class", "anatomy-text svelte-1v7ziry");
-    			add_location(div0, file$1, 67, 10, 2196);
-    			attr_dev(div1, "class", "anatomy-item reversed svelte-1v7ziry");
-    			add_location(div1, file$1, 65, 8, 2077);
+    			attr_dev(img, "class", "anatomy-icon svelte-1rhfp9x");
+    			if (img.src !== (img_src_value = /*item*/ ctx[12].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*item*/ ctx[12].title);
+    			add_location(img, file$1, 100, 10, 3145);
+    			add_location(p0, file$1, 102, 12, 3257);
+    			add_location(p1, file$1, 103, 12, 3303);
+    			attr_dev(div0, "class", "anatomy-text svelte-1rhfp9x");
+    			add_location(div0, file$1, 101, 10, 3218);
+    			attr_dev(div1, "class", "anatomy-item reversed svelte-1rhfp9x");
+    			add_location(div1, file$1, 99, 8, 3099);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1318,7 +1286,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(65:6) {#each anatomy as item}",
+    		source: "(99:6) {#each anatomy as item}",
     		ctx
     	});
 
@@ -1327,7 +1295,7 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let section0;
-    	let div3;
+    	let div4;
     	let div0;
     	let h2;
     	let t1;
@@ -1337,35 +1305,28 @@ var app = (function () {
     	let t5;
     	let p1;
     	let t7;
+    	let div3;
     	let div2;
     	let div1;
-    	let button1;
-    	let img0;
-    	let img0_src_value;
     	let t8;
-    	let t9;
-    	let button2;
-    	let img1;
-    	let img1_src_value;
-    	let t10;
     	let section1;
     	let p2;
-    	let t12;
+    	let t10;
     	let p3;
+    	let t12;
+    	let button1;
     	let t14;
-    	let button3;
-    	let t16;
     	let section2;
     	let h3;
-    	let t18;
-    	let div4;
-    	let t19;
-    	let section3;
-    	let div6;
-    	let img2;
-    	let img2_src_value;
-    	let t20;
+    	let t16;
     	let div5;
+    	let t17;
+    	let section3;
+    	let div7;
+    	let img;
+    	let img_src_value;
+    	let t18;
+    	let div6;
     	let mounted;
     	let dispose;
     	let each_value_2 = /*freetrial*/ ctx[2].images;
@@ -1395,7 +1356,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			section0 = element("section");
-    			div3 = element("div");
+    			div4 = element("div");
     			div0 = element("div");
     			h2 = element("h2");
     			h2.textContent = `${/*freetrial*/ ctx[2].title}`;
@@ -1409,113 +1370,98 @@ var app = (function () {
     			p1 = element("p");
     			p1.textContent = `${/*freetrial*/ ctx[2].desciption}`;
     			t7 = space();
+    			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
-    			button1 = element("button");
-    			img0 = element("img");
-    			t8 = space();
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				each_blocks_2[i].c();
     			}
 
-    			t9 = space();
-    			button2 = element("button");
-    			img1 = element("img");
-    			t10 = space();
+    			t8 = space();
     			section1 = element("section");
     			p2 = element("p");
     			p2.textContent = `${/*blurb*/ ctx[3].text1}`;
-    			t12 = space();
+    			t10 = space();
     			p3 = element("p");
     			p3.textContent = `${/*blurb*/ ctx[3].text2}`;
+    			t12 = space();
+    			button1 = element("button");
+    			button1.textContent = `${/*blurb*/ ctx[3].action}`;
     			t14 = space();
-    			button3 = element("button");
-    			button3.textContent = `${/*blurb*/ ctx[3].action}`;
-    			t16 = space();
     			section2 = element("section");
     			h3 = element("h3");
     			h3.textContent = `${/*help*/ ctx[4].title}`;
-    			t18 = space();
-    			div4 = element("div");
+    			t16 = space();
+    			div5 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t19 = space();
+    			t17 = space();
     			section3 = element("section");
+    			div7 = element("div");
+    			img = element("img");
+    			t18 = space();
     			div6 = element("div");
-    			img2 = element("img");
-    			t20 = space();
-    			div5 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "svelte-1v7ziry");
-    			add_location(h2, file$1, 18, 6, 460);
-    			attr_dev(p0, "class", "svelte-1v7ziry");
-    			add_location(p0, file$1, 19, 6, 493);
-    			attr_dev(button0, "class", "svelte-1v7ziry");
-    			add_location(button0, file$1, 20, 6, 527);
-    			attr_dev(p1, "class", "home-freetrial__smallprint svelte-1v7ziry");
-    			add_location(p1, file$1, 21, 6, 614);
-    			attr_dev(div0, "class", "home-freetrial__text svelte-1v7ziry");
-    			add_location(div0, file$1, 17, 4, 419);
-    			if (img0.src !== (img0_src_value = "./images/chevron-left.svg")) attr_dev(img0, "src", img0_src_value);
-    			attr_dev(img0, "alt", "View previous screenshot");
-    			attr_dev(img0, "class", "svelte-1v7ziry");
-    			add_location(img0, file$1, 26, 10, 837);
-    			attr_dev(button1, "class", "carousel_prev svelte-1v7ziry");
-    			add_location(button1, file$1, 25, 8, 776);
-    			if (img1.src !== (img1_src_value = "./images/chevron-right.svg")) attr_dev(img1, "src", img1_src_value);
-    			attr_dev(img1, "alt", "View next screenshot");
-    			attr_dev(img1, "class", "svelte-1v7ziry");
-    			add_location(img1, file$1, 34, 10, 1184);
-    			attr_dev(button2, "class", "carousel_next svelte-1v7ziry");
-    			add_location(button2, file$1, 33, 8, 1127);
-    			attr_dev(div1, "class", "carousel_image svelte-1v7ziry");
-    			add_location(div1, file$1, 24, 6, 739);
-    			attr_dev(div2, "class", "home-freetrial__carousel svelte-1v7ziry");
-    			add_location(div2, file$1, 23, 4, 694);
-    			attr_dev(div3, "class", "wrapper svelte-1v7ziry");
-    			add_location(div3, file$1, 16, 2, 393);
-    			attr_dev(section0, "class", "home-freetrial svelte-1v7ziry");
-    			add_location(section0, file$1, 15, 0, 358);
-    			attr_dev(p2, "class", "svelte-1v7ziry");
-    			add_location(p2, file$1, 41, 2, 1340);
-    			attr_dev(p3, "class", "svelte-1v7ziry");
-    			add_location(p3, file$1, 42, 2, 1363);
-    			attr_dev(button3, "class", "svelte-1v7ziry");
-    			add_location(button3, file$1, 43, 2, 1386);
-    			attr_dev(section1, "class", "blurb svelte-1v7ziry");
-    			add_location(section1, file$1, 40, 0, 1314);
-    			attr_dev(h3, "class", "svelte-1v7ziry");
-    			add_location(h3, file$1, 47, 2, 1504);
-    			attr_dev(div4, "class", "usp-wrapper svelte-1v7ziry");
-    			add_location(div4, file$1, 48, 2, 1528);
-    			attr_dev(section2, "class", "help svelte-1v7ziry");
-    			add_location(section2, file$1, 46, 0, 1479);
-    			attr_dev(img2, "class", "mock-up svelte-1v7ziry");
-    			if (img2.src !== (img2_src_value = "images/anatomy.png")) attr_dev(img2, "src", img2_src_value);
-    			attr_dev(img2, "alt", "Anatomy of the Lemmi app");
-    			add_location(img2, file$1, 62, 4, 1927);
-    			attr_dev(div5, "class", "anatomy-wrapper svelte-1v7ziry");
-    			add_location(div5, file$1, 63, 4, 2009);
-    			attr_dev(div6, "class", "wrapper svelte-1v7ziry");
-    			add_location(div6, file$1, 61, 2, 1901);
-    			attr_dev(section3, "class", "anatomy svelte-1v7ziry");
-    			add_location(section3, file$1, 60, 0, 1873);
+    			attr_dev(h2, "class", "svelte-1rhfp9x");
+    			add_location(h2, file$1, 52, 6, 1426);
+    			attr_dev(p0, "class", "svelte-1rhfp9x");
+    			add_location(p0, file$1, 53, 6, 1459);
+    			attr_dev(button0, "class", "svelte-1rhfp9x");
+    			add_location(button0, file$1, 54, 6, 1493);
+    			attr_dev(p1, "class", "home-freetrial__smallprint svelte-1rhfp9x");
+    			add_location(p1, file$1, 55, 6, 1586);
+    			attr_dev(div0, "class", "home-freetrial__text svelte-1rhfp9x");
+    			add_location(div0, file$1, 51, 4, 1385);
+    			attr_dev(div1, "class", "carousel-container svelte-1rhfp9x");
+    			add_location(div1, file$1, 62, 8, 1915);
+    			attr_dev(div2, "class", "carousel_image svelte-1rhfp9x");
+    			add_location(div2, file$1, 58, 6, 1711);
+    			attr_dev(div3, "class", "home-freetrial__carousel svelte-1rhfp9x");
+    			add_location(div3, file$1, 57, 4, 1666);
+    			attr_dev(div4, "class", "wrapper svelte-1rhfp9x");
+    			add_location(div4, file$1, 50, 2, 1359);
+    			attr_dev(section0, "class", "home-freetrial svelte-1rhfp9x");
+    			add_location(section0, file$1, 49, 0, 1324);
+    			attr_dev(p2, "class", "svelte-1rhfp9x");
+    			add_location(p2, file$1, 75, 2, 2363);
+    			attr_dev(p3, "class", "svelte-1rhfp9x");
+    			add_location(p3, file$1, 76, 2, 2386);
+    			attr_dev(button1, "class", "svelte-1rhfp9x");
+    			add_location(button1, file$1, 77, 2, 2409);
+    			attr_dev(section1, "class", "blurb svelte-1rhfp9x");
+    			add_location(section1, file$1, 74, 0, 2337);
+    			attr_dev(h3, "class", "svelte-1rhfp9x");
+    			add_location(h3, file$1, 81, 2, 2526);
+    			attr_dev(div5, "class", "usp-wrapper svelte-1rhfp9x");
+    			add_location(div5, file$1, 82, 2, 2550);
+    			attr_dev(section2, "class", "help svelte-1rhfp9x");
+    			add_location(section2, file$1, 80, 0, 2501);
+    			attr_dev(img, "class", "mock-up svelte-1rhfp9x");
+    			if (img.src !== (img_src_value = "images/anatomy.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "Anatomy of the Lemmi app");
+    			add_location(img, file$1, 96, 4, 2949);
+    			attr_dev(div6, "class", "anatomy-wrapper svelte-1rhfp9x");
+    			add_location(div6, file$1, 97, 4, 3031);
+    			attr_dev(div7, "class", "wrapper svelte-1rhfp9x");
+    			add_location(div7, file$1, 95, 2, 2923);
+    			attr_dev(section3, "class", "anatomy svelte-1rhfp9x");
+    			add_location(section3, file$1, 94, 0, 2895);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
-    			append_dev(section0, div3);
-    			append_dev(div3, div0);
+    			append_dev(section0, div4);
+    			append_dev(div4, div0);
     			append_dev(div0, h2);
     			append_dev(div0, t1);
     			append_dev(div0, p0);
@@ -1523,46 +1469,42 @@ var app = (function () {
     			append_dev(div0, button0);
     			append_dev(div0, t5);
     			append_dev(div0, p1);
-    			append_dev(div3, t7);
+    			append_dev(div4, t7);
+    			append_dev(div4, div3);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
-    			append_dev(div1, button1);
-    			append_dev(button1, img0);
-    			append_dev(div1, t8);
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				each_blocks_2[i].m(div1, null);
     			}
 
-    			append_dev(div1, t9);
-    			append_dev(div1, button2);
-    			append_dev(button2, img1);
-    			insert_dev(target, t10, anchor);
+    			/*div1_binding*/ ctx[6](div1);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, section1, anchor);
     			append_dev(section1, p2);
-    			append_dev(section1, t12);
+    			append_dev(section1, t10);
     			append_dev(section1, p3);
-    			append_dev(section1, t14);
-    			append_dev(section1, button3);
-    			insert_dev(target, t16, anchor);
+    			append_dev(section1, t12);
+    			append_dev(section1, button1);
+    			insert_dev(target, t14, anchor);
     			insert_dev(target, section2, anchor);
     			append_dev(section2, h3);
-    			append_dev(section2, t18);
-    			append_dev(section2, div4);
+    			append_dev(section2, t16);
+    			append_dev(section2, div5);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div4, null);
+    				each_blocks_1[i].m(div5, null);
     			}
 
-    			insert_dev(target, t19, anchor);
+    			insert_dev(target, t17, anchor);
     			insert_dev(target, section3, anchor);
-    			append_dev(section3, div6);
-    			append_dev(div6, img2);
-    			append_dev(div6, t20);
-    			append_dev(div6, div5);
+    			append_dev(section3, div7);
+    			append_dev(div7, img);
+    			append_dev(div7, t18);
+    			append_dev(div7, div6);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div5, null);
+    				each_blocks[i].m(div6, null);
     			}
 
     			if (!mounted) {
@@ -1571,19 +1513,17 @@ var app = (function () {
     						button0,
     						"click",
     						function () {
-    							if (is_function(/*handleClickNavigation*/ ctx[0](pages.pricing))) /*handleClickNavigation*/ ctx[0](pages.pricing).apply(this, arguments);
+    							if (is_function(/*handleClickNavigation*/ ctx[0](pages.pricing, true))) /*handleClickNavigation*/ ctx[0](pages.pricing, true).apply(this, arguments);
     						},
     						false,
     						false,
     						false
     					),
-    					listen_dev(button1, "click", /*previous*/ ctx[7], false, false, false),
-    					listen_dev(button2, "click", /*next*/ ctx[6], false, false, false),
     					listen_dev(
-    						button3,
+    						button1,
     						"click",
     						function () {
-    							if (is_function(/*handleClickNavigation*/ ctx[0](pages.faqs))) /*handleClickNavigation*/ ctx[0](pages.faqs).apply(this, arguments);
+    							if (is_function(/*handleClickNavigation*/ ctx[0](pages.app))) /*handleClickNavigation*/ ctx[0](pages.app).apply(this, arguments);
     						},
     						false,
     						false,
@@ -1597,7 +1537,7 @@ var app = (function () {
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
 
-    			if (dirty & /*freetrial, carouselIndex*/ 6) {
+    			if (dirty & /*freetrial*/ 4) {
     				each_value_2 = /*freetrial*/ ctx[2].images;
     				validate_each_argument(each_value_2);
     				let i;
@@ -1610,7 +1550,7 @@ var app = (function () {
     					} else {
     						each_blocks_2[i] = create_each_block_2(child_ctx);
     						each_blocks_2[i].c();
-    						each_blocks_2[i].m(div1, t9);
+    						each_blocks_2[i].m(div1, null);
     					}
     				}
 
@@ -1634,7 +1574,7 @@ var app = (function () {
     					} else {
     						each_blocks_1[i] = create_each_block_1$1(child_ctx);
     						each_blocks_1[i].c();
-    						each_blocks_1[i].m(div4, null);
+    						each_blocks_1[i].m(div5, null);
     					}
     				}
 
@@ -1658,7 +1598,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div5, null);
+    						each_blocks[i].m(div6, null);
     					}
     				}
 
@@ -1674,12 +1614,13 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section0);
     			destroy_each(each_blocks_2, detaching);
-    			if (detaching) detach_dev(t10);
+    			/*div1_binding*/ ctx[6](null);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(section1);
-    			if (detaching) detach_dev(t16);
+    			if (detaching) detach_dev(t14);
     			if (detaching) detach_dev(section2);
     			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(t17);
     			if (detaching) detach_dev(section3);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
@@ -1698,13 +1639,49 @@ var app = (function () {
     	return block;
     }
 
+    const speed = 4;
+
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Home", slots, []);
     	const { freetrial, blurb, help, anatomy } = home;
+    	let carousel;
     	let carouselIndex = 0;
-    	const next = () => $$invalidate(1, carouselIndex = (carouselIndex + 1) % freetrial.images.length);
-    	const previous = () => $$invalidate(1, carouselIndex = (carouselIndex - 1) % freetrial.images.length);
+    	let timeoutId;
+    	const numberOfImages = freetrial.images.length;
+    	let carouselItemWidth;
+
+    	onMount(() => {
+    		carouselItemWidth = carousel.scrollWidth / numberOfImages;
+
+    		setInterval(
+    			() => {
+    				timeoutId = setTimeout(
+    					() => {
+    						carouselIndex = carouselIndex % numberOfImages;
+    						moveCarouselImage();
+    						clearTimeout(timeoutId);
+    					},
+    					1000
+    				);
+    			},
+    			speed * 1000
+    		);
+    	});
+
+    	const moveCarouselImage = () => {
+    		carousel.scrollBy(carouselItemWidth, 0);
+    		let childToMove = carousel.querySelectorAll(`.carousel-item`)[carouselIndex];
+
+    		// The line below move the item to end of carousel by 
+    		// manipulating its flex order
+    		childToMove.style.order = childToMove.style.order && childToMove.style.order === 0
+    		? 1
+    		: +childToMove.style.order + 1;
+
+    		carouselIndex++;
+    	};
+
     	let { handleClickNavigation } = $$props;
     	const writable_props = ["handleClickNavigation"];
 
@@ -1712,25 +1689,40 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Home> was created with unknown prop '${key}'`);
     	});
 
+    	function div1_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			carousel = $$value;
+    			$$invalidate(1, carousel);
+    		});
+    	}
+
     	$$self.$$set = $$props => {
     		if ("handleClickNavigation" in $$props) $$invalidate(0, handleClickNavigation = $$props.handleClickNavigation);
     	};
 
     	$$self.$capture_state = () => ({
+    		onMount,
     		home,
     		pages,
     		freetrial,
     		blurb,
     		help,
     		anatomy,
+    		carousel,
     		carouselIndex,
-    		next,
-    		previous,
+    		timeoutId,
+    		speed,
+    		numberOfImages,
+    		carouselItemWidth,
+    		moveCarouselImage,
     		handleClickNavigation
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("carouselIndex" in $$props) $$invalidate(1, carouselIndex = $$props.carouselIndex);
+    		if ("carousel" in $$props) $$invalidate(1, carousel = $$props.carousel);
+    		if ("carouselIndex" in $$props) carouselIndex = $$props.carouselIndex;
+    		if ("timeoutId" in $$props) timeoutId = $$props.timeoutId;
+    		if ("carouselItemWidth" in $$props) carouselItemWidth = $$props.carouselItemWidth;
     		if ("handleClickNavigation" in $$props) $$invalidate(0, handleClickNavigation = $$props.handleClickNavigation);
     	};
 
@@ -1738,16 +1730,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [
-    		handleClickNavigation,
-    		carouselIndex,
-    		freetrial,
-    		blurb,
-    		help,
-    		anatomy,
-    		next,
-    		previous
-    	];
+    	return [handleClickNavigation, carousel, freetrial, blurb, help, anatomy, div1_binding];
     }
 
     class Home extends SvelteComponentDev {
@@ -2467,7 +2450,7 @@ var app = (function () {
     }
 
     // (30:8) {#if plan.save}
-    function create_if_block$1(ctx) {
+    function create_if_block(ctx) {
     	let h5;
     	let t_value = /*plan*/ ctx[6].save.toUpperCase() + "";
     	let t;
@@ -2491,7 +2474,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block.name,
     		type: "if",
     		source: "(30:8) {#if plan.save}",
     		ctx
@@ -2518,7 +2501,7 @@ var app = (function () {
     	let t8;
     	let if_block0 = /*plan*/ ctx[6].popular && create_if_block_2(ctx);
     	let if_block1 = /*plan*/ ctx[6].perMonth && create_if_block_1(ctx);
-    	let if_block2 = /*plan*/ ctx[6].save && create_if_block$1(ctx);
+    	let if_block2 = /*plan*/ ctx[6].save && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -2885,6 +2868,7 @@ var app = (function () {
     }
 
     /* src/pages/FAQs.svelte generated by Svelte v3.29.0 */
+
     const file$5 = "src/pages/FAQs.svelte";
 
     function create_fragment$5(ctx) {
@@ -2977,74 +2961,74 @@ var app = (function () {
     	let t48;
     	let p13;
     	let t50;
-    	let p14;
+    	let section1;
+    	let h31;
     	let t52;
     	let details6;
     	let summary6;
     	let t54;
-    	let div19;
-    	let div18;
+    	let div20;
+    	let div17;
     	let img7;
     	let img7_src_value;
     	let t55;
-    	let div17;
-    	let p15;
+    	let p14;
     	let t57;
-    	let p16;
-    	let t59;
-    	let section1;
-    	let h31;
-    	let t61;
-    	let details7;
-    	let summary7;
-    	let t63;
-    	let div23;
-    	let div20;
+    	let div19;
     	let img8;
     	let img8_src_value;
-    	let t64;
+    	let t58;
+    	let div18;
+    	let p15;
+    	let t60;
+    	let p16;
+    	let t62;
     	let p17;
-    	let t66;
-    	let div22;
+    	let t64;
+    	let p18;
+    	let t65;
+    	let a0;
+    	let t67;
+    	let details7;
+    	let summary7;
+    	let t69;
+    	let div24;
+    	let div21;
     	let img9;
     	let img9_src_value;
-    	let t67;
-    	let div21;
-    	let p18;
-    	let t69;
+    	let t70;
     	let p19;
-    	let t71;
-    	let p20;
-    	let t73;
-    	let p21;
-    	let t74;
-    	let a0;
-    	let t76;
-    	let details8;
-    	let summary8;
-    	let t78;
-    	let div27;
-    	let div24;
+    	let t72;
+    	let div23;
     	let img10;
     	let img10_src_value;
-    	let t79;
+    	let t73;
+    	let div22;
+    	let p20;
+    	let t75;
+    	let p21;
+    	let t77;
     	let p22;
+    	let t79;
+    	let details8;
+    	let summary8;
     	let t81;
-    	let div26;
-    	let img11;
-    	let img11_src_value;
-    	let t82;
     	let div25;
     	let p23;
-    	let t84;
+    	let t83;
     	let p24;
-    	let t86;
-    	let p25;
-    	let t88;
+    	let t85;
     	let details9;
     	let summary9;
-    	let t90;
+    	let t87;
     	let div28;
+    	let div27;
+    	let img11;
+    	let img11_src_value;
+    	let t88;
+    	let div26;
+    	let p25;
+    	let t90;
     	let p26;
     	let t92;
     	let p27;
@@ -3052,22 +3036,22 @@ var app = (function () {
     	let details10;
     	let summary10;
     	let t96;
-    	let div31;
-    	let div30;
-    	let img12;
-    	let img12_src_value;
-    	let t97;
     	let div29;
     	let p28;
-    	let t99;
+    	let t98;
     	let p29;
-    	let t101;
-    	let p30;
-    	let t103;
+    	let t100;
     	let details11;
     	let summary11;
-    	let t105;
+    	let t102;
     	let div32;
+    	let div31;
+    	let img12;
+    	let img12_src_value;
+    	let t103;
+    	let div30;
+    	let p30;
+    	let t105;
     	let p31;
     	let t107;
     	let p32;
@@ -3075,113 +3059,124 @@ var app = (function () {
     	let details12;
     	let summary12;
     	let t111;
-    	let div35;
     	let div34;
+    	let div33;
     	let img13;
     	let img13_src_value;
     	let t112;
-    	let div33;
     	let p33;
     	let t114;
-    	let p34;
-    	let t116;
-    	let p35;
-    	let t118;
     	let details13;
     	let summary13;
-    	let t120;
-    	let div37;
+    	let t116;
     	let div36;
+    	let div35;
     	let img14;
     	let img14_src_value;
-    	let t121;
-    	let p36;
-    	let t123;
+    	let t117;
+    	let p34;
+    	let t119;
     	let details14;
     	let summary14;
-    	let t125;
-    	let div39;
+    	let t121;
     	let div38;
+    	let div37;
     	let img15;
     	let img15_src_value;
-    	let t126;
-    	let p37;
-    	let t128;
-    	let details15;
-    	let summary15;
-    	let t130;
-    	let div41;
-    	let div40;
-    	let img16;
-    	let img16_src_value;
-    	let t131;
-    	let p38;
-    	let t133;
+    	let t122;
+    	let p35;
+    	let t124;
     	let section2;
     	let h32;
-    	let t135;
+    	let t126;
+    	let details15;
+    	let summary15;
+    	let t128;
+    	let div40;
+    	let p36;
+    	let t130;
+    	let div39;
+    	let p37;
+    	let b0;
+    	let t132;
+    	let p38;
+    	let b1;
+    	let t134;
+    	let p39;
+    	let t136;
     	let details16;
     	let summary16;
-    	let t137;
-    	let div43;
-    	let p39;
-    	let t139;
-    	let div42;
+    	let t138;
+    	let div41;
     	let p40;
-    	let b0;
+    	let t139;
+    	let a1;
     	let t141;
-    	let p41;
-    	let b1;
-    	let t143;
-    	let p42;
-    	let t145;
+    	let t142;
     	let details17;
     	let summary17;
-    	let t147;
+    	let t144;
     	let div44;
+    	let p41;
+    	let t146;
+    	let div43;
+    	let img16;
+    	let img16_src_value;
+    	let t147;
+    	let div42;
+    	let p42;
+    	let t149;
     	let p43;
-    	let t148;
-    	let a1;
-    	let t150;
     	let t151;
+    	let p44;
+    	let t153;
+    	let p45;
+    	let t154;
+    	let a2;
+    	let t156;
+    	let t157;
     	let details18;
     	let summary18;
-    	let t153;
-    	let div47;
-    	let p44;
-    	let t155;
-    	let div46;
-    	let img17;
-    	let img17_src_value;
-    	let t156;
+    	let t159;
     	let div45;
-    	let p45;
-    	let t158;
     	let p46;
-    	let t160;
-    	let p47;
-    	let t162;
-    	let p48;
-    	let t163;
-    	let a2;
-    	let t165;
-    	let t166;
+    	let t161;
     	let details19;
     	let summary19;
+    	let t163;
+    	let div46;
+    	let p47;
+    	let t164;
+    	let a3;
+    	let t166;
+    	let a4;
     	let t168;
-    	let div48;
-    	let p49;
-    	let t170;
+    	let t169;
+    	let section3;
+    	let h33;
+    	let t171;
     	let details20;
     	let summary20;
-    	let t172;
-    	let div49;
-    	let p50;
     	let t173;
-    	let a3;
-    	let t175;
-    	let a4;
-    	let t177;
+    	let div49;
+    	let div48;
+    	let img17;
+    	let img17_src_value;
+    	let t174;
+    	let div47;
+    	let p48;
+    	let t176;
+    	let p49;
+    	let t178;
+    	let p50;
+    	let t180;
+    	let details21;
+    	let summary21;
+    	let t182;
+    	let div50;
+    	let p51;
+    	let t183;
+    	let a5;
 
     	const block = {
     		c: function create() {
@@ -3276,7 +3271,7 @@ var app = (function () {
     			t43 = space();
     			details5 = element("details");
     			summary5 = element("summary");
-    			summary5.textContent = "How do I Submit Feedback?";
+    			summary5.textContent = "How do I Sign Out? (Android only)";
     			t45 = space();
     			div16 = element("div");
     			div15 = element("div");
@@ -3287,639 +3282,667 @@ var app = (function () {
     			p12.textContent = "Tap on the Settings button.";
     			t48 = space();
     			p13 = element("p");
-    			p13.textContent = "On the Settings screen, scroll to the bottom and tap 'Submit Feedback'.";
+    			p13.textContent = "On the Settings screen, scroll to the bottom and tap 'Sign Out'.";
     			t50 = space();
-    			p14 = element("p");
-    			p14.textContent = "On the new screen, add your feedback and tap ‘Submit’.";
-    			t52 = space();
-    			details6 = element("details");
-    			summary6 = element("summary");
-    			summary6.textContent = "How do I Sign Out? (Android only)";
-    			t54 = space();
-    			div19 = element("div");
-    			div18 = element("div");
-    			img7 = element("img");
-    			t55 = space();
-    			div17 = element("div");
-    			p15 = element("p");
-    			p15.textContent = "Tap on the Settings button.";
-    			t57 = space();
-    			p16 = element("p");
-    			p16.textContent = "On the Settings screen, scroll to the bottom and tap 'Sign Out'.";
-    			t59 = space();
     			section1 = element("section");
     			h31 = element("h3");
     			h31.textContent = "2. Customisation";
-    			t61 = space();
-    			details7 = element("details");
-    			summary7 = element("summary");
-    			summary7.textContent = "How do I add custom entry words and images?";
-    			t63 = space();
-    			div23 = element("div");
+    			t52 = space();
+    			details6 = element("details");
+    			summary6 = element("summary");
+    			summary6.textContent = "How do I add custom entry words and images?";
+    			t54 = space();
     			div20 = element("div");
+    			div17 = element("div");
+    			img7 = element("img");
+    			t55 = space();
+    			p14 = element("p");
+    			p14.textContent = "Tap on the Dictionary button.";
+    			t57 = space();
+    			div19 = element("div");
     			img8 = element("img");
-    			t64 = space();
+    			t58 = space();
+    			div18 = element("div");
+    			p15 = element("p");
+    			p15.textContent = "Tap 'Add Entry'.";
+    			t60 = space();
+    			p16 = element("p");
+    			p16.textContent = "On this new screen, enter your text, select the category you want your entry to be stored in, and, optionally, choose an image.";
+    			t62 = space();
     			p17 = element("p");
-    			p17.textContent = "Tap on the Dictionary button.";
-    			t66 = space();
-    			div22 = element("div");
-    			img9 = element("img");
-    			t67 = space();
-    			div21 = element("div");
+    			p17.textContent = "Tap 'Save'.";
+    			t64 = space();
     			p18 = element("p");
-    			p18.textContent = "Tap 'Add Entry'.";
-    			t69 = space();
-    			p19 = element("p");
-    			p19.textContent = "On this new screen, enter your text, select the category you want your entry to be stored in, and, optionally, choose an image.";
-    			t71 = space();
-    			p20 = element("p");
-    			p20.textContent = "Tap 'Save'.";
-    			t73 = space();
-    			p21 = element("p");
-    			t74 = text("Note: You mustupload content that is yours, or that have been granted the right to use. For more information please see our ");
+    			t65 = text("Note: You mustupload content that is yours, or that have been granted the right to use. For more information please see our ");
     			a0 = element("a");
     			a0.textContent = "Terms of Service.";
-    			t76 = space();
+    			t67 = space();
+    			details7 = element("details");
+    			summary7 = element("summary");
+    			summary7.textContent = "How do I edit or delete custom entry words and images?";
+    			t69 = space();
+    			div24 = element("div");
+    			div21 = element("div");
+    			img9 = element("img");
+    			t70 = space();
+    			p19 = element("p");
+    			p19.textContent = "Tap on the Dictionary button.";
+    			t72 = space();
+    			div23 = element("div");
+    			img10 = element("img");
+    			t73 = space();
+    			div22 = element("div");
+    			p20 = element("p");
+    			p20.textContent = "Tap on the Word Book button.";
+    			t75 = space();
+    			p21 = element("p");
+    			p21.textContent = "To edit: tap 'Edit' on the entry you want to change. Update the text, category or image, and tap to confirm.";
+    			t77 = space();
+    			p22 = element("p");
+    			p22.textContent = "To delete: tap 'Delete' on the entry you want to delete and tap to confirm.";
+    			t79 = space();
     			details8 = element("details");
     			summary8 = element("summary");
-    			summary8.textContent = "How do I edit or delete custom entry words and images?";
-    			t78 = space();
-    			div27 = element("div");
-    			div24 = element("div");
-    			img10 = element("img");
-    			t79 = space();
-    			p22 = element("p");
-    			p22.textContent = "Tap on the Dictionary button.";
+    			summary8.textContent = "Are my custom entries safe?";
     			t81 = space();
-    			div26 = element("div");
-    			img11 = element("img");
-    			t82 = space();
     			div25 = element("div");
     			p23 = element("p");
-    			p23.textContent = "Tap on the Word Book button.";
-    			t84 = space();
+    			p23.textContent = "Yes, your custom entries are stored to your personal account. We do not have access to this, nor do we collect or store any of this information.";
+    			t83 = space();
     			p24 = element("p");
-    			p24.textContent = "To edit: tap 'Edit' on the entry you want to change. Update the text, category or image, and tap to confirm.";
-    			t86 = space();
-    			p25 = element("p");
-    			p25.textContent = "To delete: tap 'Delete' on the entry you want to delete and tap to confirm.";
-    			t88 = space();
+    			p24.textContent = "Note: for Android users, or those using Lemmi without syncing to iCloud, you will lose any custom data if you delete the app from your device.";
+    			t85 = space();
     			details9 = element("details");
     			summary9 = element("summary");
-    			summary9.textContent = "Are my custom entries safe?";
-    			t90 = space();
+    			summary9.textContent = "How do I change the speaking voice?";
+    			t87 = space();
     			div28 = element("div");
+    			div27 = element("div");
+    			img11 = element("img");
+    			t88 = space();
+    			div26 = element("div");
+    			p25 = element("p");
+    			p25.textContent = "Tap on the Settings button.";
+    			t90 = space();
     			p26 = element("p");
-    			p26.textContent = "Yes, your custom entries are stored to your personal account. We do not have access to this, nor do we collect or store any of this information.";
+    			p26.textContent = "Tap on the voice dropdown menu and tap to select a voice.";
     			t92 = space();
     			p27 = element("p");
-    			p27.textContent = "Note: for Android users, or those using Lemmi without syncing to iCloud, you will lose any custom data if you delete the app from your device.";
+    			p27.textContent = "To hear a sample voice please tap the 'Play'.";
     			t94 = space();
     			details10 = element("details");
     			summary10 = element("summary");
-    			summary10.textContent = "How do I change the speaking voice?";
+    			summary10.textContent = "How do I add alternative voices?";
     			t96 = space();
-    			div31 = element("div");
-    			div30 = element("div");
-    			img12 = element("img");
-    			t97 = space();
     			div29 = element("div");
     			p28 = element("p");
-    			p28.textContent = "Tap on the Settings button.";
-    			t99 = space();
+    			p28.textContent = "For iOS: Go to your device's Settings menu. Select 'Accessibility', then 'Spoken Content' and tap 'Voices'. We recommend using voices marked 'Enhanced'.";
+    			t98 = space();
     			p29 = element("p");
-    			p29.textContent = "Tap on the voice dropdown menu and tap to select a voice.";
-    			t101 = space();
-    			p30 = element("p");
-    			p30.textContent = "To hear a sample voice please tap the 'Play'.";
-    			t103 = space();
+    			p29.textContent = "For Android: Go to your device's Settings. Select Accessibility, then tap the 'Preferred Engine Settings' symbol and tap 'Install Voice Data'.";
+    			t100 = space();
     			details11 = element("details");
     			summary11 = element("summary");
-    			summary11.textContent = "How do I add alternative voices?";
-    			t105 = space();
+    			summary11.textContent = "How do I change the app's colour scheme?";
+    			t102 = space();
     			div32 = element("div");
+    			div31 = element("div");
+    			img12 = element("img");
+    			t103 = space();
+    			div30 = element("div");
+    			p30 = element("p");
+    			p30.textContent = "Tap on the Settings button, and choose your preferred theme.";
+    			t105 = space();
     			p31 = element("p");
-    			p31.textContent = "For iOS: Go to your device's Settings menu. Select 'Accessibility', then 'Spoken Content' and tap 'Voices'. We recommend using voices marked 'Enhanced'.";
+    			p31.textContent = "For iOS: toggle 'Dark Mode' on or off.";
     			t107 = space();
     			p32 = element("p");
-    			p32.textContent = "For Android: Go to your device's Settings. Select Accessibility, then tap the 'Preferred Engine Settings' symbol and tap 'Install Voice Data'.";
+    			p32.textContent = "For Android: choose between 'Light', 'Dark', and 'Default' modes. Selecting 'Default' will tell Lemmi to follow your device's settings.";
     			t109 = space();
     			details12 = element("details");
     			summary12 = element("summary");
-    			summary12.textContent = "How do I change the app's colour scheme?";
+    			summary12.textContent = "How do I turn off the Auto Speak option?";
     			t111 = space();
-    			div35 = element("div");
     			div34 = element("div");
+    			div33 = element("div");
     			img13 = element("img");
     			t112 = space();
-    			div33 = element("div");
     			p33 = element("p");
-    			p33.textContent = "Tap on the Settings button, and choose your preferred theme.";
+    			p33.textContent = "Tap on the Settings button, then turn ‘Auto Speak’ off.";
     			t114 = space();
-    			p34 = element("p");
-    			p34.textContent = "For iOS: toggle 'Dark Mode' on or off.";
-    			t116 = space();
-    			p35 = element("p");
-    			p35.textContent = "For Android: choose between 'Light', 'Dark', and 'Default' modes. Selecting 'Default' will tell Lemmi to follow your device's settings.";
-    			t118 = space();
     			details13 = element("details");
     			summary13 = element("summary");
-    			summary13.textContent = "How do I turn off the Auto Speak option?";
-    			t120 = space();
-    			div37 = element("div");
+    			summary13.textContent = "How do I hide Suggested Words?";
+    			t116 = space();
     			div36 = element("div");
+    			div35 = element("div");
     			img14 = element("img");
-    			t121 = space();
-    			p36 = element("p");
-    			p36.textContent = "Tap on the Settings button, then turn ‘Auto Speak’ off.";
-    			t123 = space();
+    			t117 = space();
+    			p34 = element("p");
+    			p34.textContent = "Tap on the Settings button, then turn ‘Show Suggested Words’ off.";
+    			t119 = space();
     			details14 = element("details");
     			summary14 = element("summary");
-    			summary14.textContent = "How do I hide Suggested Words?";
-    			t125 = space();
-    			div39 = element("div");
+    			summary14.textContent = "How do I hide Images and just have text?";
+    			t121 = space();
     			div38 = element("div");
+    			div37 = element("div");
     			img15 = element("img");
-    			t126 = space();
-    			p37 = element("p");
-    			p37.textContent = "Tap on the Settings button, then turn ‘Show Suggested Words’ off.";
-    			t128 = space();
-    			details15 = element("details");
-    			summary15 = element("summary");
-    			summary15.textContent = "How do I hide Images and just have text?";
-    			t130 = space();
-    			div41 = element("div");
-    			div40 = element("div");
-    			img16 = element("img");
-    			t131 = space();
-    			p38 = element("p");
-    			p38.textContent = "Tap on the Settings button, then turn ‘Show Images' off.";
-    			t133 = space();
+    			t122 = space();
+    			p35 = element("p");
+    			p35.textContent = "Tap on the Settings button, then turn ‘Show Images' off.";
+    			t124 = space();
     			section2 = element("section");
     			h32 = element("h3");
     			h32.textContent = "3. Subscriptions";
-    			t135 = space();
-    			details16 = element("details");
-    			summary16 = element("summary");
-    			summary16.textContent = "How much does Lemmi cost?";
-    			t137 = space();
-    			div43 = element("div");
-    			p39 = element("p");
-    			p39.textContent = "Lemmi is a subscription based app with two payment options:";
-    			t139 = space();
-    			div42 = element("div");
-    			p40 = element("p");
+    			t126 = space();
+    			details15 = element("details");
+    			summary15 = element("summary");
+    			summary15.textContent = "How much does Lemmi cost?";
+    			t128 = space();
+    			div40 = element("div");
+    			p36 = element("p");
+    			p36.textContent = "Lemmi is a subscription based app with two payment options:";
+    			t130 = space();
+    			div39 = element("div");
+    			p37 = element("p");
     			b0 = element("b");
     			b0.textContent = "Yearly – users pay £41.99 per year (£3.50 per month, saving 22%)";
-    			t141 = space();
-    			p41 = element("p");
+    			t132 = space();
+    			p38 = element("p");
     			b1 = element("b");
     			b1.textContent = "Monthly – users pay £4.49 per month on a rolling contract";
-    			t143 = space();
-    			p42 = element("p");
-    			p42.textContent = "Note: Both options come with a 7-day FREE trial and you can upgrade your subscription at any time.";
-    			t145 = space();
-    			details17 = element("details");
-    			summary17 = element("summary");
-    			summary17.textContent = "Do you offer any discounts?";
-    			t147 = space();
-    			div44 = element("div");
-    			p43 = element("p");
-    			t148 = text("We occasionally run promotions, to hear about these special discounts please sign up to our Newsletter ");
+    			t134 = space();
+    			p39 = element("p");
+    			p39.textContent = "Note: Both options come with a 7-day FREE trial and you can upgrade your subscription at any time.";
+    			t136 = space();
+    			details16 = element("details");
+    			summary16 = element("summary");
+    			summary16.textContent = "Do you offer any discounts?";
+    			t138 = space();
+    			div41 = element("div");
+    			p40 = element("p");
+    			t139 = text("We occasionally run promotions, to hear about these special discounts please sign up to our Newsletter ");
     			a1 = element("a");
     			a1.textContent = "at the bottom of the screen";
-    			t150 = text(".");
+    			t141 = text(".");
+    			t142 = space();
+    			details17 = element("details");
+    			summary17 = element("summary");
+    			summary17.textContent = "How do I manage or cancel my subscription renewal?";
+    			t144 = space();
+    			div44 = element("div");
+    			p41 = element("p");
+    			p41.textContent = "You can manage your subscription directly through your iCloud or Play Store account, or within the Lemmi app itself.";
+    			t146 = space();
+    			div43 = element("div");
+    			img16 = element("img");
+    			t147 = space();
+    			div42 = element("div");
+    			p42 = element("p");
+    			p42.textContent = "Tap on the Settings button.";
+    			t149 = space();
+    			p43 = element("p");
+    			p43.textContent = "Scroll down to the bottom of the page and tap 'Manage Subscription'.";
     			t151 = space();
-    			details18 = element("details");
-    			summary18 = element("summary");
-    			summary18.textContent = "How do I manage or cancel my subscription renewal?";
-    			t153 = space();
-    			div47 = element("div");
     			p44 = element("p");
-    			p44.textContent = "You can manage your subscription directly through your iCloud or Play Store account, or within the Lemmi app itself.";
-    			t155 = space();
-    			div46 = element("div");
-    			img17 = element("img");
-    			t156 = space();
-    			div45 = element("div");
+    			p44.textContent = "This will take you to the relevant Store.";
+    			t153 = space();
     			p45 = element("p");
-    			p45.textContent = "Tap on the Settings button.";
-    			t158 = space();
-    			p46 = element("p");
-    			p46.textContent = "Scroll down to the bottom of the page and tap 'Manage Subscription'.";
-    			t160 = space();
-    			p47 = element("p");
-    			p47.textContent = "This will take you to the relevant Store.";
-    			t162 = space();
-    			p48 = element("p");
-    			t163 = text("Note: You will not receive a refund for the fees you have already paid for your current subscription period, but you will have access to the service until the end of your current subscription period. For more information, please refer to Lemmi's ");
+    			t154 = text("Note: You will not receive a refund for the fees you have already paid for your current subscription period, but you will have access to the service until the end of your current subscription period. For more information, please refer to Lemmi's ");
     			a2 = element("a");
     			a2.textContent = "Terms of Service";
-    			t165 = text(".");
-    			t166 = space();
+    			t156 = text(".");
+    			t157 = space();
+    			details18 = element("details");
+    			summary18 = element("summary");
+    			summary18.textContent = "How do I install a pre-existing subscription onto a new device?";
+    			t159 = space();
+    			div45 = element("div");
+    			p46 = element("p");
+    			p46.textContent = "Ensure you are using the same iCloud or Play Store account. Re-download Lemmi onto your new device and use the ‘Restore previous purchase’ when you open Lemmi for the first time.";
+    			t161 = space();
     			details19 = element("details");
     			summary19 = element("summary");
-    			summary19.textContent = "How do I install a pre-existing subscription onto a new device?";
-    			t168 = space();
-    			div48 = element("div");
-    			p49 = element("p");
-    			p49.textContent = "Ensure you are using the same iCloud or Play Store account. Re-download Lemmi onto your new device and use the ‘Restore previous purchase’ when you open Lemmi for the first time.";
-    			t170 = space();
-    			details20 = element("details");
-    			summary20 = element("summary");
-    			summary20.textContent = "Important information";
-    			t172 = space();
-    			div49 = element("div");
-    			p50 = element("p");
-    			t173 = text("By using Lemmi you agree that you have read, understood, and agreed to Lemmi's ");
+    			summary19.textContent = "Important information";
+    			t163 = space();
+    			div46 = element("div");
+    			p47 = element("p");
+    			t164 = text("By using Lemmi you agree that you have read, understood, and agreed to Lemmi's ");
     			a3 = element("a");
     			a3.textContent = "Terms of Service";
-    			t175 = text(" and ");
+    			t166 = text(" and ");
     			a4 = element("a");
     			a4.textContent = "Privacy Policy";
-    			t177 = text(".");
-    			add_location(h2, file$5, 91, 2, 1476);
-    			attr_dev(div0, "class", "faq-title svelte-1k8b22d");
-    			add_location(div0, file$5, 90, 0, 1450);
-    			attr_dev(h30, "class", "svelte-1k8b22d");
-    			add_location(h30, file$5, 94, 2, 1529);
-    			attr_dev(summary0, "class", "svelte-1k8b22d");
-    			add_location(summary0, file$5, 96, 4, 1569);
-    			attr_dev(p0, "class", "svelte-1k8b22d");
-    			add_location(p0, file$5, 98, 6, 1649);
-    			attr_dev(p1, "class", "svelte-1k8b22d");
-    			add_location(p1, file$5, 99, 6, 1724);
-    			attr_dev(p2, "class", "svelte-1k8b22d");
-    			add_location(p2, file$5, 100, 6, 1871);
-    			attr_dev(div1, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div1, file$5, 97, 4, 1613);
-    			attr_dev(details0, "class", "svelte-1k8b22d");
-    			add_location(details0, file$5, 95, 2, 1555);
-    			attr_dev(summary1, "class", "svelte-1k8b22d");
-    			add_location(summary1, file$5, 104, 4, 1992);
+    			t168 = text(".");
+    			t169 = space();
+    			section3 = element("section");
+    			h33 = element("h3");
+    			h33.textContent = "4. Feedback and Contact";
+    			t171 = space();
+    			details20 = element("details");
+    			summary20 = element("summary");
+    			summary20.textContent = "How do I Submit Feedback?";
+    			t173 = space();
+    			div49 = element("div");
+    			div48 = element("div");
+    			img17 = element("img");
+    			t174 = space();
+    			div47 = element("div");
+    			p48 = element("p");
+    			p48.textContent = "Tap on the Settings button.";
+    			t176 = space();
+    			p49 = element("p");
+    			p49.textContent = "On the Settings screen, scroll to the bottom and tap 'Submit Feedback'.";
+    			t178 = space();
+    			p50 = element("p");
+    			p50.textContent = "On the new screen, add your feedback and tap ‘Submit’.";
+    			t180 = space();
+    			details21 = element("details");
+    			summary21 = element("summary");
+    			summary21.textContent = "Need further help?";
+    			t182 = space();
+    			div50 = element("div");
+    			p51 = element("p");
+    			t183 = text("Please contact us at ");
+    			a5 = element("a");
+    			a5.textContent = "info@lemmichat.com";
+    			add_location(h2, file$5, 1, 2, 26);
+    			attr_dev(div0, "class", "faq-title svelte-10nzrjx");
+    			add_location(div0, file$5, 0, 0, 0);
+    			attr_dev(h30, "class", "svelte-10nzrjx");
+    			add_location(h30, file$5, 4, 2, 79);
+    			attr_dev(summary0, "class", "svelte-10nzrjx");
+    			add_location(summary0, file$5, 6, 4, 119);
+    			attr_dev(p0, "class", "svelte-10nzrjx");
+    			add_location(p0, file$5, 8, 6, 199);
+    			attr_dev(p1, "class", "svelte-10nzrjx");
+    			add_location(p1, file$5, 9, 6, 274);
+    			attr_dev(p2, "class", "svelte-10nzrjx");
+    			add_location(p2, file$5, 10, 6, 421);
+    			attr_dev(div1, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div1, file$5, 7, 4, 163);
+    			attr_dev(details0, "class", "svelte-10nzrjx");
+    			add_location(details0, file$5, 5, 2, 105);
+    			attr_dev(summary1, "class", "svelte-10nzrjx");
+    			add_location(summary1, file$5, 14, 4, 542);
     			if (img0.src !== (img0_src_value = "images/clear.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "clear icon");
-    			attr_dev(img0, "class", "svelte-1k8b22d");
-    			add_location(img0, file$5, 107, 8, 2120);
-    			attr_dev(p3, "class", "svelte-1k8b22d");
-    			add_location(p3, file$5, 108, 8, 2176);
-    			attr_dev(div2, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div2, file$5, 106, 6, 2086);
+    			attr_dev(img0, "class", "svelte-10nzrjx");
+    			add_location(img0, file$5, 17, 8, 670);
+    			attr_dev(p3, "class", "svelte-10nzrjx");
+    			add_location(p3, file$5, 18, 8, 726);
+    			attr_dev(div2, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div2, file$5, 16, 6, 636);
     			if (img1.src !== (img1_src_value = "images/undo.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "undo icon");
-    			attr_dev(img1, "class", "svelte-1k8b22d");
-    			add_location(img1, file$5, 111, 8, 2277);
-    			attr_dev(p4, "class", "svelte-1k8b22d");
-    			add_location(p4, file$5, 112, 8, 2330);
-    			attr_dev(div3, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div3, file$5, 110, 6, 2243);
+    			attr_dev(img1, "class", "svelte-10nzrjx");
+    			add_location(img1, file$5, 21, 8, 827);
+    			attr_dev(p4, "class", "svelte-10nzrjx");
+    			add_location(p4, file$5, 22, 8, 880);
+    			attr_dev(div3, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div3, file$5, 20, 6, 793);
     			if (img2.src !== (img2_src_value = "images/play.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "play icon");
-    			attr_dev(img2, "class", "svelte-1k8b22d");
-    			add_location(img2, file$5, 115, 8, 2455);
-    			attr_dev(p5, "class", "svelte-1k8b22d");
-    			add_location(p5, file$5, 116, 8, 2508);
-    			attr_dev(div4, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div4, file$5, 114, 6, 2421);
-    			attr_dev(div5, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div5, file$5, 105, 4, 2050);
-    			attr_dev(details1, "class", "svelte-1k8b22d");
-    			add_location(details1, file$5, 103, 2, 1978);
-    			attr_dev(summary2, "class", "svelte-1k8b22d");
-    			add_location(summary2, file$5, 121, 4, 2607);
+    			attr_dev(img2, "class", "svelte-10nzrjx");
+    			add_location(img2, file$5, 25, 8, 1005);
+    			attr_dev(p5, "class", "svelte-10nzrjx");
+    			add_location(p5, file$5, 26, 8, 1058);
+    			attr_dev(div4, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div4, file$5, 24, 6, 971);
+    			attr_dev(div5, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div5, file$5, 15, 4, 600);
+    			attr_dev(details1, "class", "svelte-10nzrjx");
+    			add_location(details1, file$5, 13, 2, 528);
+    			attr_dev(summary2, "class", "svelte-10nzrjx");
+    			add_location(summary2, file$5, 31, 4, 1157);
     			if (img3.src !== (img3_src_value = "images/core.png")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "core icon");
-    			attr_dev(img3, "class", "svelte-1k8b22d");
-    			add_location(img3, file$5, 124, 8, 2728);
-    			attr_dev(p6, "class", "svelte-1k8b22d");
-    			add_location(p6, file$5, 126, 10, 2826);
-    			attr_dev(p7, "class", "svelte-1k8b22d");
-    			add_location(p7, file$5, 127, 10, 2915);
-    			attr_dev(p8, "class", "svelte-1k8b22d");
-    			add_location(p8, file$5, 128, 10, 3000);
-    			attr_dev(div6, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div6, file$5, 125, 8, 2782);
-    			attr_dev(div7, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div7, file$5, 123, 6, 2694);
-    			attr_dev(div8, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div8, file$5, 122, 4, 2658);
-    			attr_dev(details2, "class", "svelte-1k8b22d");
-    			add_location(details2, file$5, 120, 2, 2593);
-    			attr_dev(summary3, "class", "svelte-1k8b22d");
-    			add_location(summary3, file$5, 134, 4, 3132);
+    			attr_dev(img3, "class", "svelte-10nzrjx");
+    			add_location(img3, file$5, 34, 8, 1278);
+    			attr_dev(p6, "class", "svelte-10nzrjx");
+    			add_location(p6, file$5, 36, 10, 1376);
+    			attr_dev(p7, "class", "svelte-10nzrjx");
+    			add_location(p7, file$5, 37, 10, 1465);
+    			attr_dev(p8, "class", "svelte-10nzrjx");
+    			add_location(p8, file$5, 38, 10, 1550);
+    			attr_dev(div6, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div6, file$5, 35, 8, 1332);
+    			attr_dev(div7, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div7, file$5, 33, 6, 1244);
+    			attr_dev(div8, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div8, file$5, 32, 4, 1208);
+    			attr_dev(details2, "class", "svelte-10nzrjx");
+    			add_location(details2, file$5, 30, 2, 1143);
+    			attr_dev(summary3, "class", "svelte-10nzrjx");
+    			add_location(summary3, file$5, 44, 4, 1682);
     			if (img4.src !== (img4_src_value = "images/dictionary.png")) attr_dev(img4, "src", img4_src_value);
     			attr_dev(img4, "alt", "dictionary icon");
-    			attr_dev(img4, "class", "svelte-1k8b22d");
-    			add_location(img4, file$5, 137, 8, 3253);
-    			attr_dev(p9, "class", "svelte-1k8b22d");
-    			add_location(p9, file$5, 138, 8, 3319);
-    			attr_dev(div9, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div9, file$5, 136, 6, 3219);
-    			attr_dev(div10, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div10, file$5, 135, 4, 3183);
-    			attr_dev(details3, "class", "svelte-1k8b22d");
-    			add_location(details3, file$5, 133, 2, 3118);
-    			attr_dev(summary4, "class", "svelte-1k8b22d");
-    			add_location(summary4, file$5, 143, 4, 3441);
+    			attr_dev(img4, "class", "svelte-10nzrjx");
+    			add_location(img4, file$5, 47, 8, 1803);
+    			attr_dev(p9, "class", "svelte-10nzrjx");
+    			add_location(p9, file$5, 48, 8, 1869);
+    			attr_dev(div9, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div9, file$5, 46, 6, 1769);
+    			attr_dev(div10, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div10, file$5, 45, 4, 1733);
+    			attr_dev(details3, "class", "svelte-10nzrjx");
+    			add_location(details3, file$5, 43, 2, 1668);
+    			attr_dev(summary4, "class", "svelte-10nzrjx");
+    			add_location(summary4, file$5, 53, 4, 1991);
     			if (img5.src !== (img5_src_value = "images/settings.png")) attr_dev(img5, "src", img5_src_value);
     			attr_dev(img5, "alt", "settings icon");
-    			attr_dev(img5, "class", "svelte-1k8b22d");
-    			add_location(img5, file$5, 146, 8, 3560);
-    			attr_dev(p10, "class", "svelte-1k8b22d");
-    			add_location(p10, file$5, 148, 10, 3666);
-    			attr_dev(p11, "class", "svelte-1k8b22d");
-    			add_location(p11, file$5, 149, 10, 3711);
-    			attr_dev(div11, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div11, file$5, 147, 8, 3622);
-    			attr_dev(div12, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div12, file$5, 145, 6, 3526);
-    			attr_dev(div13, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div13, file$5, 144, 4, 3490);
-    			attr_dev(details4, "class", "svelte-1k8b22d");
-    			add_location(details4, file$5, 142, 2, 3427);
-    			attr_dev(summary5, "class", "svelte-1k8b22d");
-    			add_location(summary5, file$5, 155, 4, 3858);
+    			attr_dev(img5, "class", "svelte-10nzrjx");
+    			add_location(img5, file$5, 56, 8, 2110);
+    			attr_dev(p10, "class", "svelte-10nzrjx");
+    			add_location(p10, file$5, 58, 10, 2216);
+    			attr_dev(p11, "class", "svelte-10nzrjx");
+    			add_location(p11, file$5, 59, 10, 2261);
+    			attr_dev(div11, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div11, file$5, 57, 8, 2172);
+    			attr_dev(div12, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div12, file$5, 55, 6, 2076);
+    			attr_dev(div13, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div13, file$5, 54, 4, 2040);
+    			attr_dev(details4, "class", "svelte-10nzrjx");
+    			add_location(details4, file$5, 52, 2, 1977);
+    			attr_dev(summary5, "class", "svelte-10nzrjx");
+    			add_location(summary5, file$5, 65, 4, 2408);
     			if (img6.src !== (img6_src_value = "images/settings.png")) attr_dev(img6, "src", img6_src_value);
     			attr_dev(img6, "alt", "settings icon");
-    			attr_dev(img6, "class", "svelte-1k8b22d");
-    			add_location(img6, file$5, 158, 8, 3977);
-    			attr_dev(p12, "class", "svelte-1k8b22d");
-    			add_location(p12, file$5, 160, 10, 4083);
-    			attr_dev(p13, "class", "svelte-1k8b22d");
-    			add_location(p13, file$5, 161, 10, 4128);
-    			attr_dev(p14, "class", "svelte-1k8b22d");
-    			add_location(p14, file$5, 162, 10, 4217);
-    			attr_dev(div14, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div14, file$5, 159, 8, 4039);
-    			attr_dev(div15, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div15, file$5, 157, 6, 3943);
-    			attr_dev(div16, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div16, file$5, 156, 4, 3907);
-    			attr_dev(details5, "class", "svelte-1k8b22d");
-    			add_location(details5, file$5, 154, 2, 3844);
-    			attr_dev(summary6, "class", "svelte-1k8b22d");
-    			add_location(summary6, file$5, 168, 4, 4347);
-    			if (img7.src !== (img7_src_value = "images/settings.png")) attr_dev(img7, "src", img7_src_value);
-    			attr_dev(img7, "alt", "settings icon");
-    			attr_dev(img7, "class", "svelte-1k8b22d");
-    			add_location(img7, file$5, 171, 8, 4474);
-    			attr_dev(p15, "class", "svelte-1k8b22d");
-    			add_location(p15, file$5, 173, 10, 4580);
-    			attr_dev(p16, "class", "svelte-1k8b22d");
-    			add_location(p16, file$5, 174, 10, 4625);
-    			attr_dev(div17, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div17, file$5, 172, 8, 4536);
-    			attr_dev(div18, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div18, file$5, 170, 6, 4440);
-    			attr_dev(div19, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div19, file$5, 169, 4, 4404);
-    			attr_dev(details6, "class", "svelte-1k8b22d");
-    			add_location(details6, file$5, 167, 2, 4333);
-    			attr_dev(section0, "class", "faq-section svelte-1k8b22d");
-    			add_location(section0, file$5, 93, 0, 1497);
-    			attr_dev(h31, "class", "svelte-1k8b22d");
-    			add_location(h31, file$5, 181, 2, 4792);
-    			attr_dev(summary7, "class", "svelte-1k8b22d");
-    			add_location(summary7, file$5, 183, 4, 4834);
-    			if (img8.src !== (img8_src_value = "images/dictionary.png")) attr_dev(img8, "src", img8_src_value);
-    			attr_dev(img8, "alt", "dictionary icon");
-    			attr_dev(img8, "class", "svelte-1k8b22d");
-    			add_location(img8, file$5, 186, 8, 4971);
-    			attr_dev(p17, "class", "svelte-1k8b22d");
-    			add_location(p17, file$5, 187, 8, 5037);
-    			attr_dev(div20, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div20, file$5, 185, 6, 4937);
-    			if (img9.src !== (img9_src_value = "images/add.png")) attr_dev(img9, "src", img9_src_value);
-    			attr_dev(img9, "alt", "add entry icon");
-    			attr_dev(img9, "class", "svelte-1k8b22d");
-    			add_location(img9, file$5, 190, 8, 5127);
-    			attr_dev(p18, "class", "svelte-1k8b22d");
-    			add_location(p18, file$5, 192, 10, 5229);
-    			attr_dev(p19, "class", "svelte-1k8b22d");
-    			add_location(p19, file$5, 193, 10, 5263);
-    			attr_dev(p20, "class", "svelte-1k8b22d");
-    			add_location(p20, file$5, 194, 10, 5408);
-    			attr_dev(div21, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div21, file$5, 191, 8, 5185);
-    			attr_dev(div22, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div22, file$5, 189, 6, 5093);
+    			attr_dev(img6, "class", "svelte-10nzrjx");
+    			add_location(img6, file$5, 68, 8, 2535);
+    			attr_dev(p12, "class", "svelte-10nzrjx");
+    			add_location(p12, file$5, 70, 10, 2641);
+    			attr_dev(p13, "class", "svelte-10nzrjx");
+    			add_location(p13, file$5, 71, 10, 2686);
+    			attr_dev(div14, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div14, file$5, 69, 8, 2597);
+    			attr_dev(div15, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div15, file$5, 67, 6, 2501);
+    			attr_dev(div16, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div16, file$5, 66, 4, 2465);
+    			attr_dev(details5, "class", "svelte-10nzrjx");
+    			add_location(details5, file$5, 64, 2, 2394);
+    			attr_dev(section0, "class", "faq-section svelte-10nzrjx");
+    			add_location(section0, file$5, 3, 0, 47);
+    			attr_dev(h31, "class", "svelte-10nzrjx");
+    			add_location(h31, file$5, 78, 2, 2853);
+    			attr_dev(summary6, "class", "svelte-10nzrjx");
+    			add_location(summary6, file$5, 80, 4, 2895);
+    			if (img7.src !== (img7_src_value = "images/dictionary.png")) attr_dev(img7, "src", img7_src_value);
+    			attr_dev(img7, "alt", "dictionary icon");
+    			attr_dev(img7, "class", "svelte-10nzrjx");
+    			add_location(img7, file$5, 83, 8, 3032);
+    			attr_dev(p14, "class", "svelte-10nzrjx");
+    			add_location(p14, file$5, 84, 8, 3098);
+    			attr_dev(div17, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div17, file$5, 82, 6, 2998);
+    			if (img8.src !== (img8_src_value = "images/add.png")) attr_dev(img8, "src", img8_src_value);
+    			attr_dev(img8, "alt", "add entry icon");
+    			attr_dev(img8, "class", "svelte-10nzrjx");
+    			add_location(img8, file$5, 87, 8, 3188);
+    			attr_dev(p15, "class", "svelte-10nzrjx");
+    			add_location(p15, file$5, 89, 10, 3290);
+    			attr_dev(p16, "class", "svelte-10nzrjx");
+    			add_location(p16, file$5, 90, 10, 3324);
+    			attr_dev(p17, "class", "svelte-10nzrjx");
+    			add_location(p17, file$5, 91, 10, 3469);
+    			attr_dev(div18, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div18, file$5, 88, 8, 3246);
+    			attr_dev(div19, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div19, file$5, 86, 6, 3154);
     			attr_dev(a0, "href", "/terms-of-service.html");
-    			add_location(a0, file$5, 197, 133, 5588);
-    			attr_dev(p21, "class", "svelte-1k8b22d");
-    			add_location(p21, file$5, 197, 6, 5461);
-    			attr_dev(div23, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div23, file$5, 184, 4, 4901);
-    			attr_dev(details7, "class", "svelte-1k8b22d");
-    			add_location(details7, file$5, 182, 2, 4820);
-    			attr_dev(summary8, "class", "svelte-1k8b22d");
-    			add_location(summary8, file$5, 201, 4, 5687);
-    			if (img10.src !== (img10_src_value = "images/dictionary.png")) attr_dev(img10, "src", img10_src_value);
-    			attr_dev(img10, "alt", "dictionary icon");
-    			attr_dev(img10, "class", "svelte-1k8b22d");
-    			add_location(img10, file$5, 204, 8, 5835);
-    			attr_dev(p22, "class", "svelte-1k8b22d");
-    			add_location(p22, file$5, 205, 8, 5901);
-    			attr_dev(div24, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div24, file$5, 203, 6, 5801);
-    			if (img11.src !== (img11_src_value = "images/word-book.png")) attr_dev(img11, "src", img11_src_value);
-    			attr_dev(img11, "alt", "word book icon");
-    			attr_dev(img11, "class", "svelte-1k8b22d");
-    			add_location(img11, file$5, 208, 8, 5991);
-    			attr_dev(p23, "class", "svelte-1k8b22d");
-    			add_location(p23, file$5, 210, 10, 6099);
-    			attr_dev(p24, "class", "svelte-1k8b22d");
-    			add_location(p24, file$5, 211, 10, 6145);
-    			attr_dev(p25, "class", "svelte-1k8b22d");
-    			add_location(p25, file$5, 212, 10, 6271);
-    			attr_dev(div25, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div25, file$5, 209, 8, 6055);
-    			attr_dev(div26, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div26, file$5, 207, 6, 5957);
-    			attr_dev(div27, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div27, file$5, 202, 4, 5765);
-    			attr_dev(details8, "class", "svelte-1k8b22d");
-    			add_location(details8, file$5, 200, 2, 5673);
-    			attr_dev(summary9, "class", "svelte-1k8b22d");
-    			add_location(summary9, file$5, 218, 4, 6422);
-    			attr_dev(p26, "class", "svelte-1k8b22d");
-    			add_location(p26, file$5, 220, 6, 6509);
-    			attr_dev(p27, "class", "svelte-1k8b22d");
-    			add_location(p27, file$5, 221, 6, 6667);
-    			attr_dev(div28, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div28, file$5, 219, 4, 6473);
-    			attr_dev(details9, "class", "svelte-1k8b22d");
-    			add_location(details9, file$5, 217, 2, 6408);
-    			attr_dev(summary10, "class", "svelte-1k8b22d");
-    			add_location(summary10, file$5, 225, 4, 6857);
+    			add_location(a0, file$5, 94, 133, 3649);
+    			attr_dev(p18, "class", "svelte-10nzrjx");
+    			add_location(p18, file$5, 94, 6, 3522);
+    			attr_dev(div20, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div20, file$5, 81, 4, 2962);
+    			attr_dev(details6, "class", "svelte-10nzrjx");
+    			add_location(details6, file$5, 79, 2, 2881);
+    			attr_dev(summary7, "class", "svelte-10nzrjx");
+    			add_location(summary7, file$5, 98, 4, 3748);
+    			if (img9.src !== (img9_src_value = "images/dictionary.png")) attr_dev(img9, "src", img9_src_value);
+    			attr_dev(img9, "alt", "dictionary icon");
+    			attr_dev(img9, "class", "svelte-10nzrjx");
+    			add_location(img9, file$5, 101, 8, 3896);
+    			attr_dev(p19, "class", "svelte-10nzrjx");
+    			add_location(p19, file$5, 102, 8, 3962);
+    			attr_dev(div21, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div21, file$5, 100, 6, 3862);
+    			if (img10.src !== (img10_src_value = "images/word-book.png")) attr_dev(img10, "src", img10_src_value);
+    			attr_dev(img10, "alt", "word book icon");
+    			attr_dev(img10, "class", "svelte-10nzrjx");
+    			add_location(img10, file$5, 105, 8, 4052);
+    			attr_dev(p20, "class", "svelte-10nzrjx");
+    			add_location(p20, file$5, 107, 10, 4160);
+    			attr_dev(p21, "class", "svelte-10nzrjx");
+    			add_location(p21, file$5, 108, 10, 4206);
+    			attr_dev(p22, "class", "svelte-10nzrjx");
+    			add_location(p22, file$5, 109, 10, 4332);
+    			attr_dev(div22, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div22, file$5, 106, 8, 4116);
+    			attr_dev(div23, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div23, file$5, 104, 6, 4018);
+    			attr_dev(div24, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div24, file$5, 99, 4, 3826);
+    			attr_dev(details7, "class", "svelte-10nzrjx");
+    			add_location(details7, file$5, 97, 2, 3734);
+    			attr_dev(summary8, "class", "svelte-10nzrjx");
+    			add_location(summary8, file$5, 115, 4, 4483);
+    			attr_dev(p23, "class", "svelte-10nzrjx");
+    			add_location(p23, file$5, 117, 6, 4570);
+    			attr_dev(p24, "class", "svelte-10nzrjx");
+    			add_location(p24, file$5, 118, 6, 4728);
+    			attr_dev(div25, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div25, file$5, 116, 4, 4534);
+    			attr_dev(details8, "class", "svelte-10nzrjx");
+    			add_location(details8, file$5, 114, 2, 4469);
+    			attr_dev(summary9, "class", "svelte-10nzrjx");
+    			add_location(summary9, file$5, 122, 4, 4918);
+    			if (img11.src !== (img11_src_value = "images/settings.png")) attr_dev(img11, "src", img11_src_value);
+    			attr_dev(img11, "alt", "settings icon");
+    			attr_dev(img11, "class", "svelte-10nzrjx");
+    			add_location(img11, file$5, 125, 8, 5047);
+    			attr_dev(p25, "class", "svelte-10nzrjx");
+    			add_location(p25, file$5, 127, 10, 5153);
+    			attr_dev(p26, "class", "svelte-10nzrjx");
+    			add_location(p26, file$5, 128, 10, 5198);
+    			attr_dev(p27, "class", "svelte-10nzrjx");
+    			add_location(p27, file$5, 129, 10, 5274);
+    			attr_dev(div26, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div26, file$5, 126, 8, 5109);
+    			attr_dev(div27, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div27, file$5, 124, 6, 5013);
+    			attr_dev(div28, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div28, file$5, 123, 4, 4977);
+    			attr_dev(details9, "class", "svelte-10nzrjx");
+    			add_location(details9, file$5, 121, 2, 4904);
+    			attr_dev(summary10, "class", "svelte-10nzrjx");
+    			add_location(summary10, file$5, 135, 4, 5395);
+    			attr_dev(p28, "class", "svelte-10nzrjx");
+    			add_location(p28, file$5, 137, 6, 5487);
+    			attr_dev(p29, "class", "svelte-10nzrjx");
+    			add_location(p29, file$5, 138, 6, 5653);
+    			attr_dev(div29, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div29, file$5, 136, 4, 5451);
+    			attr_dev(details10, "class", "svelte-10nzrjx");
+    			add_location(details10, file$5, 134, 2, 5381);
+    			attr_dev(summary11, "class", "svelte-10nzrjx");
+    			add_location(summary11, file$5, 142, 4, 5843);
     			if (img12.src !== (img12_src_value = "images/settings.png")) attr_dev(img12, "src", img12_src_value);
     			attr_dev(img12, "alt", "settings icon");
-    			attr_dev(img12, "class", "svelte-1k8b22d");
-    			add_location(img12, file$5, 228, 8, 6986);
-    			attr_dev(p28, "class", "svelte-1k8b22d");
-    			add_location(p28, file$5, 230, 10, 7092);
-    			attr_dev(p29, "class", "svelte-1k8b22d");
-    			add_location(p29, file$5, 231, 10, 7137);
-    			attr_dev(p30, "class", "svelte-1k8b22d");
-    			add_location(p30, file$5, 232, 10, 7213);
-    			attr_dev(div29, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div29, file$5, 229, 8, 7048);
-    			attr_dev(div30, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div30, file$5, 227, 6, 6952);
-    			attr_dev(div31, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div31, file$5, 226, 4, 6916);
-    			attr_dev(details10, "class", "svelte-1k8b22d");
-    			add_location(details10, file$5, 224, 2, 6843);
-    			attr_dev(summary11, "class", "svelte-1k8b22d");
-    			add_location(summary11, file$5, 238, 4, 7334);
-    			attr_dev(p31, "class", "svelte-1k8b22d");
-    			add_location(p31, file$5, 240, 6, 7426);
-    			attr_dev(p32, "class", "svelte-1k8b22d");
-    			add_location(p32, file$5, 241, 6, 7592);
-    			attr_dev(div32, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div32, file$5, 239, 4, 7390);
-    			attr_dev(details11, "class", "svelte-1k8b22d");
-    			add_location(details11, file$5, 237, 2, 7320);
-    			attr_dev(summary12, "class", "svelte-1k8b22d");
-    			add_location(summary12, file$5, 245, 4, 7782);
+    			attr_dev(img12, "class", "svelte-10nzrjx");
+    			add_location(img12, file$5, 145, 8, 5977);
+    			attr_dev(p30, "class", "svelte-10nzrjx");
+    			add_location(p30, file$5, 147, 10, 6083);
+    			attr_dev(p31, "class", "svelte-10nzrjx");
+    			add_location(p31, file$5, 148, 10, 6161);
+    			attr_dev(p32, "class", "svelte-10nzrjx");
+    			add_location(p32, file$5, 149, 10, 6217);
+    			attr_dev(div30, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div30, file$5, 146, 8, 6039);
+    			attr_dev(div31, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div31, file$5, 144, 6, 5943);
+    			attr_dev(div32, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div32, file$5, 143, 4, 5907);
+    			attr_dev(details11, "class", "svelte-10nzrjx");
+    			add_location(details11, file$5, 141, 2, 5829);
+    			attr_dev(summary12, "class", "svelte-10nzrjx");
+    			add_location(summary12, file$5, 155, 4, 6428);
     			if (img13.src !== (img13_src_value = "images/settings.png")) attr_dev(img13, "src", img13_src_value);
     			attr_dev(img13, "alt", "settings icon");
-    			attr_dev(img13, "class", "svelte-1k8b22d");
-    			add_location(img13, file$5, 248, 8, 7916);
-    			attr_dev(p33, "class", "svelte-1k8b22d");
-    			add_location(p33, file$5, 250, 10, 8022);
-    			attr_dev(p34, "class", "svelte-1k8b22d");
-    			add_location(p34, file$5, 251, 10, 8100);
-    			attr_dev(p35, "class", "svelte-1k8b22d");
-    			add_location(p35, file$5, 252, 10, 8156);
-    			attr_dev(div33, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div33, file$5, 249, 8, 7978);
-    			attr_dev(div34, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div34, file$5, 247, 6, 7882);
-    			attr_dev(div35, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div35, file$5, 246, 4, 7846);
-    			attr_dev(details12, "class", "svelte-1k8b22d");
-    			add_location(details12, file$5, 244, 2, 7768);
-    			attr_dev(summary13, "class", "svelte-1k8b22d");
-    			add_location(summary13, file$5, 258, 4, 8367);
+    			attr_dev(img13, "class", "svelte-10nzrjx");
+    			add_location(img13, file$5, 158, 8, 6562);
+    			attr_dev(p33, "class", "svelte-10nzrjx");
+    			add_location(p33, file$5, 159, 8, 6624);
+    			attr_dev(div33, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div33, file$5, 157, 6, 6528);
+    			attr_dev(div34, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div34, file$5, 156, 4, 6492);
+    			attr_dev(details12, "class", "svelte-10nzrjx");
+    			add_location(details12, file$5, 154, 2, 6414);
+    			attr_dev(summary13, "class", "svelte-10nzrjx");
+    			add_location(summary13, file$5, 164, 4, 6740);
     			if (img14.src !== (img14_src_value = "images/settings.png")) attr_dev(img14, "src", img14_src_value);
     			attr_dev(img14, "alt", "settings icon");
-    			attr_dev(img14, "class", "svelte-1k8b22d");
-    			add_location(img14, file$5, 261, 8, 8501);
-    			attr_dev(p36, "class", "svelte-1k8b22d");
-    			add_location(p36, file$5, 262, 8, 8563);
-    			attr_dev(div36, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div36, file$5, 260, 6, 8467);
-    			attr_dev(div37, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div37, file$5, 259, 4, 8431);
-    			attr_dev(details13, "class", "svelte-1k8b22d");
-    			add_location(details13, file$5, 257, 2, 8353);
-    			attr_dev(summary14, "class", "svelte-1k8b22d");
-    			add_location(summary14, file$5, 267, 4, 8679);
+    			attr_dev(img14, "class", "svelte-10nzrjx");
+    			add_location(img14, file$5, 167, 8, 6864);
+    			attr_dev(p34, "class", "svelte-10nzrjx");
+    			add_location(p34, file$5, 168, 8, 6926);
+    			attr_dev(div35, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div35, file$5, 166, 6, 6830);
+    			attr_dev(div36, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div36, file$5, 165, 4, 6794);
+    			attr_dev(details13, "class", "svelte-10nzrjx");
+    			add_location(details13, file$5, 163, 2, 6726);
+    			attr_dev(summary14, "class", "svelte-10nzrjx");
+    			add_location(summary14, file$5, 173, 4, 7052);
     			if (img15.src !== (img15_src_value = "images/settings.png")) attr_dev(img15, "src", img15_src_value);
     			attr_dev(img15, "alt", "settings icon");
-    			attr_dev(img15, "class", "svelte-1k8b22d");
-    			add_location(img15, file$5, 270, 8, 8803);
-    			attr_dev(p37, "class", "svelte-1k8b22d");
-    			add_location(p37, file$5, 271, 8, 8865);
-    			attr_dev(div38, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div38, file$5, 269, 6, 8769);
-    			attr_dev(div39, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div39, file$5, 268, 4, 8733);
-    			attr_dev(details14, "class", "svelte-1k8b22d");
-    			add_location(details14, file$5, 266, 2, 8665);
-    			attr_dev(summary15, "class", "svelte-1k8b22d");
-    			add_location(summary15, file$5, 276, 4, 8991);
+    			attr_dev(img15, "class", "svelte-10nzrjx");
+    			add_location(img15, file$5, 176, 8, 7186);
+    			attr_dev(p35, "class", "svelte-10nzrjx");
+    			add_location(p35, file$5, 177, 8, 7248);
+    			attr_dev(div37, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div37, file$5, 175, 6, 7152);
+    			attr_dev(div38, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div38, file$5, 174, 4, 7116);
+    			attr_dev(details14, "class", "svelte-10nzrjx");
+    			add_location(details14, file$5, 172, 2, 7038);
+    			attr_dev(section1, "class", "faq-section svelte-10nzrjx");
+    			add_location(section1, file$5, 77, 0, 2821);
+    			attr_dev(h32, "class", "svelte-10nzrjx");
+    			add_location(h32, file$5, 183, 2, 7392);
+    			attr_dev(summary15, "class", "svelte-10nzrjx");
+    			add_location(summary15, file$5, 185, 4, 7434);
+    			attr_dev(p36, "class", "svelte-10nzrjx");
+    			add_location(p36, file$5, 187, 6, 7519);
+    			add_location(b0, file$5, 189, 11, 7609);
+    			attr_dev(p37, "class", "svelte-10nzrjx");
+    			add_location(p37, file$5, 189, 8, 7606);
+    			add_location(b1, file$5, 190, 11, 7696);
+    			attr_dev(p38, "class", "svelte-10nzrjx");
+    			add_location(p38, file$5, 190, 8, 7693);
+    			add_location(div39, file$5, 188, 6, 7592);
+    			attr_dev(p39, "class", "svelte-10nzrjx");
+    			add_location(p39, file$5, 192, 6, 7784);
+    			attr_dev(div40, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div40, file$5, 186, 4, 7483);
+    			attr_dev(details15, "class", "svelte-10nzrjx");
+    			add_location(details15, file$5, 184, 2, 7420);
+    			attr_dev(summary16, "class", "svelte-10nzrjx");
+    			add_location(summary16, file$5, 196, 4, 7930);
+    			attr_dev(a1, "href", "#footer");
+    			add_location(a1, file$5, 198, 112, 8123);
+    			attr_dev(p40, "class", "svelte-10nzrjx");
+    			add_location(p40, file$5, 198, 6, 8017);
+    			attr_dev(div41, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div41, file$5, 197, 4, 7981);
+    			attr_dev(details16, "class", "svelte-10nzrjx");
+    			add_location(details16, file$5, 195, 2, 7916);
+    			attr_dev(summary17, "class", "svelte-10nzrjx");
+    			add_location(summary17, file$5, 202, 4, 8218);
+    			attr_dev(p41, "class", "svelte-10nzrjx");
+    			add_location(p41, file$5, 204, 6, 8328);
     			if (img16.src !== (img16_src_value = "images/settings.png")) attr_dev(img16, "src", img16_src_value);
     			attr_dev(img16, "alt", "settings icon");
-    			attr_dev(img16, "class", "svelte-1k8b22d");
-    			add_location(img16, file$5, 279, 8, 9125);
-    			attr_dev(p38, "class", "svelte-1k8b22d");
-    			add_location(p38, file$5, 280, 8, 9187);
-    			attr_dev(div40, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div40, file$5, 278, 6, 9091);
-    			attr_dev(div41, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div41, file$5, 277, 4, 9055);
-    			attr_dev(details15, "class", "svelte-1k8b22d");
-    			add_location(details15, file$5, 275, 2, 8977);
-    			attr_dev(section1, "class", "faq-section svelte-1k8b22d");
-    			add_location(section1, file$5, 180, 0, 4760);
-    			attr_dev(h32, "class", "svelte-1k8b22d");
-    			add_location(h32, file$5, 286, 2, 9331);
-    			attr_dev(summary16, "class", "svelte-1k8b22d");
-    			add_location(summary16, file$5, 288, 4, 9373);
-    			attr_dev(p39, "class", "svelte-1k8b22d");
-    			add_location(p39, file$5, 290, 6, 9458);
-    			add_location(b0, file$5, 292, 11, 9548);
-    			attr_dev(p40, "class", "svelte-1k8b22d");
-    			add_location(p40, file$5, 292, 8, 9545);
-    			add_location(b1, file$5, 293, 11, 9635);
-    			attr_dev(p41, "class", "svelte-1k8b22d");
-    			add_location(p41, file$5, 293, 8, 9632);
-    			add_location(div42, file$5, 291, 6, 9531);
-    			attr_dev(p42, "class", "svelte-1k8b22d");
-    			add_location(p42, file$5, 295, 6, 9723);
-    			attr_dev(div43, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div43, file$5, 289, 4, 9422);
-    			attr_dev(details16, "class", "svelte-1k8b22d");
-    			add_location(details16, file$5, 287, 2, 9359);
-    			attr_dev(summary17, "class", "svelte-1k8b22d");
-    			add_location(summary17, file$5, 299, 4, 9869);
-    			attr_dev(a1, "href", "#footer");
-    			add_location(a1, file$5, 301, 112, 10062);
-    			attr_dev(p43, "class", "svelte-1k8b22d");
-    			add_location(p43, file$5, 301, 6, 9956);
-    			attr_dev(div44, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div44, file$5, 300, 4, 9920);
-    			attr_dev(details17, "class", "svelte-1k8b22d");
-    			add_location(details17, file$5, 298, 2, 9855);
-    			attr_dev(summary18, "class", "svelte-1k8b22d");
-    			add_location(summary18, file$5, 305, 4, 10157);
-    			attr_dev(p44, "class", "svelte-1k8b22d");
-    			add_location(p44, file$5, 307, 6, 10267);
+    			attr_dev(img16, "class", "svelte-10nzrjx");
+    			add_location(img16, file$5, 206, 8, 8492);
+    			attr_dev(p42, "class", "svelte-10nzrjx");
+    			add_location(p42, file$5, 208, 10, 8598);
+    			attr_dev(p43, "class", "svelte-10nzrjx");
+    			add_location(p43, file$5, 209, 10, 8643);
+    			attr_dev(p44, "class", "svelte-10nzrjx");
+    			add_location(p44, file$5, 210, 10, 8729);
+    			attr_dev(div42, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div42, file$5, 207, 8, 8554);
+    			attr_dev(div43, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div43, file$5, 205, 6, 8458);
+    			attr_dev(a2, "href", "/terms-of-service.html");
+    			add_location(a2, file$5, 213, 255, 9061);
+    			attr_dev(p45, "class", "svelte-10nzrjx");
+    			add_location(p45, file$5, 213, 6, 8812);
+    			attr_dev(div44, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div44, file$5, 203, 4, 8292);
+    			attr_dev(details17, "class", "svelte-10nzrjx");
+    			add_location(details17, file$5, 201, 2, 8204);
+    			attr_dev(summary18, "class", "svelte-10nzrjx");
+    			add_location(summary18, file$5, 217, 4, 9160);
+    			attr_dev(p46, "class", "svelte-10nzrjx");
+    			add_location(p46, file$5, 219, 6, 9283);
+    			attr_dev(div45, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div45, file$5, 218, 4, 9247);
+    			attr_dev(details18, "class", "svelte-10nzrjx");
+    			add_location(details18, file$5, 216, 2, 9146);
+    			attr_dev(summary19, "class", "svelte-10nzrjx");
+    			add_location(summary19, file$5, 223, 4, 9509);
+    			attr_dev(a3, "href", "/terms-of-service.html");
+    			add_location(a3, file$5, 225, 88, 9672);
+    			attr_dev(a4, "href", "/privacy-policy.html");
+    			add_location(a4, file$5, 225, 146, 9730);
+    			attr_dev(p47, "class", "svelte-10nzrjx");
+    			add_location(p47, file$5, 225, 6, 9590);
+    			attr_dev(div46, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div46, file$5, 224, 4, 9554);
+    			attr_dev(details19, "class", "svelte-10nzrjx");
+    			add_location(details19, file$5, 222, 2, 9495);
+    			attr_dev(section2, "class", "faq-section svelte-10nzrjx");
+    			add_location(section2, file$5, 182, 0, 7360);
+    			attr_dev(h33, "class", "svelte-10nzrjx");
+    			add_location(h33, file$5, 230, 2, 9852);
+    			attr_dev(summary20, "class", "svelte-10nzrjx");
+    			add_location(summary20, file$5, 232, 4, 9901);
     			if (img17.src !== (img17_src_value = "images/settings.png")) attr_dev(img17, "src", img17_src_value);
     			attr_dev(img17, "alt", "settings icon");
-    			attr_dev(img17, "class", "svelte-1k8b22d");
-    			add_location(img17, file$5, 309, 8, 10431);
-    			attr_dev(p45, "class", "svelte-1k8b22d");
-    			add_location(p45, file$5, 311, 10, 10537);
-    			attr_dev(p46, "class", "svelte-1k8b22d");
-    			add_location(p46, file$5, 312, 10, 10582);
-    			attr_dev(p47, "class", "svelte-1k8b22d");
-    			add_location(p47, file$5, 313, 10, 10668);
-    			attr_dev(div45, "class", "iconed-text-wrapper svelte-1k8b22d");
-    			add_location(div45, file$5, 310, 8, 10493);
-    			attr_dev(div46, "class", "iconed-text svelte-1k8b22d");
-    			add_location(div46, file$5, 308, 6, 10397);
-    			attr_dev(a2, "href", "/terms-of-service.html");
-    			add_location(a2, file$5, 316, 255, 11000);
-    			attr_dev(p48, "class", "svelte-1k8b22d");
-    			add_location(p48, file$5, 316, 6, 10751);
-    			attr_dev(div47, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div47, file$5, 306, 4, 10231);
-    			attr_dev(details18, "class", "svelte-1k8b22d");
-    			add_location(details18, file$5, 304, 2, 10143);
-    			attr_dev(summary19, "class", "svelte-1k8b22d");
-    			add_location(summary19, file$5, 320, 4, 11099);
-    			attr_dev(p49, "class", "svelte-1k8b22d");
-    			add_location(p49, file$5, 322, 6, 11222);
-    			attr_dev(div48, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div48, file$5, 321, 4, 11186);
-    			attr_dev(details19, "class", "svelte-1k8b22d");
-    			add_location(details19, file$5, 319, 2, 11085);
-    			attr_dev(summary20, "class", "svelte-1k8b22d");
-    			add_location(summary20, file$5, 326, 4, 11448);
-    			attr_dev(a3, "href", "/terms-of-service.html");
-    			add_location(a3, file$5, 328, 88, 11611);
-    			attr_dev(a4, "href", "/privacy-policy.html");
-    			add_location(a4, file$5, 328, 146, 11669);
-    			attr_dev(p50, "class", "svelte-1k8b22d");
-    			add_location(p50, file$5, 328, 6, 11529);
-    			attr_dev(div49, "class", "details-wrapper svelte-1k8b22d");
-    			add_location(div49, file$5, 327, 4, 11493);
-    			attr_dev(details20, "class", "svelte-1k8b22d");
-    			add_location(details20, file$5, 325, 2, 11434);
-    			attr_dev(section2, "class", "faq-section svelte-1k8b22d");
-    			add_location(section2, file$5, 285, 0, 9299);
+    			attr_dev(img17, "class", "svelte-10nzrjx");
+    			add_location(img17, file$5, 235, 8, 10020);
+    			attr_dev(p48, "class", "svelte-10nzrjx");
+    			add_location(p48, file$5, 237, 10, 10126);
+    			attr_dev(p49, "class", "svelte-10nzrjx");
+    			add_location(p49, file$5, 238, 10, 10171);
+    			attr_dev(p50, "class", "svelte-10nzrjx");
+    			add_location(p50, file$5, 239, 10, 10260);
+    			attr_dev(div47, "class", "iconed-text-wrapper svelte-10nzrjx");
+    			add_location(div47, file$5, 236, 8, 10082);
+    			attr_dev(div48, "class", "iconed-text svelte-10nzrjx");
+    			add_location(div48, file$5, 234, 6, 9986);
+    			attr_dev(div49, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div49, file$5, 233, 4, 9950);
+    			attr_dev(details20, "class", "svelte-10nzrjx");
+    			add_location(details20, file$5, 231, 2, 9887);
+    			attr_dev(summary21, "class", "svelte-10nzrjx");
+    			add_location(summary21, file$5, 245, 4, 10390);
+    			attr_dev(a5, "href", "mailto:info@lemmichat.com?subject='Contact from Website'");
+    			add_location(a5, file$5, 248, 29, 10501);
+    			attr_dev(p51, "class", "svelte-10nzrjx");
+    			add_location(p51, file$5, 247, 6, 10468);
+    			attr_dev(div50, "class", "details-wrapper svelte-10nzrjx");
+    			add_location(div50, file$5, 246, 4, 10432);
+    			attr_dev(details21, "class", "svelte-10nzrjx");
+    			add_location(details21, file$5, 244, 2, 10376);
+    			attr_dev(section3, "class", "faq-section svelte-10nzrjx");
+    			add_location(section3, file$5, 229, 0, 9820);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4006,201 +4029,212 @@ var app = (function () {
     			append_dev(div14, p12);
     			append_dev(div14, t48);
     			append_dev(div14, p13);
-    			append_dev(div14, t50);
-    			append_dev(div14, p14);
-    			append_dev(section0, t52);
-    			append_dev(section0, details6);
-    			append_dev(details6, summary6);
-    			append_dev(details6, t54);
-    			append_dev(details6, div19);
-    			append_dev(div19, div18);
-    			append_dev(div18, img7);
-    			append_dev(div18, t55);
-    			append_dev(div18, div17);
-    			append_dev(div17, p15);
-    			append_dev(div17, t57);
-    			append_dev(div17, p16);
-    			insert_dev(target, t59, anchor);
+    			insert_dev(target, t50, anchor);
     			insert_dev(target, section1, anchor);
     			append_dev(section1, h31);
-    			append_dev(section1, t61);
+    			append_dev(section1, t52);
+    			append_dev(section1, details6);
+    			append_dev(details6, summary6);
+    			append_dev(details6, t54);
+    			append_dev(details6, div20);
+    			append_dev(div20, div17);
+    			append_dev(div17, img7);
+    			append_dev(div17, t55);
+    			append_dev(div17, p14);
+    			append_dev(div20, t57);
+    			append_dev(div20, div19);
+    			append_dev(div19, img8);
+    			append_dev(div19, t58);
+    			append_dev(div19, div18);
+    			append_dev(div18, p15);
+    			append_dev(div18, t60);
+    			append_dev(div18, p16);
+    			append_dev(div18, t62);
+    			append_dev(div18, p17);
+    			append_dev(div20, t64);
+    			append_dev(div20, p18);
+    			append_dev(p18, t65);
+    			append_dev(p18, a0);
+    			append_dev(section1, t67);
     			append_dev(section1, details7);
     			append_dev(details7, summary7);
-    			append_dev(details7, t63);
-    			append_dev(details7, div23);
-    			append_dev(div23, div20);
-    			append_dev(div20, img8);
-    			append_dev(div20, t64);
-    			append_dev(div20, p17);
-    			append_dev(div23, t66);
-    			append_dev(div23, div22);
-    			append_dev(div22, img9);
-    			append_dev(div22, t67);
-    			append_dev(div22, div21);
-    			append_dev(div21, p18);
-    			append_dev(div21, t69);
+    			append_dev(details7, t69);
+    			append_dev(details7, div24);
+    			append_dev(div24, div21);
+    			append_dev(div21, img9);
+    			append_dev(div21, t70);
     			append_dev(div21, p19);
-    			append_dev(div21, t71);
-    			append_dev(div21, p20);
+    			append_dev(div24, t72);
+    			append_dev(div24, div23);
+    			append_dev(div23, img10);
     			append_dev(div23, t73);
-    			append_dev(div23, p21);
-    			append_dev(p21, t74);
-    			append_dev(p21, a0);
-    			append_dev(section1, t76);
+    			append_dev(div23, div22);
+    			append_dev(div22, p20);
+    			append_dev(div22, t75);
+    			append_dev(div22, p21);
+    			append_dev(div22, t77);
+    			append_dev(div22, p22);
+    			append_dev(section1, t79);
     			append_dev(section1, details8);
     			append_dev(details8, summary8);
-    			append_dev(details8, t78);
-    			append_dev(details8, div27);
-    			append_dev(div27, div24);
-    			append_dev(div24, img10);
-    			append_dev(div24, t79);
-    			append_dev(div24, p22);
-    			append_dev(div27, t81);
-    			append_dev(div27, div26);
-    			append_dev(div26, img11);
-    			append_dev(div26, t82);
-    			append_dev(div26, div25);
+    			append_dev(details8, t81);
+    			append_dev(details8, div25);
     			append_dev(div25, p23);
-    			append_dev(div25, t84);
+    			append_dev(div25, t83);
     			append_dev(div25, p24);
-    			append_dev(div25, t86);
-    			append_dev(div25, p25);
-    			append_dev(section1, t88);
+    			append_dev(section1, t85);
     			append_dev(section1, details9);
     			append_dev(details9, summary9);
-    			append_dev(details9, t90);
+    			append_dev(details9, t87);
     			append_dev(details9, div28);
-    			append_dev(div28, p26);
-    			append_dev(div28, t92);
-    			append_dev(div28, p27);
+    			append_dev(div28, div27);
+    			append_dev(div27, img11);
+    			append_dev(div27, t88);
+    			append_dev(div27, div26);
+    			append_dev(div26, p25);
+    			append_dev(div26, t90);
+    			append_dev(div26, p26);
+    			append_dev(div26, t92);
+    			append_dev(div26, p27);
     			append_dev(section1, t94);
     			append_dev(section1, details10);
     			append_dev(details10, summary10);
     			append_dev(details10, t96);
-    			append_dev(details10, div31);
-    			append_dev(div31, div30);
-    			append_dev(div30, img12);
-    			append_dev(div30, t97);
-    			append_dev(div30, div29);
+    			append_dev(details10, div29);
     			append_dev(div29, p28);
-    			append_dev(div29, t99);
+    			append_dev(div29, t98);
     			append_dev(div29, p29);
-    			append_dev(div29, t101);
-    			append_dev(div29, p30);
-    			append_dev(section1, t103);
+    			append_dev(section1, t100);
     			append_dev(section1, details11);
     			append_dev(details11, summary11);
-    			append_dev(details11, t105);
+    			append_dev(details11, t102);
     			append_dev(details11, div32);
-    			append_dev(div32, p31);
-    			append_dev(div32, t107);
-    			append_dev(div32, p32);
+    			append_dev(div32, div31);
+    			append_dev(div31, img12);
+    			append_dev(div31, t103);
+    			append_dev(div31, div30);
+    			append_dev(div30, p30);
+    			append_dev(div30, t105);
+    			append_dev(div30, p31);
+    			append_dev(div30, t107);
+    			append_dev(div30, p32);
     			append_dev(section1, t109);
     			append_dev(section1, details12);
     			append_dev(details12, summary12);
     			append_dev(details12, t111);
-    			append_dev(details12, div35);
-    			append_dev(div35, div34);
-    			append_dev(div34, img13);
-    			append_dev(div34, t112);
+    			append_dev(details12, div34);
     			append_dev(div34, div33);
+    			append_dev(div33, img13);
+    			append_dev(div33, t112);
     			append_dev(div33, p33);
-    			append_dev(div33, t114);
-    			append_dev(div33, p34);
-    			append_dev(div33, t116);
-    			append_dev(div33, p35);
-    			append_dev(section1, t118);
+    			append_dev(section1, t114);
     			append_dev(section1, details13);
     			append_dev(details13, summary13);
-    			append_dev(details13, t120);
-    			append_dev(details13, div37);
-    			append_dev(div37, div36);
-    			append_dev(div36, img14);
-    			append_dev(div36, t121);
-    			append_dev(div36, p36);
-    			append_dev(section1, t123);
+    			append_dev(details13, t116);
+    			append_dev(details13, div36);
+    			append_dev(div36, div35);
+    			append_dev(div35, img14);
+    			append_dev(div35, t117);
+    			append_dev(div35, p34);
+    			append_dev(section1, t119);
     			append_dev(section1, details14);
     			append_dev(details14, summary14);
-    			append_dev(details14, t125);
-    			append_dev(details14, div39);
-    			append_dev(div39, div38);
-    			append_dev(div38, img15);
-    			append_dev(div38, t126);
-    			append_dev(div38, p37);
-    			append_dev(section1, t128);
-    			append_dev(section1, details15);
-    			append_dev(details15, summary15);
-    			append_dev(details15, t130);
-    			append_dev(details15, div41);
-    			append_dev(div41, div40);
-    			append_dev(div40, img16);
-    			append_dev(div40, t131);
-    			append_dev(div40, p38);
-    			insert_dev(target, t133, anchor);
+    			append_dev(details14, t121);
+    			append_dev(details14, div38);
+    			append_dev(div38, div37);
+    			append_dev(div37, img15);
+    			append_dev(div37, t122);
+    			append_dev(div37, p35);
+    			insert_dev(target, t124, anchor);
     			insert_dev(target, section2, anchor);
     			append_dev(section2, h32);
-    			append_dev(section2, t135);
+    			append_dev(section2, t126);
+    			append_dev(section2, details15);
+    			append_dev(details15, summary15);
+    			append_dev(details15, t128);
+    			append_dev(details15, div40);
+    			append_dev(div40, p36);
+    			append_dev(div40, t130);
+    			append_dev(div40, div39);
+    			append_dev(div39, p37);
+    			append_dev(p37, b0);
+    			append_dev(div39, t132);
+    			append_dev(div39, p38);
+    			append_dev(p38, b1);
+    			append_dev(div40, t134);
+    			append_dev(div40, p39);
+    			append_dev(section2, t136);
     			append_dev(section2, details16);
     			append_dev(details16, summary16);
-    			append_dev(details16, t137);
-    			append_dev(details16, div43);
-    			append_dev(div43, p39);
-    			append_dev(div43, t139);
-    			append_dev(div43, div42);
-    			append_dev(div42, p40);
-    			append_dev(p40, b0);
-    			append_dev(div42, t141);
-    			append_dev(div42, p41);
-    			append_dev(p41, b1);
-    			append_dev(div43, t143);
-    			append_dev(div43, p42);
-    			append_dev(section2, t145);
+    			append_dev(details16, t138);
+    			append_dev(details16, div41);
+    			append_dev(div41, p40);
+    			append_dev(p40, t139);
+    			append_dev(p40, a1);
+    			append_dev(p40, t141);
+    			append_dev(section2, t142);
     			append_dev(section2, details17);
     			append_dev(details17, summary17);
-    			append_dev(details17, t147);
+    			append_dev(details17, t144);
     			append_dev(details17, div44);
-    			append_dev(div44, p43);
-    			append_dev(p43, t148);
-    			append_dev(p43, a1);
-    			append_dev(p43, t150);
-    			append_dev(section2, t151);
+    			append_dev(div44, p41);
+    			append_dev(div44, t146);
+    			append_dev(div44, div43);
+    			append_dev(div43, img16);
+    			append_dev(div43, t147);
+    			append_dev(div43, div42);
+    			append_dev(div42, p42);
+    			append_dev(div42, t149);
+    			append_dev(div42, p43);
+    			append_dev(div42, t151);
+    			append_dev(div42, p44);
+    			append_dev(div44, t153);
+    			append_dev(div44, p45);
+    			append_dev(p45, t154);
+    			append_dev(p45, a2);
+    			append_dev(p45, t156);
+    			append_dev(section2, t157);
     			append_dev(section2, details18);
     			append_dev(details18, summary18);
-    			append_dev(details18, t153);
-    			append_dev(details18, div47);
-    			append_dev(div47, p44);
-    			append_dev(div47, t155);
-    			append_dev(div47, div46);
-    			append_dev(div46, img17);
-    			append_dev(div46, t156);
-    			append_dev(div46, div45);
-    			append_dev(div45, p45);
-    			append_dev(div45, t158);
+    			append_dev(details18, t159);
+    			append_dev(details18, div45);
     			append_dev(div45, p46);
-    			append_dev(div45, t160);
-    			append_dev(div45, p47);
-    			append_dev(div47, t162);
-    			append_dev(div47, p48);
-    			append_dev(p48, t163);
-    			append_dev(p48, a2);
-    			append_dev(p48, t165);
-    			append_dev(section2, t166);
+    			append_dev(section2, t161);
     			append_dev(section2, details19);
     			append_dev(details19, summary19);
-    			append_dev(details19, t168);
-    			append_dev(details19, div48);
-    			append_dev(div48, p49);
-    			append_dev(section2, t170);
-    			append_dev(section2, details20);
+    			append_dev(details19, t163);
+    			append_dev(details19, div46);
+    			append_dev(div46, p47);
+    			append_dev(p47, t164);
+    			append_dev(p47, a3);
+    			append_dev(p47, t166);
+    			append_dev(p47, a4);
+    			append_dev(p47, t168);
+    			insert_dev(target, t169, anchor);
+    			insert_dev(target, section3, anchor);
+    			append_dev(section3, h33);
+    			append_dev(section3, t171);
+    			append_dev(section3, details20);
     			append_dev(details20, summary20);
-    			append_dev(details20, t172);
+    			append_dev(details20, t173);
     			append_dev(details20, div49);
-    			append_dev(div49, p50);
-    			append_dev(p50, t173);
-    			append_dev(p50, a3);
-    			append_dev(p50, t175);
-    			append_dev(p50, a4);
-    			append_dev(p50, t177);
+    			append_dev(div49, div48);
+    			append_dev(div48, img17);
+    			append_dev(div48, t174);
+    			append_dev(div48, div47);
+    			append_dev(div47, p48);
+    			append_dev(div47, t176);
+    			append_dev(div47, p49);
+    			append_dev(div47, t178);
+    			append_dev(div47, p50);
+    			append_dev(section3, t180);
+    			append_dev(section3, details21);
+    			append_dev(details21, summary21);
+    			append_dev(details21, t182);
+    			append_dev(details21, div50);
+    			append_dev(div50, p51);
+    			append_dev(p51, t183);
+    			append_dev(p51, a5);
     		},
     		p: noop,
     		i: noop,
@@ -4209,10 +4243,12 @@ var app = (function () {
     			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(section0);
-    			if (detaching) detach_dev(t59);
+    			if (detaching) detach_dev(t50);
     			if (detaching) detach_dev(section1);
-    			if (detaching) detach_dev(t133);
+    			if (detaching) detach_dev(t124);
     			if (detaching) detach_dev(section2);
+    			if (detaching) detach_dev(t169);
+    			if (detaching) detach_dev(section3);
     		}
     	};
 
@@ -4227,7 +4263,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$5($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("FAQs", slots, []);
     	const writable_props = [];
@@ -4236,7 +4272,6 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FAQs> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ About });
     	return [];
     }
 
@@ -4293,7 +4328,7 @@ var app = (function () {
     }
 
     // (158:8) {#if error}
-    function create_if_block$2(ctx) {
+    function create_if_block$1(ctx) {
     	let p;
     	let t;
 
@@ -4318,7 +4353,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(158:8) {#if error}",
     		ctx
@@ -4367,7 +4402,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*success*/ ctx[4] && create_if_block_1$1(ctx);
-    	let if_block1 = /*error*/ ctx[5] && create_if_block$2(ctx);
+    	let if_block1 = /*error*/ ctx[5] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -4549,7 +4584,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block$2(ctx);
+    					if_block1 = create_if_block$1(ctx);
     					if_block1.c();
     					if_block1.m(div1, null);
     				}
@@ -4771,7 +4806,7 @@ var app = (function () {
     }
 
     // (168:6) {#if newsletterMsg && newsletterSuccess}
-    function create_if_block$3(ctx) {
+    function create_if_block$2(ctx) {
     	let p;
     	let t;
 
@@ -4801,7 +4836,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(168:6) {#if newsletterMsg && newsletterSuccess}",
     		ctx
@@ -4886,7 +4921,7 @@ var app = (function () {
     	let a5;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*newsletterMsg*/ ctx[2] && /*newsletterSuccess*/ ctx[1]) return create_if_block$3;
+    		if (/*newsletterMsg*/ ctx[2] && /*newsletterSuccess*/ ctx[1]) return create_if_block$2;
     		return create_else_block;
     	}
 
@@ -5204,7 +5239,7 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file$8, 27, 0, 753);
+    			add_location(main, file$8, 30, 0, 831);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5298,8 +5333,12 @@ var app = (function () {
 
     	let page = pages.home;
 
-    	let handleClickNavigation = selected => {
+    	let handleClickNavigation = (selected, scrollToTop = false) => {
     		$$invalidate(0, page = selected);
+
+    		if (scrollToTop) {
+    			window.scrollTo(0, 0);
+    		}
     	};
 
     	const writable_props = [];

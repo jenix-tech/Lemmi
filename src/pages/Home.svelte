@@ -1,13 +1,47 @@
 <script>
+  import { onMount } from 'svelte';
   import { home, pages } from '../strings';
   const { freetrial, blurb, help, anatomy } = home;
 
+  let carousel;
   let carouselIndex = 0
+  let timeoutId;
+  const speed = 4;
+  const numberOfImages = freetrial.images.length;
+  let carouselItemWidth;
+  onMount(() => {
+  carouselItemWidth = carousel.scrollWidth / numberOfImages;
+    setInterval(() => {
+      timeoutId = setTimeout(() => {
+        carouselIndex = carouselIndex % numberOfImages;
+        moveCarouselImage()
+        clearTimeout(timeoutId);
+      }, 1000);
+    }, speed * 1000);
+  })
 
-  const next = () =>
-    carouselIndex = (carouselIndex + 1) % freetrial.images.length
-  const previous = () =>
-    carouselIndex = (carouselIndex - 1) % freetrial.images.length
+  const moveCarouselImage = () => {
+    carousel.scrollBy(carouselItemWidth, 0);
+    let childToMove = carousel.querySelectorAll(`.carousel-item`)[
+      carouselIndex
+    ];
+    // The line below move the item to end of carousel by 
+    // manipulating its flex order
+    childToMove.style.order =
+      childToMove.style.order && childToMove.style.order === 0
+        ? 1
+        : +childToMove.style.order + 1;
+        carouselIndex++;
+  }
+
+  // const next = () => {
+  //   carouselIndex = carouselIndex % numberOfImages;
+  //   moveCarouselImage();
+  // }
+  // const previous = () => {
+  //   carouselIndex = -carouselIndex % numberOfImages;
+  //   moveCarouselImage();
+  // }
 
   export let handleClickNavigation;
 
@@ -18,22 +52,22 @@
     <div class="home-freetrial__text">
       <h2>{freetrial.title}</h2>
       <p>{freetrial.subtitle}</p>
-      <button on:click={handleClickNavigation(pages.pricing)}>Get 1 week free</button>
+      <button on:click={handleClickNavigation(pages.pricing, true)}>Get 1 week free</button>
       <p class="home-freetrial__smallprint">{freetrial.desciption}</p>
     </div>
     <div class="home-freetrial__carousel">
       <div class="carousel_image">
-        <button class="carousel_prev" on:click={previous}>
+        <!-- <button class="carousel_prev" on:click={previous}>
           <img src="./images/chevron-left.svg" alt="View previous screenshot" />
-        </button>
-        {#each freetrial.images as photo, index}
-          {#if index == carouselIndex}
-            <img src={photo} alt="Screenshot of Lemmi running on iOS" />
-          {/if}
-        {/each}
-        <button class="carousel_next" on:click={next}>
+        </button> -->
+        <div class="carousel-container" bind:this={carousel}>
+          {#each freetrial.images as src}
+            <img class="carousel-item" {src} alt="Screenshot of Lemmi running on iOS" />
+          {/each}
+        </div>
+        <!-- <button class="carousel_next" on:click={next}>
           <img src="./images/chevron-right.svg" alt="View next screenshot" />
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
@@ -126,14 +160,32 @@
     height: 100%;
   }
 
+  .carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 13rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: 0;
+    scrollbar-color: transparent transparent;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
   .carousel_image {
     position: absolute;
     top: 40px;
   }
 
-  .carousel_image img {
-    width: 210px;
-    height: auto;
+  .carousel-item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 100%;
+    scroll-snap-align: center;
+    margin: 0 2px;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }

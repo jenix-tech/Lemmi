@@ -290,8 +290,6 @@
     background-color: #25548c;
     color: #ffffff;
     height: 40px;
-    display: flex;
-    align-items: center;
     padding: 0 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -335,5 +333,4 @@
       padding: 0 5px;
     }
   }
-
 </style>

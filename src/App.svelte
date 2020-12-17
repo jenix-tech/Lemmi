@@ -19,8 +19,11 @@
   };
 
   let page = pages.home;
-  let handleClickNavigation = (selected) => {
+  let handleClickNavigation = (selected, scrollToTop = false) => {
     page = selected;
+    if (scrollToTop) {
+      window.scrollTo(0,0);
+    }
   };
 </script>
 
