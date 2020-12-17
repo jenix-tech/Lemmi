@@ -77,7 +77,7 @@
 
 <style>
   .home-freetrial {
-    height: 40vh;
+    height: 23rem;
     background-color: #25548c;
     color: #ffffff;
   }
@@ -173,7 +173,7 @@
   }
 
   .blurb {
-    height: 20vh;
+    height: 17rem;
     font-size: 19px;
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@
   }
 
   .help {
-    height: 30vh;
+    height: 17rem;
     padding: 5px 0 10px 0;
     background-color: #25548c;
     color: #ffffff;
@@ -256,7 +256,7 @@
   }
 
   .anatomy {
-    height: 50vh;
+    height: 30rem;
     font-size: 19px;
     display: flex;
     flex-direction: row;
@@ -273,7 +273,7 @@
   }
 
   .mock-up {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
   }
 
@@ -300,7 +300,7 @@
     font-size: 1rem;
   }
 
-  @media only screen and (max-width: 936px) {
+  @media screen and (max-width: 936px) {
     .home-freetrial__carousel {
       width: 35%;
     }
@@ -318,9 +318,9 @@
     }
   }
 
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .home-freetrial {
-      height: 65vh;
+      height: 40rem;
     }
     .wrapper {
       flex-direction: column-reverse;
@@ -330,15 +330,33 @@
       width: 100%;
     }
 
+    .help {
+      height: 43rem;
+    }
+
     .blurb {
+      height: 18rem;
       padding: 25px;
     }
   
     .carousel_image button {
       top: 40%;
     }
+
+    .anatomy {
+      height: 30rem;
+    }
+
+    .anatomy-wrapper {
+      height: 100%;
+      margin: 0;
+    }
+
+    .anatomy-item {
+      margin: 10px 0;
+    }
   }
-  @media only screen and (max-width: 674px) {
+  @media screen and (max-width: 674px) {
     .mock-up {
       display: none;
     }
@@ -347,10 +365,6 @@
       display: flex;
     }
 
-
-    .help {
-      height: 80vh;
-    }
     .usp-wrapper {
       flex-direction: column;
       align-items: center;

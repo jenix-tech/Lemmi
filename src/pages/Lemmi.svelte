@@ -59,7 +59,7 @@
     flex-direction: row-reverse;
   }
 
-  @media only screen and (max-width: 619px) {
+  @media screen and (max-width: 619px) {
     .feature {
       flex-direction: column;
     }

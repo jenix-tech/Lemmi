@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    text-align: center;
   }
 
   article {
@@ -113,7 +114,7 @@
     color: #ffffff;
   }
 
-  @media only screen and (max-width: 619px) {
+  @media screen and (max-width: 619px) {
     article {
       margin: 0 10px;
     }

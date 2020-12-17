@@ -134,7 +134,7 @@ button:focus {
   font-size: 10px;
 }
 
-@media only screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .privacy-policy {
     margin: 40px auto 140px auto;
   }

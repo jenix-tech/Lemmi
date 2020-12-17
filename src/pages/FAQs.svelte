@@ -74,13 +74,13 @@ import About from "./About.svelte";
 
   
 
-  @media only screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .faq-section {
       max-width: 700px;
     }
   }
 
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .faq-section {
       padding: 0 5px;
     }
@@ -195,7 +195,7 @@ import About from "./About.svelte";
           <p>Tap 'Save'.</p>
         </div>
       </div>
-      <p>Note: You must only upload content that is yours, or that have been granted the right to use. For more information please see our <a href="/terms-of-service.html">Terms of Service.</a></p>
+      <p>Note: You mustupload content that is yours, or that have been granted the right to use. For more information please see our <a href="/terms-of-service.html">Terms of Service.</a></p>
     </div>
   </details>
   <details>

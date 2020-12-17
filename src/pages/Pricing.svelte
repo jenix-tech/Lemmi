@@ -104,7 +104,7 @@
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 10px;
-    height: 35vh;
+    height: 20rem;
   }
 
   .popular {
@@ -209,7 +209,7 @@
     margin: -1px 5px 0 0;
   }
 
-  @media only screen and (max-width: 619px) {
+  @media screen and (max-width: 619px) {
     .subscriptions {
       margin: 0 10px;
     }
@@ -218,9 +218,22 @@
     }
     .plan {
       width: 100%;
-      height: 25vh;
+      height: 13rem;
       margin: 0 0 30px 0;
     }
+
+    .plan h1 {
+      margin-top: 3rem;
+    }
+
+    .billing {
+      margin-top: 2rem;
+    }
+
+    .saving {
+      margin-bottom: 3%;
+    }
+    
     .store-icons {
       flex-direction: column;
     }

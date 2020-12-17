@@ -119,7 +119,7 @@
     display: flex;
   }
 
-  @media only screen and (max-width: 767px) { 
+  @media screen and (max-width: 767px) { 
     .footer-content {
       padding: 15px 20px;
       text-align: center;
@@ -134,7 +134,7 @@
     .subscribe input {
       width: 100%;
       height: 40px;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
 
     .subscribe button {
@@ -185,7 +185,7 @@
           {newsletter.button.toUpperCase()}
         </button>
       </div>
-    {/if}
+      {/if}
   </div>
   <div class="social-links">
     <a href={links.email} rel="noopener" target="_blank">

@@ -111,7 +111,7 @@
   }
 
   .form-wrapper textarea {
-    height: 15vh;
+    height: 10rem;
     width: 100%;
   }
 
@@ -123,13 +123,13 @@
     margin-top: 15px;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .contact {
       max-width: 700px;
     }
   }
 
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .contact p {
       padding: 0 20px;
     }

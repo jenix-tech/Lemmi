@@ -162,13 +162,13 @@
     color: #25548c
   }
 
-  @media only screen and (max-width: 936px) {
+  @media screen and (max-width: 936px) {
     .hero-info {
       width: 45%;
     }
   }
 
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     header {
       flex-direction: column;
       text-align: center;
@@ -194,7 +194,7 @@
     }
   }
 
-  @media only screen and (max-width: 674px) {
+  @media screen and (max-width: 674px) {
     .nav-bar {
       display: none;
     }
@@ -202,7 +202,7 @@
     .mobile-nav {
       display: flex;
       background-color: #ffffff;
-      height: 6vh;
+      height: 5rem;
     }
 
     .mobile-nav ul {
@@ -210,6 +210,7 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      justify-content: space-around;
     }
 
     .mobile-nav li {
@@ -217,9 +218,13 @@
       display: flex;
       justify-content: center;
     }
+
+    .mobile-nav button {
+      font-size: 1.15rem;
+    }
   }
 
-  @media only screen and (max-width: 619px) {
+  @media screen and (max-width: 619px) {
     .mobile-hero-image {
       display: flex;
     }
@@ -236,10 +241,6 @@
     .play-icon {
       height: 35px;
       margin: 0;
-    }
-
-    .mobile-nav button {
-      font-size: 1.15rem;
     }
   }
 </style>
