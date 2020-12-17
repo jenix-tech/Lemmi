@@ -165,13 +165,13 @@ export const pricing = {
   billing: "Billed after 7 day FREE trial",
   whatsIncluded: "What's included?",
   included: [
-    "Available offline - once downloaded, Lemmi does not require an internet connection",
+    "Offline availability - once downloaded, Lemmi does not require an internet connection",
     "Extensive word options - over 600+ words and phrases included",
-    "Personalised - users can add unlimited personal words and images",
-    "Private - bespoke entries are stored privately on the user's private account",
+    "Personalisation - users can add unlimited personal words and images",
+    "Privacy - bespoke entries are stored privately on the user's private account",
     "Phone calls - Lemmi can be used during phone conversations (iOS 13+ only)",
     "Language options - English with additional languages coming soon",
-    "Regular updated - including new features, words, phrases, and icons"
+    "Regular updates - including new features, words, phrases, and icons"
   ],
   available: "Available on iOS and Android devices"
 }
