@@ -336,6 +336,7 @@
     }
   }
 
+/* Hack for safari */
   @media not all and (min-resolution:.001dpcm) {
     @supports (-webkit-appearance:none) and (display:flow-root) { 
       .faq-section summary { 

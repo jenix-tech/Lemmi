@@ -205,7 +205,7 @@
     <div class="copywrite">
       <p>&copy; 2020 Jenix Technologies LTD</p>
     </div>
-    <p class="memorial">In loving memory of N. Lemmikki Hyry</p>
+    <p class="memorial">Dedicated to N. Lemmikki Hyry</p>
     <div class="navigation-wrapper">
       <div class="navigation">
         <a href="/privacy-policy.html">Privacy Policy</a>

@@ -26,6 +26,66 @@
   }
 </script>
 
+<div class="contact-title">
+  <h2>{contact.title.toUpperCase()}</h2>
+</div>
+<section class="contact">
+  <p>{contact.instructions}</p>
+  <div class="form">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h3>{contact.form}</h3>
+        {#if success}
+          <p class="success">{success}</p>
+        {/if}
+        {#if error}
+          <p class="error">{error}</p>
+        {/if}
+      </div>
+      <form id="contact-form">
+        <div class="name">
+          <div>
+            <label for="first-name">First Name:*</label>
+            <input 
+              id="first-name" 
+              type="text" 
+              autocomplete="name"
+              required
+              on:change={(e) => first = e.target.value}
+            />
+          </div>
+          <div>
+            <label for="last-name">Last Name:</label>
+            <input 
+              id="last-name" 
+              type="text" 
+              autocomplete="additional-name"
+              on:change={(e) => last = e.target.value}
+            />
+          </div>
+        </div>
+        <label for="email">Email:*</label>
+        <input 
+          type="email" 
+          id="email" 
+          required
+          autocomplete="email"
+          on:change={(e) => email = e.target.value}
+        />
+        <label for="message">Message:*</label>
+        <textarea 
+          id="message" 
+          required
+          on:change={(e) => feedback = e.target.value}
+        />
+      </form>
+      <button on:click={handleSubmit}>{contact.submit.toUpperCase()}</button>
+    </div>
+  </div>
+  <p>{contact.notes}</p>
+</section>
+
+
 <style>
   .contact-title {
     width: 100%;
@@ -142,62 +202,3 @@
     }
   }
 </style>
-
-<div class="contact-title">
-  <h2>{contact.title.toUpperCase()}</h2>
-</div>
-<section class="contact">
-  <p>{contact.instructions}</p>
-  <div class="form">
-    <div class="form-wrapper">
-      <div class="form-header">
-        <h3>{contact.form}</h3>
-        {#if success}
-          <p class="success">{success}</p>
-        {/if}
-        {#if error}
-          <p class="error">{error}</p>
-        {/if}
-      </div>
-      <form id="contact-form">
-        <div class="name">
-          <div>
-            <label for="first-name">First Name:*</label>
-            <input 
-              id="first-name" 
-              type="text" 
-              autocomplete="name"
-              required
-              on:change={(e) => first = e.target.value}
-            />
-          </div>
-          <div>
-            <label for="last-name">Last Name:</label>
-            <input 
-              id="last-name" 
-              type="text" 
-              autocomplete="additional-name"
-              on:change={(e) => last = e.target.value}
-            />
-          </div>
-        </div>
-        <label for="email">Email:*</label>
-        <input 
-          type="email" 
-          id="email" 
-          required
-          autocomplete="email"
-          on:change={(e) => email = e.target.value}
-        />
-        <label for="message">Message:*</label>
-        <textarea 
-          id="message" 
-          required
-          on:change={(e) => feedback = e.target.value}
-        />
-      </form>
-      <button on:click={handleSubmit}>{contact.submit.toUpperCase()}</button>
-    </div>
-  </div>
-  <p>{contact.notes}</p>
-</section>

@@ -13,34 +13,40 @@
 </script>
 
 <header>
-  <img class="mobile-hero-image" src="images/appIcon.svg" alt="Lemmi Logo" />
-  <img
-    class="hero-image"
-    src="images/hero-image.png"
-    alt="Lemmi shown on an iPad and iPhone"
-  />
-  <section class="hero-info">
-    <h1 class="title">{hero.title}</h1>
-    <h3 class="subtitle">{hero.subtitle}</h3>
-    <div class="store-icons">
-      <button
-        on:click={() => openStore('app')}
-      >
-        <img
-          class="app-icon"
-          src="images/app-store.png"
-          alt="Download on the App Store" />
-      </button>
-      <button
-        on:click={() => openStore('play')}
-      >
-        <img
-          class="play-icon"
-          src="images/play-store.png"
-          alt="Download on the Play Store" />
-      </button>
-    </div>
-  </section>
+  <div class="header-wrapper">
+    <img class="mobile-hero-image" src="images/appIcon.svg" alt="Lemmi Logo" />
+    <img
+      class="hero-image"
+      src="images/hero-image.png"
+      alt="Lemmi shown on an iPad and iPhone"
+    />
+    <section class="hero-info">
+      <h1 class="title">
+        <img class="logo" src="images/appIcon.svg" alt="Lemmi Logo" />
+        {hero.title}<sup>®</sup>
+      </h1>
+      <h3 class="subtitle">{hero.subtitle}</h3>
+      <div class="store-icons">
+        <button
+          on:click={() => openStore('app')}
+        >
+          <img
+            class="app-icon"
+            src="images/app-store.png"
+            alt="Download on the App Store" />
+        </button>
+        <button
+          on:click={() => openStore('play')}
+        >
+          <img
+            class="play-icon"
+            src="images/play-store.png"
+            alt="Download on the Play Store" />
+        </button>
+      </div>
+    </section>
+  </div>
+  <p class="lemmi-description">Providing a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.</p>
 </header>
 <nav class="nav-bar">
   <ul>
@@ -70,8 +76,20 @@
 <style>
   header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 40px;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .lemmi-description {
+    text-align: center;
+    margin: 30px auto 0 auto;
+    max-width: 800px;
   }
 
   .hero-image {
@@ -93,10 +111,19 @@
     display: none;
   }
 
+  .logo {
+    height: 40px;
+  }
+
   .title {
     margin-top: 15px;
     font-size: 3rem;
     font-weight: 500;
+  }
+
+  .title sup {
+    font-size: 1.1rem;
+    vertical-align: top;
   }
 
   .subtitle {
@@ -169,7 +196,7 @@
   }
 
   @media screen and (max-width: 767px) {
-    header {
+    .header-wrapper {
       flex-direction: column;
       text-align: center;
       align-items: center;
@@ -229,7 +256,7 @@
       display: flex;
     }
 
-    .hero-image {
+    .hero-image, .logo {
       display: none;
     }
 
