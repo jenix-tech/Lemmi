@@ -452,4 +452,16 @@
       width: 80%;
     }
   }
+
+  /* Hack for safari */
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) and (display:flow-root) { 
+      .carousel-container { 
+        width: 11rem;
+        height: 22rem;
+      } 
+    } 
+  }
 </style>
+
+
