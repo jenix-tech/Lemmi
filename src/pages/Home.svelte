@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { home, pages } from '../strings';
-  const { freetrial, blurb, help, anatomy } = home;
+  const { intro, freetrial, blurb, help, anatomy } = home;
 
   let carousel;
   let carouselIndex = 0
@@ -47,6 +47,10 @@
 
 </script>
 
+<section class="home-intro">
+  <h2>{intro.text1}</h2>
+  <p>{intro.text2}</p>
+</section>
 <section class="home-freetrial">
   <div class="wrapper">
     <div class="home-freetrial__text">
@@ -74,7 +78,6 @@
 </section>
 <section class="blurb">
   <p>{blurb.text1}</p>
-  <p>{blurb.text2}</p>
   <button 
     on:click={handleClickNavigation(pages.app)}>{blurb.action}</button>
 </section>
@@ -110,6 +113,25 @@
 </section>
 
 <style>
+  .home-intro {
+    height: 10rem;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .home-intro h2 {
+    margin-bottom: 10px;
+  }
+
+  .home-intro h2, .home-intro p {
+    max-width: 800px;
+  }
+
   .home-freetrial {
     height: 23rem;
     background-color: #25548c;
@@ -190,21 +212,21 @@
     image-rendering: crisp-edges;
   }
 
-  .carousel_image button {
+  /* .carousel_image button {
     position: absolute;
     top: 35%;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
-  }
+  } */
 
   .carousel_image button img {
     position: relative;
     width: 100%;
   }
 
-  .carousel_prev {
+  /* .carousel_prev {
     height: 50px;
     width: 25px;
     border-top-left-radius: 10px;
@@ -222,10 +244,10 @@
     right: -22px;
     background: #ffffff8c;
     border: none;
-  }
+  } */
 
   .blurb {
-    height: 17rem;
+    height: 8rem;
     font-size: 19px;
     display: flex;
     flex-direction: column;
@@ -371,6 +393,9 @@
   }
 
   @media screen and (max-width: 767px) {
+    .home-intro {
+      height: 18rem;
+    }
     .home-freetrial {
       height: 40rem;
     }
@@ -387,13 +412,13 @@
     }
 
     .blurb {
-      height: 18rem;
+      height: 10rem;
       padding: 25px;
     }
   
-    .carousel_image button {
+    /* .carousel_image button {
       top: 40%;
-    }
+    } */
 
     .anatomy {
       height: 30rem;

@@ -5,16 +5,19 @@ export const hero = {
 };
 
 export const home = {
+  intro: {
+    text1: "Lemmi was designed for people who struggle with their speech.",
+    text2: "This assistive text-to-speech (AAC) app gives users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
+  },
   freetrial: {
     title: "Get a weeks FREE trial",
-    subtitle: "Enjoy our ad-free personalisable, speech app.",
+    subtitle: "Customisable and ad-free, try Lemmi today!",
     button: "Get 1 week free",
     desciption: "From only £3.50/month on a yearly plan. Terms of Service apply.",
     images: ["images/chat.png", "images/personalise.png", "images/save-time.png", "images/simple-to-use.png", "images/customise.png"]
   },
   blurb: {
-    text1: "Discover a world of possibilities with this unique text-to-speech (AAC) app that gives users a voice of their own.",
-    text2: "Lemmi enables users the freedom and independence to fully take part in conversations and to share thoughts and needs clearly with others.",
+    text1: "Discover a world of possibilities with this unique speech app that gives users a voice of their own.",
     action: "SHOW ME HOW"
   },
   help: {

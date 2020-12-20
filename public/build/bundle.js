@@ -403,16 +403,19 @@ var app = (function () {
     };
 
     const home = {
+      intro: {
+        text1: "Lemmi was designed for people who struggle with their speech.",
+        text2: "This assistive text-to-speech (AAC) app gives users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
+      },
       freetrial: {
         title: "Get a weeks FREE trial",
-        subtitle: "Enjoy our ad-free personalisable, speech app.",
+        subtitle: "Customisable and ad-free, try Lemmi today!",
         button: "Get 1 week free",
         desciption: "From only £3.50/month on a yearly plan. Terms of Service apply.",
         images: ["images/chat.png", "images/personalise.png", "images/save-time.png", "images/simple-to-use.png", "images/customise.png"]
       },
       blurb: {
-        text1: "Discover a world of possibilities with this unique text-to-speech (AAC) app that gives users a voice of their own.",
-        text2: "Lemmi enables users the freedom and independence to fully take part in conversations and to share thoughts and needs clearly with others.",
+        text1: "Discover a world of possibilities with this unique speech app that gives users a voice of their own.",
         action: "SHOW ME HOW"
       },
       help: {
@@ -1138,23 +1141,23 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
+    	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[18] = list[i];
+    	child_ctx[19] = list[i];
     	return child_ctx;
     }
 
-    // (64:10) {#each freetrial.images as src}
+    // (68:10) {#each freetrial.images as src}
     function create_each_block_2(ctx) {
     	let img;
     	let img_src_value;
@@ -1162,10 +1165,10 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			img = element("img");
-    			attr_dev(img, "class", "carousel-item svelte-1rhfp9x");
-    			if (img.src !== (img_src_value = /*src*/ ctx[18])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "carousel-item svelte-7td4e4");
+    			if (img.src !== (img_src_value = /*src*/ ctx[19])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Screenshot of Lemmi running on iOS");
-    			add_location(img, file$1, 64, 12, 2023);
+    			add_location(img, file$1, 68, 12, 2118);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1180,14 +1183,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(64:10) {#each freetrial.images as src}",
+    		source: "(68:10) {#each freetrial.images as src}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:4) {#each help.usps as usp}
+    // (87:4) {#each help.usps as usp}
     function create_each_block_1$1(ctx) {
     	let div1;
     	let div0;
@@ -1196,11 +1199,11 @@ var app = (function () {
     	let img_alt_value;
     	let t0;
     	let p0;
-    	let t1_value = /*usp*/ ctx[15].title.toUpperCase() + "";
+    	let t1_value = /*usp*/ ctx[16].title.toUpperCase() + "";
     	let t1;
     	let t2;
     	let p1;
-    	let t3_value = /*usp*/ ctx[15].description + "";
+    	let t3_value = /*usp*/ ctx[16].description + "";
     	let t3;
     	let t4;
 
@@ -1216,18 +1219,18 @@ var app = (function () {
     			p1 = element("p");
     			t3 = text(t3_value);
     			t4 = space();
-    			if (img.src !== (img_src_value = /*usp*/ ctx[15].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[15].title);
-    			attr_dev(img, "class", "svelte-1rhfp9x");
-    			add_location(img, file$1, 86, 10, 2679);
-    			attr_dev(div0, "class", "usp-image-wrapper svelte-1rhfp9x");
-    			add_location(div0, file$1, 85, 8, 2637);
-    			attr_dev(p0, "class", "usp-title svelte-1rhfp9x");
-    			add_location(p0, file$1, 88, 8, 2742);
-    			attr_dev(p1, "class", "usp-description svelte-1rhfp9x");
-    			add_location(p1, file$1, 89, 8, 2801);
-    			attr_dev(div1, "class", "usp svelte-1rhfp9x");
-    			add_location(div1, file$1, 84, 6, 2611);
+    			if (img.src !== (img_src_value = /*usp*/ ctx[16].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[16].title);
+    			attr_dev(img, "class", "svelte-7td4e4");
+    			add_location(img, file$1, 89, 10, 2751);
+    			attr_dev(div0, "class", "usp-image-wrapper svelte-7td4e4");
+    			add_location(div0, file$1, 88, 8, 2709);
+    			attr_dev(p0, "class", "usp-title svelte-7td4e4");
+    			add_location(p0, file$1, 91, 8, 2814);
+    			attr_dev(p1, "class", "usp-description svelte-7td4e4");
+    			add_location(p1, file$1, 92, 8, 2873);
+    			attr_dev(div1, "class", "usp svelte-7td4e4");
+    			add_location(div1, file$1, 87, 6, 2683);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1251,14 +1254,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(84:4) {#each help.usps as usp}",
+    		source: "(87:4) {#each help.usps as usp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:6) {#each anatomy as item}
+    // (102:6) {#each anatomy as item}
     function create_each_block$1(ctx) {
     	let div1;
     	let img;
@@ -1267,11 +1270,11 @@ var app = (function () {
     	let t0;
     	let div0;
     	let p0;
-    	let t1_value = /*item*/ ctx[12].title.toUpperCase() + "";
+    	let t1_value = /*item*/ ctx[13].title.toUpperCase() + "";
     	let t1;
     	let t2;
     	let p1;
-    	let t3_value = /*item*/ ctx[12].desciption + "";
+    	let t3_value = /*item*/ ctx[13].desciption + "";
     	let t3;
     	let t4;
 
@@ -1287,16 +1290,16 @@ var app = (function () {
     			p1 = element("p");
     			t3 = text(t3_value);
     			t4 = space();
-    			attr_dev(img, "class", "anatomy-icon svelte-1rhfp9x");
-    			if (img.src !== (img_src_value = /*item*/ ctx[12].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*item*/ ctx[12].title);
-    			add_location(img, file$1, 100, 10, 3145);
-    			add_location(p0, file$1, 102, 12, 3257);
-    			add_location(p1, file$1, 103, 12, 3303);
-    			attr_dev(div0, "class", "anatomy-text svelte-1rhfp9x");
-    			add_location(div0, file$1, 101, 10, 3218);
-    			attr_dev(div1, "class", "anatomy-item reversed svelte-1rhfp9x");
-    			add_location(div1, file$1, 99, 8, 3099);
+    			attr_dev(img, "class", "anatomy-icon svelte-7td4e4");
+    			if (img.src !== (img_src_value = /*item*/ ctx[13].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*item*/ ctx[13].title);
+    			add_location(img, file$1, 103, 10, 3217);
+    			add_location(p0, file$1, 105, 12, 3329);
+    			add_location(p1, file$1, 106, 12, 3375);
+    			attr_dev(div0, "class", "anatomy-text svelte-7td4e4");
+    			add_location(div0, file$1, 104, 10, 3290);
+    			attr_dev(div1, "class", "anatomy-item reversed svelte-7td4e4");
+    			add_location(div1, file$1, 102, 8, 3171);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1320,7 +1323,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(99:6) {#each anatomy as item}",
+    		source: "(102:6) {#each anatomy as item}",
     		ctx
     	});
 
@@ -1329,41 +1332,44 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let section0;
-    	let div4;
-    	let div0;
-    	let h2;
+    	let h20;
     	let t1;
     	let p0;
     	let t3;
-    	let button0;
+    	let section1;
+    	let div4;
+    	let div0;
+    	let h21;
     	let t5;
     	let p1;
     	let t7;
+    	let button0;
+    	let t9;
+    	let p2;
+    	let t11;
     	let div3;
     	let div2;
     	let div1;
-    	let t8;
-    	let section1;
-    	let p2;
-    	let t10;
-    	let p3;
     	let t12;
-    	let button1;
-    	let t14;
     	let section2;
-    	let h3;
+    	let p3;
+    	let t14;
+    	let button1;
     	let t16;
-    	let div5;
-    	let t17;
     	let section3;
+    	let h3;
+    	let t18;
+    	let div5;
+    	let t19;
+    	let section4;
     	let div7;
     	let img;
     	let img_src_value;
-    	let t18;
+    	let t20;
     	let div6;
     	let mounted;
     	let dispose;
-    	let each_value_2 = /*freetrial*/ ctx[2].images;
+    	let each_value_2 = /*freetrial*/ ctx[3].images;
     	validate_each_argument(each_value_2);
     	let each_blocks_2 = [];
 
@@ -1371,7 +1377,7 @@ var app = (function () {
     		each_blocks_2[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
 
-    	let each_value_1 = /*help*/ ctx[4].usps;
+    	let each_value_1 = /*help*/ ctx[5].usps;
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -1379,7 +1385,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*anatomy*/ ctx[5];
+    	let each_value = /*anatomy*/ ctx[6];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -1390,20 +1396,27 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			section0 = element("section");
-    			div4 = element("div");
-    			div0 = element("div");
-    			h2 = element("h2");
-    			h2.textContent = `${/*freetrial*/ ctx[2].title}`;
+    			h20 = element("h2");
+    			h20.textContent = `${/*intro*/ ctx[2].text1}`;
     			t1 = space();
     			p0 = element("p");
-    			p0.textContent = `${/*freetrial*/ ctx[2].subtitle}`;
+    			p0.textContent = `${/*intro*/ ctx[2].text2}`;
     			t3 = space();
-    			button0 = element("button");
-    			button0.textContent = "Get 1 week free";
+    			section1 = element("section");
+    			div4 = element("div");
+    			div0 = element("div");
+    			h21 = element("h2");
+    			h21.textContent = `${/*freetrial*/ ctx[3].title}`;
     			t5 = space();
     			p1 = element("p");
-    			p1.textContent = `${/*freetrial*/ ctx[2].desciption}`;
+    			p1.textContent = `${/*freetrial*/ ctx[3].subtitle}`;
     			t7 = space();
+    			button0 = element("button");
+    			button0.textContent = "Get 1 week free";
+    			t9 = space();
+    			p2 = element("p");
+    			p2.textContent = `${/*freetrial*/ ctx[3].desciption}`;
+    			t11 = space();
     			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
@@ -1412,98 +1425,104 @@ var app = (function () {
     				each_blocks_2[i].c();
     			}
 
-    			t8 = space();
-    			section1 = element("section");
-    			p2 = element("p");
-    			p2.textContent = `${/*blurb*/ ctx[3].text1}`;
-    			t10 = space();
-    			p3 = element("p");
-    			p3.textContent = `${/*blurb*/ ctx[3].text2}`;
     			t12 = space();
-    			button1 = element("button");
-    			button1.textContent = `${/*blurb*/ ctx[3].action}`;
-    			t14 = space();
     			section2 = element("section");
-    			h3 = element("h3");
-    			h3.textContent = `${/*help*/ ctx[4].title}`;
+    			p3 = element("p");
+    			p3.textContent = `${/*blurb*/ ctx[4].text1}`;
+    			t14 = space();
+    			button1 = element("button");
+    			button1.textContent = `${/*blurb*/ ctx[4].action}`;
     			t16 = space();
+    			section3 = element("section");
+    			h3 = element("h3");
+    			h3.textContent = `${/*help*/ ctx[5].title}`;
+    			t18 = space();
     			div5 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t17 = space();
-    			section3 = element("section");
+    			t19 = space();
+    			section4 = element("section");
     			div7 = element("div");
     			img = element("img");
-    			t18 = space();
+    			t20 = space();
     			div6 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "svelte-1rhfp9x");
-    			add_location(h2, file$1, 52, 6, 1426);
-    			attr_dev(p0, "class", "svelte-1rhfp9x");
-    			add_location(p0, file$1, 53, 6, 1459);
-    			attr_dev(button0, "class", "svelte-1rhfp9x");
-    			add_location(button0, file$1, 54, 6, 1493);
-    			attr_dev(p1, "class", "home-freetrial__smallprint svelte-1rhfp9x");
-    			add_location(p1, file$1, 55, 6, 1586);
-    			attr_dev(div0, "class", "home-freetrial__text svelte-1rhfp9x");
-    			add_location(div0, file$1, 51, 4, 1385);
-    			attr_dev(div1, "class", "carousel-container svelte-1rhfp9x");
-    			add_location(div1, file$1, 62, 8, 1915);
-    			attr_dev(div2, "class", "carousel_image svelte-1rhfp9x");
-    			add_location(div2, file$1, 58, 6, 1711);
-    			attr_dev(div3, "class", "home-freetrial__carousel svelte-1rhfp9x");
-    			add_location(div3, file$1, 57, 4, 1666);
-    			attr_dev(div4, "class", "wrapper svelte-1rhfp9x");
-    			add_location(div4, file$1, 50, 2, 1359);
-    			attr_dev(section0, "class", "home-freetrial svelte-1rhfp9x");
-    			add_location(section0, file$1, 49, 0, 1324);
-    			attr_dev(p2, "class", "svelte-1rhfp9x");
-    			add_location(p2, file$1, 75, 2, 2363);
-    			attr_dev(p3, "class", "svelte-1rhfp9x");
-    			add_location(p3, file$1, 76, 2, 2386);
-    			attr_dev(button1, "class", "svelte-1rhfp9x");
-    			add_location(button1, file$1, 77, 2, 2409);
-    			attr_dev(section1, "class", "blurb svelte-1rhfp9x");
-    			add_location(section1, file$1, 74, 0, 2337);
-    			attr_dev(h3, "class", "svelte-1rhfp9x");
-    			add_location(h3, file$1, 81, 2, 2526);
-    			attr_dev(div5, "class", "usp-wrapper svelte-1rhfp9x");
-    			add_location(div5, file$1, 82, 2, 2550);
-    			attr_dev(section2, "class", "help svelte-1rhfp9x");
-    			add_location(section2, file$1, 80, 0, 2501);
-    			attr_dev(img, "class", "mock-up svelte-1rhfp9x");
+    			attr_dev(h20, "class", "svelte-7td4e4");
+    			add_location(h20, file$1, 50, 2, 1362);
+    			attr_dev(p0, "class", "svelte-7td4e4");
+    			add_location(p0, file$1, 51, 2, 1387);
+    			attr_dev(section0, "class", "home-intro svelte-7td4e4");
+    			add_location(section0, file$1, 49, 0, 1331);
+    			attr_dev(h21, "class", "svelte-7td4e4");
+    			add_location(h21, file$1, 56, 6, 1521);
+    			attr_dev(p1, "class", "svelte-7td4e4");
+    			add_location(p1, file$1, 57, 6, 1554);
+    			attr_dev(button0, "class", "svelte-7td4e4");
+    			add_location(button0, file$1, 58, 6, 1588);
+    			attr_dev(p2, "class", "home-freetrial__smallprint svelte-7td4e4");
+    			add_location(p2, file$1, 59, 6, 1681);
+    			attr_dev(div0, "class", "home-freetrial__text svelte-7td4e4");
+    			add_location(div0, file$1, 55, 4, 1480);
+    			attr_dev(div1, "class", "carousel-container svelte-7td4e4");
+    			add_location(div1, file$1, 66, 8, 2010);
+    			attr_dev(div2, "class", "carousel_image svelte-7td4e4");
+    			add_location(div2, file$1, 62, 6, 1806);
+    			attr_dev(div3, "class", "home-freetrial__carousel svelte-7td4e4");
+    			add_location(div3, file$1, 61, 4, 1761);
+    			attr_dev(div4, "class", "wrapper svelte-7td4e4");
+    			add_location(div4, file$1, 54, 2, 1454);
+    			attr_dev(section1, "class", "home-freetrial svelte-7td4e4");
+    			add_location(section1, file$1, 53, 0, 1419);
+    			attr_dev(p3, "class", "svelte-7td4e4");
+    			add_location(p3, file$1, 79, 2, 2458);
+    			attr_dev(button1, "class", "svelte-7td4e4");
+    			add_location(button1, file$1, 80, 2, 2481);
+    			attr_dev(section2, "class", "blurb svelte-7td4e4");
+    			add_location(section2, file$1, 78, 0, 2432);
+    			attr_dev(h3, "class", "svelte-7td4e4");
+    			add_location(h3, file$1, 84, 2, 2598);
+    			attr_dev(div5, "class", "usp-wrapper svelte-7td4e4");
+    			add_location(div5, file$1, 85, 2, 2622);
+    			attr_dev(section3, "class", "help svelte-7td4e4");
+    			add_location(section3, file$1, 83, 0, 2573);
+    			attr_dev(img, "class", "mock-up svelte-7td4e4");
     			if (img.src !== (img_src_value = "images/anatomy.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Anatomy of the Lemmi app");
-    			add_location(img, file$1, 96, 4, 2949);
-    			attr_dev(div6, "class", "anatomy-wrapper svelte-1rhfp9x");
-    			add_location(div6, file$1, 97, 4, 3031);
-    			attr_dev(div7, "class", "wrapper svelte-1rhfp9x");
-    			add_location(div7, file$1, 95, 2, 2923);
-    			attr_dev(section3, "class", "anatomy svelte-1rhfp9x");
-    			add_location(section3, file$1, 94, 0, 2895);
+    			add_location(img, file$1, 99, 4, 3021);
+    			attr_dev(div6, "class", "anatomy-wrapper svelte-7td4e4");
+    			add_location(div6, file$1, 100, 4, 3103);
+    			attr_dev(div7, "class", "wrapper svelte-7td4e4");
+    			add_location(div7, file$1, 98, 2, 2995);
+    			attr_dev(section4, "class", "anatomy svelte-7td4e4");
+    			add_location(section4, file$1, 97, 0, 2967);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
-    			append_dev(section0, div4);
+    			append_dev(section0, h20);
+    			append_dev(section0, t1);
+    			append_dev(section0, p0);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, section1, anchor);
+    			append_dev(section1, div4);
     			append_dev(div4, div0);
-    			append_dev(div0, h2);
-    			append_dev(div0, t1);
-    			append_dev(div0, p0);
-    			append_dev(div0, t3);
-    			append_dev(div0, button0);
+    			append_dev(div0, h21);
     			append_dev(div0, t5);
     			append_dev(div0, p1);
-    			append_dev(div4, t7);
+    			append_dev(div0, t7);
+    			append_dev(div0, button0);
+    			append_dev(div0, t9);
+    			append_dev(div0, p2);
+    			append_dev(div4, t11);
     			append_dev(div4, div3);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
@@ -1512,29 +1531,27 @@ var app = (function () {
     				each_blocks_2[i].m(div1, null);
     			}
 
-    			/*div1_binding*/ ctx[6](div1);
-    			insert_dev(target, t8, anchor);
-    			insert_dev(target, section1, anchor);
-    			append_dev(section1, p2);
-    			append_dev(section1, t10);
-    			append_dev(section1, p3);
-    			append_dev(section1, t12);
-    			append_dev(section1, button1);
-    			insert_dev(target, t14, anchor);
+    			/*div1_binding*/ ctx[7](div1);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, section2, anchor);
-    			append_dev(section2, h3);
-    			append_dev(section2, t16);
-    			append_dev(section2, div5);
+    			append_dev(section2, p3);
+    			append_dev(section2, t14);
+    			append_dev(section2, button1);
+    			insert_dev(target, t16, anchor);
+    			insert_dev(target, section3, anchor);
+    			append_dev(section3, h3);
+    			append_dev(section3, t18);
+    			append_dev(section3, div5);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(div5, null);
     			}
 
-    			insert_dev(target, t17, anchor);
-    			insert_dev(target, section3, anchor);
-    			append_dev(section3, div7);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, section4, anchor);
+    			append_dev(section4, div7);
     			append_dev(div7, img);
-    			append_dev(div7, t18);
+    			append_dev(div7, t20);
     			append_dev(div7, div6);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1571,8 +1588,8 @@ var app = (function () {
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
 
-    			if (dirty & /*freetrial*/ 4) {
-    				each_value_2 = /*freetrial*/ ctx[2].images;
+    			if (dirty & /*freetrial*/ 8) {
+    				each_value_2 = /*freetrial*/ ctx[3].images;
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -1595,8 +1612,8 @@ var app = (function () {
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty & /*help*/ 16) {
-    				each_value_1 = /*help*/ ctx[4].usps;
+    			if (dirty & /*help*/ 32) {
+    				each_value_1 = /*help*/ ctx[5].usps;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -1619,8 +1636,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*anatomy*/ 32) {
-    				each_value = /*anatomy*/ ctx[5];
+    			if (dirty & /*anatomy*/ 64) {
+    				each_value = /*anatomy*/ ctx[6];
     				validate_each_argument(each_value);
     				let i;
 
@@ -1647,15 +1664,17 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section0);
-    			destroy_each(each_blocks_2, detaching);
-    			/*div1_binding*/ ctx[6](null);
-    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(section1);
-    			if (detaching) detach_dev(t14);
+    			destroy_each(each_blocks_2, detaching);
+    			/*div1_binding*/ ctx[7](null);
+    			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(section2);
-    			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(t16);
     			if (detaching) detach_dev(section3);
+    			destroy_each(each_blocks_1, detaching);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(section4);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
     			run_all(dispose);
@@ -1678,7 +1697,7 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Home", slots, []);
-    	const { freetrial, blurb, help, anatomy } = home;
+    	const { intro, freetrial, blurb, help, anatomy } = home;
     	let carousel;
     	let carouselIndex = 0;
     	let timeoutId;
@@ -1738,6 +1757,7 @@ var app = (function () {
     		onMount,
     		home,
     		pages,
+    		intro,
     		freetrial,
     		blurb,
     		help,
@@ -1764,7 +1784,16 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [handleClickNavigation, carousel, freetrial, blurb, help, anatomy, div1_binding];
+    	return [
+    		handleClickNavigation,
+    		carousel,
+    		intro,
+    		freetrial,
+    		blurb,
+    		help,
+    		anatomy,
+    		div1_binding
+    	];
     }
 
     class Home extends SvelteComponentDev {
