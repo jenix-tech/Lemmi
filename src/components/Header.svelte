@@ -46,7 +46,6 @@
       </div>
     </section>
   </div>
-  <p class="lemmi-description">Providing a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.</p>
 </header>
 <nav class="nav-bar">
   <ul>

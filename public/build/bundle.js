@@ -664,7 +664,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (53:4) {#each Object.values(pages) as pageTitle}
+    // (52:4) {#each Object.values(pages) as pageTitle}
     function create_each_block_1(ctx) {
     	let li;
     	let button;
@@ -690,8 +690,8 @@ var app = (function () {
 			? "selected"
 			: ""}`) + " svelte-1pnh5qj"));
 
-    			add_location(button, file, 54, 8, 1550);
-    			add_location(li, file, 53, 6, 1537);
+    			add_location(button, file, 53, 8, 1345);
+    			add_location(li, file, 52, 6, 1332);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -724,14 +724,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(53:4) {#each Object.values(pages) as pageTitle}",
+    		source: "(52:4) {#each Object.values(pages) as pageTitle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:4) {#each Object.values(mobilePages) as pageTitle}
+    // (64:4) {#each Object.values(mobilePages) as pageTitle}
     function create_each_block(ctx) {
     	let li;
     	let button;
@@ -757,9 +757,9 @@ var app = (function () {
 			? "selected"
 			: ""}`) + " svelte-1pnh5qj"));
 
-    			add_location(button, file, 66, 8, 1850);
+    			add_location(button, file, 65, 8, 1645);
     			attr_dev(li, "class", "svelte-1pnh5qj");
-    			add_location(li, file, 65, 6, 1837);
+    			add_location(li, file, 64, 6, 1632);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -792,7 +792,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(65:4) {#each Object.values(mobilePages) as pageTitle}",
+    		source: "(64:4) {#each Object.values(mobilePages) as pageTitle}",
     		ctx
     	});
 
@@ -828,11 +828,9 @@ var app = (function () {
     	let img4;
     	let img4_src_value;
     	let t9;
-    	let p;
-    	let t11;
     	let nav0;
     	let ul0;
-    	let t12;
+    	let t10;
     	let nav1;
     	let ul1;
     	let mounted;
@@ -879,9 +877,6 @@ var app = (function () {
     			button1 = element("button");
     			img4 = element("img");
     			t9 = space();
-    			p = element("p");
-    			p.textContent = "Providing a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.";
-    			t11 = space();
     			nav0 = element("nav");
     			ul0 = element("ul");
 
@@ -889,7 +884,7 @@ var app = (function () {
     				each_blocks_1[i].c();
     			}
 
-    			t12 = space();
+    			t10 = space();
     			nav1 = element("nav");
     			ul1 = element("ul");
 
@@ -933,18 +928,16 @@ var app = (function () {
     			add_location(section, file, 22, 4, 515);
     			attr_dev(div1, "class", "header-wrapper svelte-1pnh5qj");
     			add_location(div1, file, 15, 2, 281);
-    			attr_dev(p, "class", "lemmi-description svelte-1pnh5qj");
-    			add_location(p, file, 48, 2, 1243);
     			attr_dev(header, "class", "svelte-1pnh5qj");
     			add_location(header, file, 14, 0, 270);
     			attr_dev(ul0, "class", "svelte-1pnh5qj");
-    			add_location(ul0, file, 51, 2, 1480);
+    			add_location(ul0, file, 50, 2, 1275);
     			attr_dev(nav0, "class", "nav-bar svelte-1pnh5qj");
-    			add_location(nav0, file, 50, 0, 1456);
+    			add_location(nav0, file, 49, 0, 1251);
     			attr_dev(ul1, "class", "svelte-1pnh5qj");
-    			add_location(ul1, file, 63, 2, 1774);
+    			add_location(ul1, file, 62, 2, 1569);
     			attr_dev(nav1, "class", "mobile-nav svelte-1pnh5qj");
-    			add_location(nav1, file, 62, 0, 1747);
+    			add_location(nav1, file, 61, 0, 1542);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -971,9 +964,7 @@ var app = (function () {
     			append_dev(div0, t8);
     			append_dev(div0, button1);
     			append_dev(button1, img4);
-    			append_dev(header, t9);
-    			append_dev(header, p);
-    			insert_dev(target, t11, anchor);
+    			insert_dev(target, t9, anchor);
     			insert_dev(target, nav0, anchor);
     			append_dev(nav0, ul0);
 
@@ -981,7 +972,7 @@ var app = (function () {
     				each_blocks_1[i].m(ul0, null);
     			}
 
-    			insert_dev(target, t12, anchor);
+    			insert_dev(target, t10, anchor);
     			insert_dev(target, nav1, anchor);
     			append_dev(nav1, ul1);
 
@@ -1051,10 +1042,10 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(header);
-    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(t9);
     			if (detaching) detach_dev(nav0);
     			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(t10);
     			if (detaching) detach_dev(nav1);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
@@ -5325,7 +5316,7 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file$8, 30, 0, 832);
+    			add_location(main, file$8, 30, 0, 831);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5417,7 +5408,7 @@ var app = (function () {
     		[pages.contact]: Contact
     	};
 
-    	let page = pages.about;
+    	let page = pages.home;
 
     	let handleClickNavigation = (selected, scrollToTop = false) => {
     		$$invalidate(0, page = selected);
