@@ -473,26 +473,63 @@ var app = (function () {
     };
 
     const about = {
+      heading: "Our goal is to provide tools to help anyone struggling with speech",
+      vision: {
+        title: "The Vision",
+        text: "Lemmi is a heart-felt project for both co-founders. The vision throughout has been to help those with speech impairments communicate more effectively and, in doing so, help to improve their independence and social confidence."
+      },
       story: {
-        title: "The Story of Lemmi",
-        heading: "Our goal is to give users a voice; to help build their confidence and independence, and to keep them connected.",
-        sections: [
-          [
-            "The original idea for Lemmi arose after, co-founder, Jemma helped care for a loved one who developed aphasia after suffering a serious stroke.",
-            "Having witnessed, first-hand, the devastating impact that a speech impairment can have on an individual’s confidence and overall well-being, Jemma set out to create an accessible and user-friendly resource that could help others who might, for any reason, struggle to express themselves verbally.",
-            "Following a conversation with Will (Jemma's close friend and software developer), the idea of developing an assistive app took shape."
-          ],
-          [
-            "Together, Jemma and Will spent the next few years learning about the world of AAC, researching what potential users would find most helpful. Their vision was to develop the best all-round communication app available for anyone with any form of aphasia or speech impairment.",
-            "After years of perfecting the design, their newly created app - Lemmi - is now available on iOS and Android."
-          ],
-          [
-            "Lemmi has been a passion project for both co-founders, who hope that it will provide a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.",
-          ]
+        title: "The Story",
+        timeline: [
+          {
+            date: 2008,
+            text: "Jemma's Grandma suffers a stroke and develops aphasia.",
+            image: "images/broken-heart.svg"
+          },
+          {
+            date: 2010,
+            text: "Jemma helps to care for her Grandma and sees the devastating impact a speech impairment can have on an individual's confidence and well-being.",
+            image: "images/storm.svg"
+          },
+          {
+            date: 2010,
+            text: "Jemma develops word props and books to help her Grandma communicate a litte easier. The first ideas for an app begin to form.",
+            image: "images/book.svg"
+          },
+          {
+            date: 2018,
+            text : "Jemma discusses the idea with her good friend Will - a software developer with passions just like her own.",
+            image: "images/light-bulb.svg"
+          },
+          {
+            date: 2019,
+            text: "Will surprises Jemma with the first protoype of the speech app.",
+            image: "images/gift.svg"
+          },
+          {
+            date: 2019,
+            text: "As co-founders, Will and Jemma spend time developing the app further, continuing to research speech impairments and AAC.",
+            image: "images/contract.svg"
+          },
+          {
+            date: 2019,
+            text: "The name 'Lemmi' is chosen in honor of Jemma's Finnish Grandma, who's middle name is Lemmikki, which means 'forget-me-not'.",
+            image: "images/alpine-forget-me-not.svg"
+          },
+          {
+            date: 2020,
+            text: "Final app design, development, and market research conducted and finalised.",
+            image: "images/settings.svg"
+          },
+          {
+            date: 2021,
+            text: "Lemmi launches on iOS and Android to help people with speech impairments all over the world.",
+            image: "images/shuttle.svg"
+          }
         ]
       },
       team: {
-        title: "The Team",
+        title: "The Founders",
         people: [{
           name: "Jemma Grace",
           image: "images/jemma-bowles.jpg",
@@ -651,7 +688,7 @@ var app = (function () {
 
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-1ta4ag0"));
+			: ""}`) + " svelte-1pnh5qj"));
 
     			add_location(button, file, 54, 8, 1550);
     			add_location(li, file, 53, 6, 1537);
@@ -672,7 +709,7 @@ var app = (function () {
 
     			if (dirty & /*page*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-1ta4ag0"))) {
+			: ""}`) + " svelte-1pnh5qj"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -718,10 +755,10 @@ var app = (function () {
 
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-1ta4ag0"));
+			: ""}`) + " svelte-1pnh5qj"));
 
     			add_location(button, file, 66, 8, 1850);
-    			attr_dev(li, "class", "svelte-1ta4ag0");
+    			attr_dev(li, "class", "svelte-1pnh5qj");
     			add_location(li, file, 65, 6, 1837);
     		},
     		m: function mount(target, anchor) {
@@ -740,7 +777,7 @@ var app = (function () {
 
     			if (dirty & /*page*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(`${/*page*/ ctx[0] === /*pageTitle*/ ctx[7]
 			? "selected"
-			: ""}`) + " svelte-1ta4ag0"))) {
+			: ""}`) + " svelte-1pnh5qj"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -860,53 +897,53 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "mobile-hero-image svelte-1ta4ag0");
+    			attr_dev(img0, "class", "mobile-hero-image svelte-1pnh5qj");
     			if (img0.src !== (img0_src_value = "images/appIcon.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Lemmi Logo");
     			add_location(img0, file, 16, 4, 314);
-    			attr_dev(img1, "class", "hero-image svelte-1ta4ag0");
+    			attr_dev(img1, "class", "hero-image svelte-1pnh5qj");
     			if (img1.src !== (img1_src_value = "images/hero-image.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Lemmi shown on an iPad and iPhone");
     			add_location(img1, file, 17, 4, 394);
-    			attr_dev(img2, "class", "logo svelte-1ta4ag0");
+    			attr_dev(img2, "class", "logo svelte-1pnh5qj");
     			if (img2.src !== (img2_src_value = "images/appIcon.svg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "Lemmi Logo");
     			add_location(img2, file, 24, 8, 576);
-    			attr_dev(sup, "class", "svelte-1ta4ag0");
+    			attr_dev(sup, "class", "svelte-1pnh5qj");
     			add_location(sup, file, 25, 20, 659);
-    			attr_dev(h1, "class", "title svelte-1ta4ag0");
+    			attr_dev(h1, "class", "title svelte-1pnh5qj");
     			add_location(h1, file, 23, 6, 549);
-    			attr_dev(h3, "class", "subtitle svelte-1ta4ag0");
+    			attr_dev(h3, "class", "subtitle svelte-1pnh5qj");
     			add_location(h3, file, 27, 6, 690);
-    			attr_dev(img3, "class", "app-icon svelte-1ta4ag0");
+    			attr_dev(img3, "class", "app-icon svelte-1pnh5qj");
     			if (img3.src !== (img3_src_value = "images/app-store.png")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "Download on the App Store");
     			add_location(img3, file, 32, 10, 844);
-    			attr_dev(button0, "class", "svelte-1ta4ag0");
+    			attr_dev(button0, "class", "svelte-1pnh5qj");
     			add_location(button0, file, 29, 8, 772);
-    			attr_dev(img4, "class", "play-icon svelte-1ta4ag0");
+    			attr_dev(img4, "class", "play-icon svelte-1pnh5qj");
     			if (img4.src !== (img4_src_value = "images/play-store.png")) attr_dev(img4, "src", img4_src_value);
     			attr_dev(img4, "alt", "Download on the Play Store");
     			add_location(img4, file, 40, 10, 1063);
-    			attr_dev(button1, "class", "svelte-1ta4ag0");
+    			attr_dev(button1, "class", "svelte-1pnh5qj");
     			add_location(button1, file, 37, 8, 990);
-    			attr_dev(div0, "class", "store-icons svelte-1ta4ag0");
+    			attr_dev(div0, "class", "store-icons svelte-1pnh5qj");
     			add_location(div0, file, 28, 6, 738);
-    			attr_dev(section, "class", "hero-info svelte-1ta4ag0");
+    			attr_dev(section, "class", "hero-info svelte-1pnh5qj");
     			add_location(section, file, 22, 4, 515);
-    			attr_dev(div1, "class", "header-wrapper svelte-1ta4ag0");
+    			attr_dev(div1, "class", "header-wrapper svelte-1pnh5qj");
     			add_location(div1, file, 15, 2, 281);
-    			attr_dev(p, "class", "lemmi-description svelte-1ta4ag0");
+    			attr_dev(p, "class", "lemmi-description svelte-1pnh5qj");
     			add_location(p, file, 48, 2, 1243);
-    			attr_dev(header, "class", "svelte-1ta4ag0");
+    			attr_dev(header, "class", "svelte-1pnh5qj");
     			add_location(header, file, 14, 0, 270);
-    			attr_dev(ul0, "class", "svelte-1ta4ag0");
+    			attr_dev(ul0, "class", "svelte-1pnh5qj");
     			add_location(ul0, file, 51, 2, 1480);
-    			attr_dev(nav0, "class", "nav-bar svelte-1ta4ag0");
+    			attr_dev(nav0, "class", "nav-bar svelte-1pnh5qj");
     			add_location(nav0, file, 50, 0, 1456);
-    			attr_dev(ul1, "class", "svelte-1ta4ag0");
+    			attr_dev(ul1, "class", "svelte-1pnh5qj");
     			add_location(ul1, file, 63, 2, 1774);
-    			attr_dev(nav1, "class", "mobile-nav svelte-1ta4ag0");
+    			attr_dev(nav1, "class", "mobile-nav svelte-1pnh5qj");
     			add_location(nav1, file, 62, 0, 1747);
     		},
     		l: function claim(nodes) {
@@ -2032,117 +2069,76 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
-    	return child_ctx;
-    }
-
-    function get_each_context_2$1(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[4] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
-    // (17:6) {#each section as paragraph}
-    function create_each_block_2$1(ctx) {
+    // (21:6) {#each story.timeline as event}
+    function create_each_block_1$2(ctx) {
+    	let div2;
+    	let div0;
+    	let img;
+    	let img_src_value;
+    	let t0;
+    	let div1;
+    	let h2;
+    	let t1_value = /*event*/ ctx[7].date + "";
+    	let t1;
+    	let t2;
     	let p;
-    	let t_value = /*paragraph*/ ctx[8] + "";
-    	let t;
+    	let t3_value = /*event*/ ctx[7].text + "";
+    	let t3;
+    	let t4;
 
     	const block = {
     		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			img = element("img");
+    			t0 = space();
+    			div1 = element("div");
+    			h2 = element("h2");
+    			t1 = text(t1_value);
+    			t2 = space();
     			p = element("p");
-    			t = text(t_value);
-    			attr_dev(p, "class", "svelte-11z7ofv");
-    			add_location(p, file$3, 17, 8, 378);
+    			t3 = text(t3_value);
+    			t4 = space();
+    			if (img.src !== (img_src_value = /*event*/ ctx[7].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "Timeline icon");
+    			attr_dev(img, "class", "svelte-13bnvh8");
+    			add_location(img, file$3, 23, 12, 589);
+    			attr_dev(div0, "class", "timeline-img svelte-13bnvh8");
+    			add_location(div0, file$3, 22, 10, 550);
+    			attr_dev(h2, "class", "svelte-13bnvh8");
+    			add_location(h2, file$3, 26, 12, 719);
+    			add_location(p, file$3, 27, 12, 753);
+    			attr_dev(div1, "class", "timeline-content js--fadeInLeft svelte-13bnvh8");
+    			add_location(div1, file$3, 25, 10, 661);
+    			attr_dev(div2, "class", "timeline-item svelte-13bnvh8");
+    			add_location(div2, file$3, 21, 8, 512);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, img);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
+    			append_dev(div1, h2);
+    			append_dev(h2, t1);
+    			append_dev(div1, t2);
+    			append_dev(div1, p);
+    			append_dev(p, t3);
+    			append_dev(div2, t4);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_2$1.name,
-    		type: "each",
-    		source: "(17:6) {#each section as paragraph}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (15:2) {#each story.sections as section}
-    function create_each_block_1$2(ctx) {
-    	let section;
-    	let t;
-    	let each_value_2 = /*section*/ ctx[5];
-    	validate_each_argument(each_value_2);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			t = space();
-    			attr_dev(section, "class", "svelte-11z7ofv");
-    			add_location(section, file$3, 15, 4, 325);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(section, null);
-    			}
-
-    			append_dev(section, t);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*story*/ 1) {
-    				each_value_2 = /*section*/ ctx[5];
-    				validate_each_argument(each_value_2);
-    				let i;
-
-    				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block_2$1(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(section, t);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value_2.length;
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(div2);
     		}
     	};
 
@@ -2150,14 +2146,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(15:2) {#each story.sections as section}",
+    		source: "(21:6) {#each story.timeline as event}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:4) {#each team.people as person}
+    // (40:4) {#each team.people as person}
     function create_each_block$3(ctx) {
     	let div;
     	let img;
@@ -2165,11 +2161,11 @@ var app = (function () {
     	let img_alt_value;
     	let t0;
     	let h30;
-    	let t1_value = /*person*/ ctx[2].name + "";
+    	let t1_value = /*person*/ ctx[4].name + "";
     	let t1;
     	let t2;
     	let h31;
-    	let t3_value = /*person*/ ctx[2].role + "";
+    	let t3_value = /*person*/ ctx[4].role + "";
     	let t3;
     	let t4;
 
@@ -2184,16 +2180,16 @@ var app = (function () {
     			h31 = element("h3");
     			t3 = text(t3_value);
     			t4 = space();
-    			if (img.src !== (img_src_value = /*person*/ ctx[2].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = `Picture of ${/*person*/ ctx[2].name}`);
-    			attr_dev(img, "class", "svelte-11z7ofv");
-    			add_location(img, file$3, 29, 8, 644);
-    			attr_dev(h30, "class", "team-name svelte-11z7ofv");
-    			add_location(h30, file$3, 30, 8, 712);
-    			attr_dev(h31, "class", "team-role svelte-11z7ofv");
-    			add_location(h31, file$3, 31, 8, 761);
-    			attr_dev(div, "class", "team-member svelte-11z7ofv");
-    			add_location(div, file$3, 28, 6, 610);
+    			if (img.src !== (img_src_value = /*person*/ ctx[4].image)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = `Picture of ${/*person*/ ctx[4].name}`);
+    			attr_dev(img, "class", "svelte-13bnvh8");
+    			add_location(img, file$3, 41, 8, 1052);
+    			attr_dev(h30, "class", "team-name svelte-13bnvh8");
+    			add_location(h30, file$3, 42, 8, 1120);
+    			attr_dev(h31, "class", "team-role svelte-13bnvh8");
+    			add_location(h31, file$3, 43, 8, 1169);
+    			attr_dev(div, "class", "team-member svelte-13bnvh8");
+    			add_location(div, file$3, 40, 6, 1018);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2216,7 +2212,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(28:4) {#each team.people as person}",
+    		source: "(40:4) {#each team.people as person}",
     		ctx
     	});
 
@@ -2228,16 +2224,21 @@ var app = (function () {
     	let h20;
     	let t1;
     	let article0;
-    	let header;
-    	let blockquote;
-    	let t5;
-    	let t6;
+    	let p;
+    	let t3;
     	let div1;
     	let h21;
-    	let t8;
+    	let t5;
     	let article1;
+    	let section;
     	let div2;
-    	let each_value_1 = /*story*/ ctx[0].sections;
+    	let t6;
+    	let div3;
+    	let h22;
+    	let t8;
+    	let article2;
+    	let div4;
+    	let each_value_1 = /*story*/ ctx[1].timeline;
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -2245,7 +2246,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*team*/ ctx[1].people;
+    	let each_value = /*team*/ ctx[2].people;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -2257,45 +2258,58 @@ var app = (function () {
     		c: function create() {
     			div0 = element("div");
     			h20 = element("h2");
-    			h20.textContent = `${/*story*/ ctx[0].title.toUpperCase()}`;
+    			h20.textContent = `${/*vision*/ ctx[0].title.toUpperCase()}`;
     			t1 = space();
     			article0 = element("article");
-    			header = element("header");
-    			blockquote = element("blockquote");
-    			blockquote.textContent = `"${/*story*/ ctx[0].heading.toUpperCase()}"`;
+    			p = element("p");
+    			p.textContent = `${/*vision*/ ctx[0].text}`;
+    			t3 = space();
+    			div1 = element("div");
+    			h21 = element("h2");
+    			h21.textContent = `${/*story*/ ctx[1].title.toUpperCase()}`;
     			t5 = space();
+    			article1 = element("article");
+    			section = element("section");
+    			div2 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
     			t6 = space();
-    			div1 = element("div");
-    			h21 = element("h2");
-    			h21.textContent = `${/*team*/ ctx[1].title.toUpperCase()}`;
+    			div3 = element("div");
+    			h22 = element("h2");
+    			h22.textContent = `${/*team*/ ctx[2].title.toUpperCase()}`;
     			t8 = space();
-    			article1 = element("article");
-    			div2 = element("div");
+    			article2 = element("article");
+    			div4 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h20, file$3, 6, 2, 119);
-    			attr_dev(div0, "class", "about-title svelte-11z7ofv");
-    			add_location(div0, file$3, 5, 0, 91);
-    			add_location(blockquote, file$3, 10, 4, 202);
-    			attr_dev(header, "class", "svelte-11z7ofv");
-    			add_location(header, file$3, 9, 2, 189);
-    			attr_dev(article0, "class", "story svelte-11z7ofv");
-    			add_location(article0, file$3, 8, 0, 163);
-    			add_location(h21, file$3, 23, 2, 475);
-    			attr_dev(div1, "class", "about-title svelte-11z7ofv");
-    			add_location(div1, file$3, 22, 0, 447);
-    			attr_dev(div2, "class", "team-wrapper svelte-11z7ofv");
-    			add_location(div2, file$3, 26, 2, 543);
-    			attr_dev(article1, "class", "team svelte-11z7ofv");
-    			add_location(article1, file$3, 25, 0, 518);
+    			add_location(h20, file$3, 9, 2, 209);
+    			attr_dev(div0, "class", "about-title svelte-13bnvh8");
+    			add_location(div0, file$3, 8, 0, 181);
+    			add_location(p, file$3, 12, 2, 281);
+    			attr_dev(article0, "class", "vision svelte-13bnvh8");
+    			add_location(article0, file$3, 11, 0, 254);
+    			add_location(h21, file$3, 15, 2, 341);
+    			attr_dev(div1, "class", "about-title svelte-13bnvh8");
+    			add_location(div1, file$3, 14, 0, 313);
+    			attr_dev(div2, "class", "container");
+    			add_location(div2, file$3, 19, 4, 442);
+    			attr_dev(section, "class", "timeline svelte-13bnvh8");
+    			add_location(section, file$3, 18, 2, 411);
+    			attr_dev(article1, "class", "story svelte-13bnvh8");
+    			add_location(article1, file$3, 17, 0, 385);
+    			add_location(h22, file$3, 35, 2, 883);
+    			attr_dev(div3, "class", "about-title svelte-13bnvh8");
+    			add_location(div3, file$3, 34, 0, 855);
+    			attr_dev(div4, "class", "team-wrapper svelte-13bnvh8");
+    			add_location(div4, file$3, 38, 2, 951);
+    			attr_dev(article2, "class", "team svelte-13bnvh8");
+    			add_location(article2, file$3, 37, 0, 926);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2305,28 +2319,33 @@ var app = (function () {
     			append_dev(div0, h20);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, article0, anchor);
-    			append_dev(article0, header);
-    			append_dev(header, blockquote);
-    			append_dev(article0, t5);
+    			append_dev(article0, p);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h21);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, article1, anchor);
+    			append_dev(article1, section);
+    			append_dev(section, div2);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(article0, null);
+    				each_blocks_1[i].m(div2, null);
     			}
 
     			insert_dev(target, t6, anchor);
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, h21);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, h22);
     			insert_dev(target, t8, anchor);
-    			insert_dev(target, article1, anchor);
-    			append_dev(article1, div2);
+    			insert_dev(target, article2, anchor);
+    			append_dev(article2, div4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div2, null);
+    				each_blocks[i].m(div4, null);
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*story*/ 1) {
-    				each_value_1 = /*story*/ ctx[0].sections;
+    			if (dirty & /*story*/ 2) {
+    				each_value_1 = /*story*/ ctx[1].timeline;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -2338,7 +2357,7 @@ var app = (function () {
     					} else {
     						each_blocks_1[i] = create_each_block_1$2(child_ctx);
     						each_blocks_1[i].c();
-    						each_blocks_1[i].m(article0, null);
+    						each_blocks_1[i].m(div2, null);
     					}
     				}
 
@@ -2349,8 +2368,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*team*/ 2) {
-    				each_value = /*team*/ ctx[1].people;
+    			if (dirty & /*team*/ 4) {
+    				each_value = /*team*/ ctx[2].people;
     				validate_each_argument(each_value);
     				let i;
 
@@ -2362,7 +2381,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$3(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div2, null);
+    						each_blocks[i].m(div4, null);
     					}
     				}
 
@@ -2379,11 +2398,15 @@ var app = (function () {
     			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(article0);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(article1);
     			destroy_each(each_blocks_1, detaching);
     			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div3);
     			if (detaching) detach_dev(t8);
-    			if (detaching) detach_dev(article1);
+    			if (detaching) detach_dev(article2);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -2402,15 +2425,15 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("About", slots, []);
-    	const { story, team } = about;
+    	const { heading, vision, story, team } = about;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<About> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ about, story, team });
-    	return [story, team];
+    	$$self.$capture_state = () => ({ about, heading, vision, story, team });
+    	return [vision, story, team];
     }
 
     class About extends SvelteComponentDev {
@@ -5302,7 +5325,7 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file$8, 30, 0, 831);
+    			add_location(main, file$8, 30, 0, 832);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5394,7 +5417,7 @@ var app = (function () {
     		[pages.contact]: Contact
     	};
 
-    	let page = pages.home;
+    	let page = pages.about;
 
     	let handleClickNavigation = (selected, scrollToTop = false) => {
     		$$invalidate(0, page = selected);

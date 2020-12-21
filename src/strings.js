@@ -75,26 +75,63 @@ export const home = {
 }
 
 export const about = {
+  heading: "Our goal is to provide tools to help anyone struggling with speech",
+  vision: {
+    title: "The Vision",
+    text: "Lemmi is a heart-felt project for both co-founders. The vision throughout has been to help those with speech impairments communicate more effectively and, in doing so, help to improve their independence and social confidence."
+  },
   story: {
-    title: "The Story of Lemmi",
-    heading: "Our goal is to give users a voice; to help build their confidence and independence, and to keep them connected.",
-    sections: [
-      [
-        "The original idea for Lemmi arose after, co-founder, Jemma helped care for a loved one who developed aphasia after suffering a serious stroke.",
-        "Having witnessed, first-hand, the devastating impact that a speech impairment can have on an individual’s confidence and overall well-being, Jemma set out to create an accessible and user-friendly resource that could help others who might, for any reason, struggle to express themselves verbally.",
-        "Following a conversation with Will (Jemma's close friend and software developer), the idea of developing an assistive app took shape."
-      ],
-      [
-        "Together, Jemma and Will spent the next few years learning about the world of AAC, researching what potential users would find most helpful. Their vision was to develop the best all-round communication app available for anyone with any form of aphasia or speech impairment.",
-        "After years of perfecting the design, their newly created app - Lemmi - is now available on iOS and Android."
-      ],
-      [
-        "Lemmi has been a passion project for both co-founders, who hope that it will provide a lifeline for anyone struggling with speech by providing a tool to communicate more easily and confidently with their friends, family and day-to-day contacts.",
-      ]
+    title: "The Story",
+    timeline: [
+      {
+        date: 2008,
+        text: "Jemma's Grandma suffers a stroke and develops aphasia.",
+        image: "images/broken-heart.svg"
+      },
+      {
+        date: 2010,
+        text: "Jemma helps to care for her Grandma and sees the devastating impact a speech impairment can have on an individual's confidence and well-being.",
+        image: "images/storm.svg"
+      },
+      {
+        date: 2010,
+        text: "Jemma develops word props and books to help her Grandma communicate a litte easier. The first ideas for an app begin to form.",
+        image: "images/book.svg"
+      },
+      {
+        date: 2018,
+        text : "Jemma discusses the idea with her good friend Will - a software developer with passions just like her own.",
+        image: "images/light-bulb.svg"
+      },
+      {
+        date: 2019,
+        text: "Will surprises Jemma with the first protoype of the speech app.",
+        image: "images/gift.svg"
+      },
+      {
+        date: 2019,
+        text: "As co-founders, Will and Jemma spend time developing the app further, continuing to research speech impairments and AAC.",
+        image: "images/contract.svg"
+      },
+      {
+        date: 2019,
+        text: "The name 'Lemmi' is chosen in honor of Jemma's Finnish Grandma, who's middle name is Lemmikki, which means 'forget-me-not'.",
+        image: "images/alpine-forget-me-not.svg"
+      },
+      {
+        date: 2020,
+        text: "Final app design, development, and market research conducted and finalised.",
+        image: "images/settings.svg"
+      },
+      {
+        date: 2021,
+        text: "Lemmi launches on iOS and Android to help people with speech impairments all over the world.",
+        image: "images/shuttle.svg"
+      }
     ]
   },
   team: {
-    title: "The Team",
+    title: "The Founders",
     people: [{
       name: "Jemma Grace",
       image: "images/jemma-bowles.jpg",

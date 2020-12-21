@@ -1,24 +1,36 @@
 <script>
   import { about } from '../strings';
-  const { story, team } = about;
+  const { heading, vision, story, team } = about;
 </script>
 
+<!-- <section class="about-intro">
+  <h2>"{heading}"</h2>
+</section> -->
+<div class="about-title">
+  <h2>{vision.title.toUpperCase()}</h2>
+</div>
+<article class="vision">
+  <p>{vision.text}</p>
+</article>
 <div class="about-title">
   <h2>{story.title.toUpperCase()}</h2>
 </div>
 <article class="story">
-  <header>
-    <blockquote>
-        "{story.heading.toUpperCase()}"
-    </blockquote>
-  </header>
-  {#each story.sections as section}
-    <section>
-      {#each section as paragraph}
-        <p>{paragraph}</p>
+  <section class="timeline">
+    <div class="container">
+      {#each story.timeline as event}
+        <div class="timeline-item">
+          <div class="timeline-img">
+            <img src={event.image} alt="Timeline icon"/>
+          </div>
+          <div class="timeline-content js--fadeInLeft">
+            <h2>{event.date}</h2>
+            <p>{event.text}</p>
+          </div>
+        </div> 
       {/each}
-    </section>
-  {/each}
+    </div>
+  </section>
 </article>
 <div class="about-title">
   <h2>{team.title.toUpperCase()}</h2>
@@ -36,6 +48,25 @@
 </article>
 
 <style>
+  .about-intro {
+    height: 7rem;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .about-intro h2 {
+    margin-bottom: 10px;
+  }
+
+  .about-intro h2 {
+    max-width: 800px;
+  }
+
   .about-title {
     width: 100%;
     background-color: #25548c;
@@ -57,24 +88,96 @@
     margin-bottom: 20px;
   }
 
-  .story header {
-    margin: 5px 0;
-    font-size: 1.5rem;
-    color: #25548c;
-    font-weight: 600;
-  }
-
-  .story section {
-    background-color: #ffffff;
-    margin-bottom: 20px;
+  .vision {
+    height: 6rem;
+    margin-top: 15px;
     font-size: 1.1rem;
-    padding: 20px 20px 0px 20px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .story p {
-    margin-bottom: 20px;
+  .story {
+    margin-top: 30px;
+  }
+
+  .timeline {
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    background: #25548c;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+  .timeline-item:nth-child(even) .timeline-content {
+    float: right;
+  }
+  .timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -10px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+  .timeline-item::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .timeline-content {
+    position: relative;
+    width: 22rem;
+    border-radius: 4px;
+    padding: 20px 10px;
+    background: #f5f5f5;
+    border: 1px solid #25538c4f;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+  }
+
+  .timeline-content h2 {
+    color: #25548C;
+    margin-bottom: 5px;
+  }
+  .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    right: -10px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #f5f5f5;
+  }
+  .timeline-img {
+    width: 40px;
+    height: 40px;
+    background: #ABE0E8;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-img img {
+    height: 30px;
+    width: 30px;
   }
 
   .team {
@@ -115,11 +218,52 @@
   }
 
   @media screen and (max-width: 619px) {
+    .about-intro {
+      height: 10rem;
+    }
     article {
       margin: 0 10px;
     }
+    
+    .vision {
+      height: 12rem;
+      margin-top: 0px;
+    }
+
     .team-wrapper {
       flex-direction: column;
     }
+
+    .team-member {
+      margin: 20px;
+    }
   }
+  @media screen and (max-width: 768px) {
+    .timeline::before {
+      left: 2rem;
+    }
+    .timeline .timeline-img {
+      left: 2rem;
+    }
+    .timeline .timeline-content {
+      max-width: 100%;
+      width: auto;
+      margin-left: 4rem;
+      padding: 10px 20px;
+    }
+    .timeline .timeline-item:nth-child(even) .timeline-content {
+      float: none;
+    }
+    .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      width: 0;
+      height: 0;
+      top: 30px;
+      left: -10px;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent #f5f5f5 transparent transparent;
+    }
+}
 </style>

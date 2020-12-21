@@ -269,5 +269,9 @@
       height: 35px;
       margin: 0;
     }
+
+    .lemmi-description {
+      margin-top: 5px;
+    }
   }
 </style>

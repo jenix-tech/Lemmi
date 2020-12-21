@@ -18,7 +18,7 @@
     [pages.contact]: Contact
   };
 
-  let page = pages.home;
+  let page = pages.about;
   let handleClickNavigation = (selected, scrollToTop = false) => {
     page = selected;
     if (scrollToTop) {
