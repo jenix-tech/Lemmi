@@ -453,15 +453,25 @@
     }
   }
 
-  /* Hack for safari */
+  /* HACKS FOR SAFARI */
+  /* 13+ */
   @media not all and (min-resolution:.001dpcm) {
     @supports (-webkit-appearance:none) and (display:flow-root) { 
       .carousel-container { 
         width: 11rem;
         height: 22rem;
       } 
-    } 
+    }
+    /* 11+ */
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) { 
+      .carousel-container { 
+        width: 11rem;
+        height: 22rem;
+      } 
+    }
   }
+
+
 </style>
 
 
