@@ -1,13 +1,12 @@
 export const hero = {
   title: "Lemmi",
-  subtitle: "The assistive app that lets you chat!",
-  description: "Discover a world of possibilities with this customisable speech app that gives you the independence to take part in conversations wherever you are, with or without a network connection.",
+  subtitle: "The assistive app that lets you chat!"
 };
 
 export const home = {
   intro: {
     text1: "Lemmi was designed for people who struggle with their speech.",
-    text2: "This assistive text-to-speech (AAC) app gives users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
+    text2: "This assistive text-to-speech (AAC) app provides a tool to communicate more easily, allowing users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
   },
   freetrial: {
     title: "Get a weeks FREE trial",
