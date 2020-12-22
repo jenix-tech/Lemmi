@@ -160,27 +160,27 @@ export const app = {
     {
       title: "Chat",
       description: "Users can type their own words or select from over 600+ words and phrases which the app will read aloud.",
-      image: "images/chat.png"
+      image: "images/chat-hand.png"
     },
     {
       title: "Personalise",
       description: "Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
-      image: "images/personalise.png"
+      image: "images/personalise-hand.png"
     },
     {
       title: "Save time",
       description: "Suggested word prompts are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
-      image: "images/save-time.png"
+      image: "images/save-time-hand.png"
     },
     {
       title: "Simple to use",
       description: "The app has a user friendly design (including a clear menu, easy navigation, and simple graphics) making it suitable for all ages and abilities.",
-      image: "images/simple-to-use.png"
+      image: "images/simple-to-use-hand.png"
     },
     {
       title: "Customise",
       description: "The app can be adapted to suit individual needs by changing the setting options (e.g. tone of voice, colour theme, and more).",
-      image: "images/customise.png"
+      image: "images/customise-hand.png"
     },
   ]
 }
