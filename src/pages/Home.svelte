@@ -462,13 +462,7 @@
         height: 22rem;
       } 
     }
-    /* 11+ */
-    @supports (-webkit-appearance:none) and (stroke-color:transparent) { 
-      .carousel-container { 
-        width: 11rem;
-        height: 22rem;
-      } 
-    }
+   
   }
 
 
