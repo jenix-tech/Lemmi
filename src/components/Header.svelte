@@ -5,9 +5,9 @@
 
   const openStore = (store) => {
     if (store === 'app') {
-      console.log('app')
+      window.open('https://apps.apple.com/us/app/lemmi/id1519868911')
     } else {
-      console.log('play')
+      window.open('http://play.google.com/store/apps/details?id=com.jenix.lemmi')
     }
   }
 </script>
