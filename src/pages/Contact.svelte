@@ -149,7 +149,7 @@
   }
 
   .error {
-    class: red;
+    color: red;
   }
 
   form {
