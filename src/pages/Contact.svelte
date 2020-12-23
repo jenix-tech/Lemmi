@@ -8,6 +8,10 @@
       "https://bize978r9h.execute-api.us-east-2.amazonaws.com/Production/contact";
     const res = await fetch(url, {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
       body: JSON.stringify({ feedback, first, last, email })
     });
     const response = await res.json();
