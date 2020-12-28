@@ -10,9 +10,14 @@
       "https://bize978r9h.execute-api.us-east-2.amazonaws.com/Production/join-newsletter";
     const res = await fetch(url, {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
       body: JSON.stringify({ email })
     });
     const response = await res.json();
+    console.log(response);
     if (response.statusCode && response.statusCode === 200) {
       newsletterSuccess = true;
       newsletterMsg = successMsg;
