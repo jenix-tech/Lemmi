@@ -9,21 +9,21 @@ function setupI18n({ withLocale }) {
 
   const _locale = supported(withLocale) || fallbackLocale;
   
-    const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
+  const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
 
-    return fetch(messsagesFileUrl)
-        .then(response => response.json())
-        .then((messages) => {
-            dictionary.set({ [_locale]: messages });
+  return fetch(messsagesFileUrl)
+    .then(response => response.json())
+    .then((messages) => {
+      dictionary.set({ [_locale]: messages });
 
-            cachedLocale = _locale;
+      cachedLocale = _locale;
 
-            locale.set(_locale);
-            init({
-              fallbackLocale: 'en',
-              initialLocale: _locale,
-            });
-        });
+      locale.set(_locale);
+      init({
+        fallbackLocale: 'en',
+        initialLocale: _locale,
+      });
+    });
 }
 
 function formatDate(date, options) {
@@ -37,11 +37,11 @@ const dir = derived(locale, $locale => $locale === 'ar' ? 'rtl' : 'ltr');
 
 const locales = {
   en: "English",
-  'en-US': "English (US)",
+  'en-us': "English (US)",
 };
 
 const supported = (locale) => {
-  if (Object.keys(locales).includes(locale)) {
+  if (Object.keys(locales).includes(locale.toLowerCase())) {
     return locale;
   } else {
     return 'en';

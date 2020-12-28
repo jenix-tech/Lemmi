@@ -655,7 +655,7 @@ var app = (function () {
 
     var dlv_umd = createCommonjsModule(function (module, exports) {
     !function(t,n){module.exports=function(t,n,e,i,o){for(n=n.split?n.split("."):n,i=0;i<n.length;i++)t=t?t[n[i]]:o;return t===o?e:t};}();
-
+    //# sourceMappingURL=dlv.umd.js.map
     });
 
     /*! *****************************************************************************
@@ -4836,19 +4836,19 @@ var app = (function () {
 
       const _locale = supported(withLocale) || fallbackLocale;
       
-        const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
+      const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
 
-        return fetch(messsagesFileUrl)
-            .then(response => response.json())
-            .then((messages) => {
-                a.set({ [_locale]: messages });
+      return fetch(messsagesFileUrl)
+        .then(response => response.json())
+        .then((messages) => {
+          a.set({ [_locale]: messages });
 
-                x.set(_locale);
-                j({
-                  fallbackLocale: 'en',
-                  initialLocale: _locale,
-                });
-            });
+          x.set(_locale);
+          j({
+            fallbackLocale: 'en',
+            initialLocale: _locale,
+          });
+        });
     }
 
     const isLocaleLoaded = derived(x, $locale => typeof $locale === 'string');
@@ -4857,11 +4857,11 @@ var app = (function () {
 
     const locales = {
       en: "English",
-      'en-US': "English (US)",
+      'en-us': "English (US)",
     };
 
     const supported = (locale) => {
-      if (Object.keys(locales).includes(locale)) {
+      if (Object.keys(locales).includes(locale.toLowerCase())) {
         return locale;
       } else {
         return 'en';
