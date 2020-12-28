@@ -16,6 +16,10 @@
       },
       body: JSON.stringify({ email })
     });
+
+      newsletterSuccess = true;
+      newsletterMsg = successMsg;
+
     const response = await res.json();
     if (response.statusCode && response.statusCode === 200) {
       newsletterSuccess = true;
