@@ -17,7 +17,6 @@
       body: JSON.stringify({ email })
     });
     const response = await res.json();
-    console.log(response);
     if (response.statusCode && response.statusCode === 200) {
       newsletterSuccess = true;
       newsletterMsg = successMsg;
