@@ -21,7 +21,8 @@ function setupI18n({ withLocale }) {
       locale.set(_locale);
       init({
         fallbackLocale: 'en',
-        initialLocale: _locale,
+        initialLocale: 'en'
+        // initialLocale: _locale,
       });
     });
 }

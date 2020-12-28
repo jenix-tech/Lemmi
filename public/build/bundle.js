@@ -4846,7 +4846,8 @@ var app = (function () {
           x.set(_locale);
           j({
             fallbackLocale: 'en',
-            initialLocale: _locale,
+            initialLocale: 'en'
+            // initialLocale: _locale,
           });
         });
     }
