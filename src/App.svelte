@@ -1,4 +1,5 @@
 <script>
+  import { getLocaleFromNavigator } from 'svelte-i18n';
   import { setupI18n, isLocaleLoaded } from "./services/i18n";
 
   import Header from "./components/Header.svelte";
@@ -11,7 +12,7 @@
   import Footer from "./components/Footer.svelte";
   import { pages } from "./strings";
 
-  setupI18n({ withLocale: window.navigator.language });
+  setupI18n({ withLocale: getLocaleFromNavigator() });
 
   const components = {
     [pages.home]: Home,

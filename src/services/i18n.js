@@ -41,6 +41,7 @@ const locales = {
 };
 
 const supported = (locale) => {
+  console.log(locale);
   if (Object.keys(locales).includes(locale.toLowerCase())) {
     return locale;
   } else {
