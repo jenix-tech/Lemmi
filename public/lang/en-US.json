@@ -168,7 +168,7 @@
         "image":"images/chat-hand.png"
       },
       {
-        "title":"Personalise",
+        "title":"Personalize",
         "description":"Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
         "image":"images/personalise-hand.png"
       },
@@ -207,7 +207,7 @@
     "included":[
       "Offline availability - once downloaded, Lemmi does not require an internet connection",
       "Extensive word options - over 600+ words and phrases included",
-      "Personalisation - users can add unlimited personal words and images",
+      "Personalization - users can add unlimited personal words and images",
       "Privacy - bespoke entries are stored privately on the user's private account",
       "Phone calls - Lemmi can be used during phone conversations (iOS 13+ only)",
       "Language options - English with additional languages coming soon",
