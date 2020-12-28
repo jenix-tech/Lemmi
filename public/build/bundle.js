@@ -4833,7 +4833,7 @@ var app = (function () {
     const MESSAGE_FILE_URL_TEMPLATE = '/lang/{locale}.json';
 
     function setupI18n({ withLocale }) {
-
+      console.log(withLocale);
       const _locale = supported(withLocale) || fallbackLocale;
       
       const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
