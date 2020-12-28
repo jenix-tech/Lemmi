@@ -6,10 +6,9 @@ const MESSAGE_FILE_URL_TEMPLATE = '/lang/{locale}.json';
 let cachedLocale;
 
 function setupI18n({ withLocale }) {
-  console.log(withLocale)
   const _locale = supported(withLocale) || fallbackLocale;
   
-  const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
+  const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale.toLowerCase());
 
   return fetch(messsagesFileUrl)
     .then(response => response.json())
@@ -21,8 +20,7 @@ function setupI18n({ withLocale }) {
       locale.set(_locale);
       init({
         fallbackLocale: 'en',
-        initialLocale: 'en'
-        // initialLocale: _locale,
+        initialLocale: _locale,
       });
     });
 }
