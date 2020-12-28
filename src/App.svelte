@@ -1,4 +1,6 @@
 <script>
+  import { setupI18n, isLocaleLoaded } from "./services/i18n";
+
   import Header from "./components/Header.svelte";
   import Home from "./pages/Home.svelte";
   import Lemmi from "./pages/Lemmi.svelte";
@@ -8,6 +10,8 @@
   import Contact from "./pages/Contact.svelte";
   import Footer from "./components/Footer.svelte";
   import { pages } from "./strings";
+
+  setupI18n({ withLocale: window.navigator.language });
 
   const components = {
     [pages.home]: Home,
@@ -27,8 +31,11 @@
   };
 </script>
 
-<Header {page} {handleClickNavigation} />
-<main>
-  <svelte:component this={components[page]} {handleClickNavigation} />
-</main>
-<Footer />
+{#if $isLocaleLoaded}
+  <Header {page} {handleClickNavigation} />
+  <main>
+    <svelte:component this={components[page]} {handleClickNavigation} />
+  </main>
+  <Footer />
+{/if}
+

@@ -1,5 +1,6 @@
 <script>
-  import { hero, pages, mobilePages } from "../strings.js";
+  import { _ } from "../services/i18n";
+  import { pages, mobilePages } from "../strings.js";
   export let page;
   export let handleClickNavigation;
 
@@ -23,9 +24,9 @@
     <section class="hero-info">
       <h1 class="title">
         <img class="logo" src="images/appIcon.svg" alt="Lemmi Logo" />
-        {hero.title}<sup>®</sup>
+        {$_('hero.title')}<sup>®</sup>
       </h1>
-      <h3 class="subtitle">{hero.subtitle}</h3>
+      <h3 class="subtitle">{$_('hero.subtitle')}</h3>
       <div class="store-icons">
         <button
           on:click={() => openStore('app')}

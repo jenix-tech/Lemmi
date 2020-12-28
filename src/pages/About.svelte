@@ -1,24 +1,23 @@
 <script>
-  import { about } from '../strings';
-  const { heading, vision, story, team } = about;
+  import { _ } from "../services/i18n";
 </script>
 
 <!-- <section class="about-intro">
   <h2>"{heading}"</h2>
 </section> -->
 <div class="about-title">
-  <h2>{vision.title.toUpperCase()}</h2>
+  <h2>{$_('about.vision.title').toUpperCase()}</h2>
 </div>
 <article class="vision">
-  <p>{vision.text}</p>
+  <p>{$_('about.vision.text')}</p>
 </article>
 <div class="about-title">
-  <h2>{story.title.toUpperCase()}</h2>
+  <h2>{$_('about.story.title').toUpperCase()}</h2>
 </div>
 <article class="story">
   <section class="timeline">
     <div class="container">
-      {#each story.timeline as event}
+      {#each $_('about.story.timeline') as event}
         <div class="timeline-item">
           <div class="timeline-img">
             <img src={event.image} alt="Timeline icon"/>
@@ -33,11 +32,11 @@
   </section>
 </article>
 <div class="about-title">
-  <h2>{team.title.toUpperCase()}</h2>
+  <h2>{$_('about.team.title').title.toUpperCase()}</h2>
 </div>
 <article class="team">
   <div class="team-wrapper">
-    {#each team.people as person}
+    {#each $_('about.team.people') as person}
       <div class="team-member">
         <img src={person.image} alt={`Picture of ${person.name}`}/>
         <h3 class="team-name">{person.name}</h3>

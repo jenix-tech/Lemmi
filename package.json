@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
     "rollup": "^1.32.1",
     "rollup-plugin-livereload": "^1.3.0",
@@ -22,6 +23,7 @@
     "svelte": "^3.29.0"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.6"
+    "sirv-cli": "^0.4.6",
+    "svelte-i18n": "^3.3.0"
   }
 }

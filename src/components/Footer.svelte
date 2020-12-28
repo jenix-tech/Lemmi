@@ -1,8 +1,7 @@
 <script>
-  import { actions, links } from "../strings.js";
-  const { newsletter } = actions;
+  import { _ } from "../services/i18n";
   let email;
-  let successMsg = newsletter.success;
+  let successMsg = $_('actions.newsletter.success');
   let newsletterSuccess = false;
   let newsletterMsg;
   async function handleSubmit() {
@@ -20,8 +19,6 @@
       },
       body: JSON.stringify({ email })
     });
-
-
 
     const response = await res.json();
     if (response.statusCode && response.statusCode === 200) {
@@ -42,6 +39,61 @@
     }
   }
 </script>
+
+<footer id="footer">
+  <div class="footer-content">
+    <div class="subscribe-wrapper">
+      <p class="heading">{$_('actions.newsletter.heading')}</p>
+      {#if newsletterMsg && newsletterSuccess}
+        <p class="message" class:success={newsletterSuccess}>{newsletterMsg}</p>
+      {:else}
+      {#if newsletterMsg && !newsletterSuccess}
+        <p class="message">{newsletterMsg}</p>
+      {/if}
+      <div class="subscribe">
+        <input
+          id="newletter"
+          name="newletter"
+          type="email"
+          placeholder="EMAIL ADDRESS"
+          aria-label="Newsletter Sign Up"
+          required
+          bind:value={email}
+          on:input={onInputChange} />
+        <button id="submit" class="submit" on:click={handleSubmit}>
+          {$_('actions.newsletter.button').toUpperCase()}
+        </button>
+      </div>
+      {/if}
+  </div>
+  <div class="social-links">
+    <a href={$_('links.email')} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/email.svg" alt="social-icon" />
+    </a>
+    <a href={$_('links.twitter')} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/twitter.svg" alt="social-icon" />
+    </a>
+    <a href={$_('links.facebook')} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/facebook.svg" alt="social-icon" />
+    </a>
+    <a href={$_('links.instagram')} rel="noopener" target="_blank">
+      <img class="social-icon" src="images/instagram.svg" alt="social-icon" />
+    </a>
+  </div>
+  <div class="small-print">
+    <div class="copywrite">
+      <p>&copy; 2020 Jenix Technologies LTD</p>
+    </div>
+    <p class="memorial">Dedicated to N. Lemmikki Hyry</p>
+    <div class="navigation-wrapper">
+      <div class="navigation">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</footer>
 
 <style>
   footer {
@@ -183,58 +235,3 @@
     }
   }
 </style>
-
-<footer id="footer">
-  <div class="footer-content">
-    <div class="subscribe-wrapper">
-      <p class="heading">{newsletter.heading}</p>
-      {#if newsletterMsg && newsletterSuccess}
-        <p class="message" class:success={newsletterSuccess}>{newsletterMsg}</p>
-      {:else}
-      {#if newsletterMsg && !newsletterSuccess}
-        <p class="message">{newsletterMsg}</p>
-      {/if}
-      <div class="subscribe">
-        <input
-          id="newletter"
-          name="newletter"
-          type="email"
-          placeholder="EMAIL ADDRESS"
-          aria-label="Newsletter Sign Up"
-          required
-          bind:value={email}
-          on:input={onInputChange} />
-        <button id="submit" class="submit" on:click={handleSubmit}>
-          {newsletter.button.toUpperCase()}
-        </button>
-      </div>
-      {/if}
-  </div>
-  <div class="social-links">
-    <a href={links.email} rel="noopener" target="_blank">
-      <img class="social-icon" src="images/email.svg" alt="social-icon" />
-    </a>
-    <a href={links.twitter} rel="noopener" target="_blank">
-      <img class="social-icon" src="images/twitter.svg" alt="social-icon" />
-    </a>
-    <a href={links.facebook} rel="noopener" target="_blank">
-      <img class="social-icon" src="images/facebook.svg" alt="social-icon" />
-    </a>
-    <a href={links.instagram} rel="noopener" target="_blank">
-      <img class="social-icon" src="images/instagram.svg" alt="social-icon" />
-    </a>
-  </div>
-  <div class="small-print">
-    <div class="copywrite">
-      <p>&copy; 2020 Jenix Technologies LTD</p>
-    </div>
-    <p class="memorial">Dedicated to N. Lemmikki Hyry</p>
-    <div class="navigation-wrapper">
-      <div class="navigation">
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms-of-service.html">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-  </div>
-</footer>

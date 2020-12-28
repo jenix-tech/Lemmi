@@ -1,5 +1,5 @@
 <script>
-  import { contact } from '../strings';
+  import { _ } from "../services/i18n";
 
   let first, last, email, feedback, success, error;
 
@@ -31,14 +31,14 @@
 </script>
 
 <div class="contact-title">
-  <h2>{contact.title.toUpperCase()}</h2>
+  <h2>{$_('contact.title').toUpperCase()}</h2>
 </div>
 <section class="contact">
-  <p>{contact.instructions}</p>
+  <p>{$_('contact.instructions')}</p>
   <div class="form">
     <div class="form-wrapper">
       <div class="form-header">
-        <h3>{contact.form}</h3>
+        <h3>{$_('contact.form')}</h3>
         {#if success}
           <p class="success">{success}</p>
         {/if}
@@ -83,10 +83,10 @@
           on:change={(e) => feedback = e.target.value}
         />
       </form>
-      <button on:click={handleSubmit}>{contact.submit.toUpperCase()}</button>
+      <button on:click={handleSubmit}>{$_('contact.submit').toUpperCase()}</button>
     </div>
   </div>
-  <p>{contact.notes}</p>
+  <p>{$_('contact.notes')}</p>
 </section>
 
 

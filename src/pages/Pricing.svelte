@@ -1,5 +1,5 @@
 <script>
-  import { pricing } from '../strings';
+  import { _ } from "../services/i18n";
 
   const openStore = (store) => {
     if (store === 'app') {
@@ -11,12 +11,12 @@
 </script>
 
 <div class="pricing-title">
-  <h2>{pricing.title.toUpperCase()}</h2>
+  <h2>{$_('pricing.title').toUpperCase()}</h2>
 </div>
 <section class="subscriptions">
-  <h2>{pricing.subscription}</h2>
+  <h2>{$_('pricing.subscription')}</h2>
   <div class="plans-wrapper">
-    {#each pricing.plans as plan}
+    {#each $_('pricing.plans') as plan}
       <div class="plan">
         {#if plan.popular}
           <h3 class="popular">{plan.popular}</h3>
@@ -26,7 +26,7 @@
         {#if plan.perMonth}
           <p class="perMonth">{plan.perMonth}</p>
         {/if}
-        <p class="billing">{pricing.billing}</p>
+        <p class="billing">{$_('pricing.billing')}</p>
         {#if plan.save}
           <h5 class="saving">{plan.save.toUpperCase()}</h5>
         {/if}
@@ -34,12 +34,12 @@
     {/each}
   </div>
   <div class="included">
-    <h2>{pricing.whatsIncluded}</h2>
-    {#each pricing.included as included}
+    <h2>{$_('pricing.whatsIncluded')}</h2>
+    {#each $_('pricing.included') as included}
       <p>{included}</p>
     {/each}
   </div>
-  <h4>{pricing.available}</h4>
+  <h4>{$_('pricing.available')}</h4>
   <div class="store-icons">
     <button
       on:click={() => openStore('app')}

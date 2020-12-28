@@ -1,6 +1,24 @@
 <script>
-  import { app } from "../strings.js";
+  import { _ } from "../services/i18n";
 </script>
+
+<div class="lemmi-title">
+  <h3>{$_('app.header').toUpperCase()}</h3>
+</div>
+<section class="features">
+  {#each $_('app.features') as { title, description, image }, index}
+    <div class="feature" class:right={index % 2 !== 0}>
+      <img
+        class="feature-image"
+        src={image}
+        alt="{title} image" />
+      <div class="text-wrapper">
+        <h3 class="feature-title">{title}</h3>
+        <p class="feature-description">{description}</p>
+      </div>
+    </div>
+  {/each}
+</section>
 
 <style>
   .lemmi-title {
@@ -69,21 +87,3 @@
     }
   }
 </style>
-
-<div class="lemmi-title">
-  <h3>{app.header.toUpperCase()}</h3>
-</div>
-<section class="features">
-  {#each app.features as { title, description, image }, index}
-    <div class="feature" class:right={index % 2 !== 0}>
-      <img
-        class="feature-image"
-        src={image}
-        alt="{title} image" />
-      <div class="text-wrapper">
-        <h3 class="feature-title">{title}</h3>
-        <p class="feature-description">{description}</p>
-      </div>
-    </div>
-  {/each}
-</section>

@@ -1,13 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-  import { home, pages } from '../strings';
-  const { intro, freetrial, blurb, help, anatomy } = home;
+  import { _ } from "../services/i18n";
+  import { pages } from '../strings';
 
   let carousel;
   let carouselIndex = 0
   let timeoutId;
   const speed = 4;
-  const numberOfImages = freetrial.images.length;
+  const numberOfImages = $_('home.freetrial.images').length;
   let carouselItemWidth;
   onMount(() => {
   carouselItemWidth = carousel.scrollWidth / numberOfImages;
@@ -48,16 +48,16 @@
 </script>
 
 <section class="home-intro">
-  <h2>{intro.text1}</h2>
-  <p>{intro.text2}</p>
+  <h2>{$_('home.intro.text1')}</h2>
+  <p>{$_('home.intro.text2')}</p>
 </section>
 <section class="home-freetrial">
   <div class="wrapper">
     <div class="home-freetrial__text">
-      <h2>{freetrial.title}</h2>
-      <p>{freetrial.subtitle}</p>
+      <h2>{$_('home.freetrial.title')}</h2>
+      <p>{$_('home.freetrial.subtitle')}</p>
       <button on:click={handleClickNavigation(pages.pricing, true)}>Get 1 week free</button>
-      <p class="home-freetrial__smallprint">{freetrial.desciption}</p>
+      <p class="home-freetrial__smallprint">{$_('home.freetrial.description')}</p>
     </div>
     <div class="home-freetrial__carousel">
       <div class="carousel_image">
@@ -65,7 +65,7 @@
           <img src="./images/chevron-left.svg" alt="View previous screenshot" />
         </button> -->
         <div class="carousel-container" bind:this={carousel}>
-          {#each freetrial.images as src}
+          {#each $_('home.freetrial.images') as src}
             <img class="carousel-item" {src} alt="Screenshot of Lemmi running on iOS" />
           {/each}
         </div>
@@ -77,14 +77,14 @@
   </div>
 </section>
 <section class="blurb">
-  <p>{blurb.text1}</p>
+  <p>{$_('home.blurb.text1')}</p>
   <button 
-    on:click={handleClickNavigation(pages.app)}>{blurb.action}</button>
+    on:click={handleClickNavigation(pages.app)}>{$_('home.blurb.action')}</button>
 </section>
 <section class="help">
-  <h3>{help.title}</h3>
+  <h3>{$_('home.help.title')}</h3>
   <div class="usp-wrapper">
-    {#each help.usps as usp}
+    {#each $_('home.help.usps') as usp}
       <div class="usp">
         <div class="usp-image-wrapper">
           <img src={usp.image} alt={usp.title} />
@@ -99,7 +99,7 @@
   <div class="wrapper">
     <img class="mock-up" src="images/anatomy.png" alt="Anatomy of the Lemmi app">
     <div class="anatomy-wrapper">
-      {#each anatomy as item}
+      {#each $_('home.anatomy') as item}
         <div class="anatomy-item reversed">
           <img class="anatomy-icon" src={item.image} alt={item.title} />
           <div class="anatomy-text">
