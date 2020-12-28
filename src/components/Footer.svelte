@@ -8,6 +8,10 @@
   async function handleSubmit() {
     const url =
       "https://bize978r9h.execute-api.us-east-2.amazonaws.com/Production/join-newsletter";
+
+    newsletterSuccess = true;
+    newsletterMsg = successMsg;
+
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -17,8 +21,7 @@
       body: JSON.stringify({ email })
     });
 
-      newsletterSuccess = true;
-      newsletterMsg = successMsg;
+
 
     const response = await res.json();
     if (response.statusCode && response.statusCode === 200) {
@@ -125,6 +128,18 @@
   }
   .navigation-wrapper {
     display: flex;
+  }
+
+  .success, .message {
+    margin: 20px 0;
+  }
+
+  .message {
+    color: #ce0e0e
+  }
+
+  .success {
+    color: #01a116
   }
 
   @media screen and (max-width: 767px) { 
