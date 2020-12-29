@@ -4835,7 +4835,7 @@ var app = (function () {
     function setupI18n({ withLocale }) {
       const _locale = supported(withLocale) || fallbackLocale;
       
-      const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale.toLowerCase());
+      const messsagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
 
       return fetch(messsagesFileUrl)
         .then(response => response.json())
@@ -4862,7 +4862,7 @@ var app = (function () {
     const supported = (locale) => {
       console.log(locale);
       if (Object.keys(locales).includes(locale.toLowerCase())) {
-        return locale;
+        return locale.toLowerCase();
       } else {
         return 'en';
       }
