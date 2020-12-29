@@ -1,0 +1,248 @@
+{
+  "hero":{
+    "title":"Lemmi",
+    "subtitle":"The assistive app that lets you chat!"
+  },
+  "home":{
+    "intro":{
+      "text1":"Lemmi was designed for people who struggle with their speech.",
+      "text2":"This assistive text-to-speech (AAC) app provides a tool to communicate more easily, allowing users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
+    },
+    "freetrial":{
+      "title":"Get a weeks FREE trial",
+      "subtitle":"Customizable and ad-free, try Lemmi today!",
+      "button":"Get 1 week free",
+      "desciption":"From only $3.58/month on a yearly plan. Terms of Service apply.",
+      "images":[
+        "images/chat.png",
+        "images/personalise.png",
+        "images/save-time.png",
+        "images/simple-to-use.png",
+        "images/customise.png"
+      ]
+    },
+    "blurb":{
+      "text1":"Discover a world of possibilities with this unique speech app that gives users a voice of their own.",
+      "action":"SHOW ME HOW"
+    },
+    "help":{
+      "title":"Lemmi helps you...",
+      "usps":[
+        {
+          "image":"/images/communicate-with-ease.svg",
+          "title":"Communicate with ease",
+          "description":"Type your own words or select from over 600 other options which the app will read aloud."
+        },
+        {
+          "image":"/images/keep-up-with-conversations.svg",
+          "title":"Keep up with conversations",
+          "description":"Suggested word prompts are shown to help keep your conversations flowing."
+        },
+        {
+          "image":"/images/no-wifi.svg",
+          "title":"Stay connected",
+          "description":"Once downloaded, Lemmi does not require an internet connection for you to communicate with others."
+        }
+      ]
+    },
+    "anatomy":[
+      {
+        "title":"Predictive Words",
+        "desciption":"Suggested words appear to help you form phrases faster",
+        "image":"/images/predictive.svg"
+      },
+      {
+        "title":"Word Book",
+        "desciption":"Access word categories and add custom entries",
+        "image":"/images/book.svg"
+      },
+      {
+        "title":"Settings",
+        "desciption":"Customize the app, manage your subscription, and get help",
+        "image":"/images/settings.svg"
+      },
+      {
+        "title":"Connectivity",
+        "desciption":"Once downloaded, available anytime, anywhere",
+        "image":"/images/no-wifi.svg"
+      },
+      {
+        "title":"Play",
+        "desciption":"Tap for the text in the speech bar to be read aloud",
+        "image":"/images/play.svg"
+      },
+      {
+        "title":"Core Words",
+        "desciption":"Quick access core words such as 'Yes' and 'Please'",
+        "image":"/images/plus.svg"
+      }
+    ]
+  },
+  "about":{
+    "heading":"Our goal is to provide tools to help anyone struggling with speech",
+    "vision":{
+      "title":"The Vision",
+      "text":"Lemmi is a heart-felt project for both co-founders. The vision throughout has been to help those with speech impairments communicate more effectively and, in doing so, help to improve their independence and social confidence."
+    },
+    "story":{
+      "title":"The Story",
+      "timeline":[
+        {
+          "date":2008,
+          "text":"Jemma's Grandma suffers a stroke and develops aphasia.",
+          "image":"images/broken-heart.svg"
+        },
+        {
+          "date":2010,
+          "text":"Jemma helps to care for her Grandma and sees the devastating impact a speech impairment can have on an individual's confidence and well-being.",
+          "image":"images/storm.svg"
+        },
+        {
+          "date":2010,
+          "text":"Jemma develops word props and books to help her Grandma communicate a litte easier. The first ideas for an app begin to form.",
+          "image":"images/book.svg"
+        },
+        {
+          "date":2018,
+          "text":"Jemma discusses the idea with her good friend Will - a software developer with passions just like her own.",
+          "image":"images/light-bulb.svg"
+        },
+        {
+          "date":2019,
+          "text":"Will surprises Jemma with the first protoype of the speech app.",
+          "image":"images/gift.svg"
+        },
+        {
+          "date":2019,
+          "text":"As co-founders, Will and Jemma spend time developing the app further, continuing to research speech impairments and AAC.",
+          "image":"images/contract.svg"
+        },
+        {
+          "date":2019,
+          "text":"The name 'Lemmi' is chosen in honor of Jemma's Finnish Grandma, who's middle name is Lemmikki, which means 'forget-me-not'.",
+          "image":"images/alpine-forget-me-not.svg"
+        },
+        {
+          "date":2020,
+          "text":"Final app design, development, and market research conducted and finalized.",
+          "image":"images/settings.svg"
+        },
+        {
+          "date":2021,
+          "text":"Lemmi launches on iOS and Android to help people with speech impairments all over the world.",
+          "image":"images/shuttle.svg"
+        }
+      ]
+    },
+    "team":{
+      "title":"The Founders",
+      "people":[
+        {
+          "name":"Jemma Grace",
+          "image":"images/jemma-bowles.jpg",
+          "role":"Co-founder"
+        },
+        {
+          "name":"Will Nixon",
+          "image":"images/will-nixon.jpg",
+          "role":"Co-founder"
+        }
+      ]
+    }
+  },
+  "contact":{
+    "title":"Contact Us",
+    "instructions":"Lemmi is continually being revised in response to customer's feedback, so please do not hesitate to get in touch with any questions or to let us know of any ways you think the app could be improved further.",
+    "form":"Get in touch",
+    "notes":"We greatly appreciate and value all feedback given, and will do our best to respond to everyone's comments and ideas.",
+    "submit":"Submit",
+    "success":"Your form has been submitted!",
+    "error":"There was an issue submitting your form. Please try again or email as: info@lemmichat.com"
+  },
+  "app":{
+    "header":"Lemmi offers users a range of exciting functions and personalized possibilities",
+    "features":[
+      {
+        "title":"Chat",
+        "description":"Users can type their own words or select from over 600+ words and phrases which the app will read aloud.",
+        "image":"images/chat-hand.png"
+      },
+      {
+        "title":"Personalize",
+        "description":"Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
+        "image":"images/personalise-hand.png"
+      },
+      {
+        "title":"Save time",
+        "description":"Suggested word prompts are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
+        "image":"images/save-time-hand.png"
+      },
+      {
+        "title":"Simple to use",
+        "description":"The app has a user friendly design (including a clear menu, easy navigation, and simple graphics) making it suitable for all ages and abilities.",
+        "image":"images/simple-to-use-hand.png"
+      },
+      {
+        "title":"Customise",
+        "description":"The app can be adapted to suit individual needs by changing the setting options (e.g. tone of voice, colour theme, and more).",
+        "image":"images/customise-hand.png"
+      }
+    ]
+  },
+  "pricing":{
+    "title":"Pricing",
+    "subscription":"We offer two subscription plans:",
+    "plans":[
+      {"title":"Monthly","price":"$4.49 per month"},
+      {
+        "title":"Yearly",
+        "price":"$42.99 per year",
+        "perMonth":"(Just $3.58 per month!)",
+        "save":"Save 22%",
+        "popular":"Most Popular"
+      }
+    ],
+    "billing":"Billed after 7 day FREE trial",
+    "whatsIncluded":"What's included?",
+    "included":[
+      "Offline availability - once downloaded, Lemmi does not require an internet connection",
+      "Extensive word options - over 600+ words and phrases included",
+      "Personalization - users can add unlimited personal words and images",
+      "Privacy - bespoke entries are stored privately on the user's private account",
+      "Phone calls - Lemmi can be used during phone conversations (iOS 13+ only)",
+      "Language options - English with additional languages coming soon",
+      "Regular updates - including new features, words, phrases, and icons"
+    ],
+    "available":"Available on iOS and Android devices"
+  },
+  "actions":{
+    "newsletter":{
+      "heading":"Keep up to date with Lemmi's latest updates and offers",
+      "button":"Subscribe",
+      "success":"You have been successfully subscribed!",
+      "error":"Something went wrong - please check your email and try again. If you continue to have difficulties, please reach out on our contact page."
+    }
+  },
+  "links":{
+    "email":"mailto:info@lemmichat.com?subject=New Contact from Website",
+    "twitter":"https://twitter.com/lemmichat",
+    "facebook":"https://www.facebook.com/lemmichat",
+    "instagram":"https://www.instagram.com/lemmichat"
+  },
+  "pages":{
+    "home":"Home",
+    "app":"App",
+    "about":"About",
+    "pricing":"Pricing",
+    "faqs":"FAQs",
+    "contact":"Contact"
+  },
+  "mobilePages":{
+    "home":"Home",
+    "about":"About",
+    "app":"App",
+    "pricing":"Pricing",
+    "faqs":"FAQs",
+    "contact":"Contact"
+  }
+}
