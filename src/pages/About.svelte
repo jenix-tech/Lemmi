@@ -32,7 +32,7 @@
   </section>
 </article>
 <div class="about-title">
-  <h2>{$_('about.team.title').title.toUpperCase()}</h2>
+  <h2>{$_('about.team.title').toUpperCase()}</h2>
 </div>
 <article class="team">
   <div class="team-wrapper">
@@ -213,7 +213,7 @@
   }
 
   .team-role {
-    color: #ffffff;
+    color: #071527;
   }
 
   @media screen and (max-width: 619px) {

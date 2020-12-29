@@ -4854,6 +4854,7 @@ var app = (function () {
 
     const dir = derived(x, $locale => $locale === 'ar' ? 'rtl' : 'ltr');
 
+    // Make sure locales are always lowercase
     const locales = {
       en: "English",
       'en-us': "English (US)",
@@ -6419,16 +6420,16 @@ var app = (function () {
     			t4 = space();
     			if (img.src !== (img_src_value = /*event*/ ctx[4].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Timeline icon");
-    			attr_dev(img, "class", "svelte-13bnvh8");
+    			attr_dev(img, "class", "svelte-9vjlz0");
     			add_location(img, file$3, 22, 12, 589);
-    			attr_dev(div0, "class", "timeline-img svelte-13bnvh8");
+    			attr_dev(div0, "class", "timeline-img svelte-9vjlz0");
     			add_location(div0, file$3, 21, 10, 550);
-    			attr_dev(h2, "class", "svelte-13bnvh8");
+    			attr_dev(h2, "class", "svelte-9vjlz0");
     			add_location(h2, file$3, 25, 12, 719);
     			add_location(p, file$3, 26, 12, 753);
-    			attr_dev(div1, "class", "timeline-content js--fadeInLeft svelte-13bnvh8");
+    			attr_dev(div1, "class", "timeline-content js--fadeInLeft svelte-9vjlz0");
     			add_location(div1, file$3, 24, 10, 661);
-    			attr_dev(div2, "class", "timeline-item svelte-13bnvh8");
+    			attr_dev(div2, "class", "timeline-item svelte-9vjlz0");
     			add_location(div2, file$3, 20, 8, 512);
     		},
     		m: function mount(target, anchor) {
@@ -6497,14 +6498,14 @@ var app = (function () {
     			t4 = space();
     			if (img.src !== (img_src_value = /*person*/ ctx[1].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = `Picture of ${/*person*/ ctx[1].name}`);
-    			attr_dev(img, "class", "svelte-13bnvh8");
-    			add_location(img, file$3, 40, 8, 1082);
-    			attr_dev(h30, "class", "team-name svelte-13bnvh8");
-    			add_location(h30, file$3, 41, 8, 1150);
-    			attr_dev(h31, "class", "team-role svelte-13bnvh8");
-    			add_location(h31, file$3, 42, 8, 1199);
-    			attr_dev(div, "class", "team-member svelte-13bnvh8");
-    			add_location(div, file$3, 39, 6, 1048);
+    			attr_dev(img, "class", "svelte-9vjlz0");
+    			add_location(img, file$3, 40, 8, 1076);
+    			attr_dev(h30, "class", "team-name svelte-9vjlz0");
+    			add_location(h30, file$3, 41, 8, 1144);
+    			attr_dev(h31, "class", "team-role svelte-9vjlz0");
+    			add_location(h31, file$3, 42, 8, 1193);
+    			attr_dev(div, "class", "team-member svelte-9vjlz0");
+    			add_location(div, file$3, 39, 6, 1042);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6567,7 +6568,7 @@ var app = (function () {
     	let t6;
     	let div3;
     	let h22;
-    	let t7_value = /*$_*/ ctx[0]("about.team.title").title.toUpperCase() + "";
+    	let t7_value = /*$_*/ ctx[0]("about.team.title").toUpperCase() + "";
     	let t7;
     	let t8;
     	let article2;
@@ -6623,27 +6624,27 @@ var app = (function () {
     			}
 
     			add_location(h20, file$3, 8, 2, 161);
-    			attr_dev(div0, "class", "about-title svelte-13bnvh8");
+    			attr_dev(div0, "class", "about-title svelte-9vjlz0");
     			add_location(div0, file$3, 7, 0, 133);
     			add_location(p, file$3, 11, 2, 245);
-    			attr_dev(article0, "class", "vision svelte-13bnvh8");
+    			attr_dev(article0, "class", "vision svelte-9vjlz0");
     			add_location(article0, file$3, 10, 0, 218);
     			add_location(h21, file$3, 14, 2, 317);
-    			attr_dev(div1, "class", "about-title svelte-13bnvh8");
+    			attr_dev(div1, "class", "about-title svelte-9vjlz0");
     			add_location(div1, file$3, 13, 0, 289);
     			attr_dev(div2, "class", "container");
     			add_location(div2, file$3, 18, 4, 430);
-    			attr_dev(section, "class", "timeline svelte-13bnvh8");
+    			attr_dev(section, "class", "timeline svelte-9vjlz0");
     			add_location(section, file$3, 17, 2, 399);
-    			attr_dev(article1, "class", "story svelte-13bnvh8");
+    			attr_dev(article1, "class", "story svelte-9vjlz0");
     			add_location(article1, file$3, 16, 0, 373);
     			add_location(h22, file$3, 34, 2, 883);
-    			attr_dev(div3, "class", "about-title svelte-13bnvh8");
+    			attr_dev(div3, "class", "about-title svelte-9vjlz0");
     			add_location(div3, file$3, 33, 0, 855);
-    			attr_dev(div4, "class", "team-wrapper svelte-13bnvh8");
-    			add_location(div4, file$3, 37, 2, 969);
-    			attr_dev(article2, "class", "team svelte-13bnvh8");
-    			add_location(article2, file$3, 36, 0, 944);
+    			attr_dev(div4, "class", "team-wrapper svelte-9vjlz0");
+    			add_location(div4, file$3, 37, 2, 963);
+    			attr_dev(article2, "class", "team svelte-9vjlz0");
+    			add_location(article2, file$3, 36, 0, 938);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6710,7 +6711,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*$_*/ 1 && t7_value !== (t7_value = /*$_*/ ctx[0]("about.team.title").title.toUpperCase() + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*$_*/ 1 && t7_value !== (t7_value = /*$_*/ ctx[0]("about.team.title").toUpperCase() + "")) set_data_dev(t7, t7_value);
 
     			if (dirty & /*$_*/ 1) {
     				each_value = /*$_*/ ctx[0]("about.team.people");
