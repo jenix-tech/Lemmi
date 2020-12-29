@@ -193,7 +193,10 @@
     "title":"Pricing",
     "subscription":"We offer two subscription plans:",
     "plans":[
-      {"title":"Monthly","price":"£4.49 per month"},
+      {
+        "title":"Monthly",
+        "price":"£4.49 per month"
+      },
       {
         "title":"Yearly",
         "price":"£41.99 per year",
@@ -213,7 +216,7 @@
       "Language options - English with additional languages coming soon",
       "Regular updates - including new features, words, phrases, and icons"
     ],
-    "available":"Available on iOS and Android devices"
+    "available":"Available on iOS and Android devices",
   },
   "actions":{
     "newsletter":{
@@ -229,4 +232,8 @@
     "facebook":"https://www.facebook.com/lemmichat",
     "instagram":"https://www.instagram.com/lemmichat"
   },
+  "faqs":{
+    "yearlyCost": "Yearly - users pay £41.99 per year (£3.50 per month, saving 22%)",
+    "monthlyCost": "Monthly - users pay £4.49 per month on a rolling contract"
+  }
 }

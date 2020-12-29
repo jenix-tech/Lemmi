@@ -193,7 +193,10 @@
     "title":"Pricing",
     "subscription":"We offer two subscription plans:",
     "plans":[
-      {"title":"Monthly","price":"$4.49 per month"},
+      {
+        "title":"Monthly",
+        "price":"$4.49 per month"
+      },
       {
         "title":"Yearly",
         "price":"$42.99 per year",
@@ -229,20 +232,8 @@
     "facebook":"https://www.facebook.com/lemmichat",
     "instagram":"https://www.instagram.com/lemmichat"
   },
-  "pages":{
-    "home":"Home",
-    "app":"App",
-    "about":"About",
-    "pricing":"Pricing",
-    "faqs":"FAQs",
-    "contact":"Contact"
-  },
-  "mobilePages":{
-    "home":"Home",
-    "about":"About",
-    "app":"App",
-    "pricing":"Pricing",
-    "faqs":"FAQs",
-    "contact":"Contact"
+  "faqs":{
+    "yearlyCost": "Yearly - users pay $42.99 per year ($3.58 per month, saving 22%)",
+    "monthlyCost": "Monthly - users pay $4.49 per month on a rolling contract"
   }
 }

@@ -1,3 +1,7 @@
+<script>
+  import { _ } from "../services/i18n";
+</script>
+
 <div class="faq-title">
   <h2>FAQs</h2>
 </div>
@@ -187,8 +191,8 @@
     <div class="details-wrapper">
       <p>Lemmi is a subscription based app with two payment options:</p>
       <div>
-        <p><b>Yearly – users pay £41.99 per year (£3.50 per month, saving 22%)</b></p>
-        <p><b>Monthly – users pay £4.49 per month on a rolling contract</b></p>
+        <p><b>{$_('faqs.yearlyCost')}</b></p>
+        <p><b>{$_('faqs.monthlyCost')}</b></p>
       </div>
       <p>Note: Both options come with a 7-day FREE trial and you can upgrade your subscription at any time.</p>
     </div>
