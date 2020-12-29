@@ -34,6 +34,7 @@ const isLocaleLoaded = derived(locale, $locale => typeof $locale === 'string');
 
 const dir = derived(locale, $locale => $locale === 'ar' ? 'rtl' : 'ltr');
 
+// Make sure locales are always lowercase
 const locales = {
   en: "English",
   'en-us': "English (US)",
