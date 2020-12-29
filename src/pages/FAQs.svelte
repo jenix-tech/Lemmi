@@ -200,7 +200,7 @@
   <details>
     <summary>Do you offer any discounts?</summary>
     <div class="details-wrapper">
-      <p>We occasionally run promotions, to hear about these special discounts please sign up to our Newsletter <a href="#footer">at the bottom of the screen</a>.</p>
+      <p>We occasionally run promotions, to hear about these special discounts please <a href="#footer">sign up to our newsletter</a>.</p>
     </div>
   </details>
   <details>
