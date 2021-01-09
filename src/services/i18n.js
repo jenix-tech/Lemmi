@@ -36,7 +36,8 @@ const dir = derived(locale, $locale => $locale === 'ar' ? 'rtl' : 'ltr');
 
 // Make sure locales are always lowercase
 const locales = {
-  en: "English",
+  'en': "English",
+  'en-gb': "English (UK)",
   'en-us': "English (US)",
 };
 
@@ -45,7 +46,7 @@ const supported = (locale) => {
   if (Object.keys(locales).includes(locale.toLowerCase())) {
     return locale.toLowerCase();
   } else {
-    return 'en';
+    return 'en-gb';
   }
 }
 

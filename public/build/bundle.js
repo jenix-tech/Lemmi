@@ -4856,7 +4856,8 @@ var app = (function () {
 
     // Make sure locales are always lowercase
     const locales = {
-      en: "English",
+      'en': "English",
+      'en-gb': "English (UK)",
       'en-us': "English (US)",
     };
 
@@ -4865,7 +4866,7 @@ var app = (function () {
       if (Object.keys(locales).includes(locale.toLowerCase())) {
         return locale.toLowerCase();
       } else {
-        return 'en';
+        return 'en-gb';
       }
     };
 
@@ -7971,9 +7972,9 @@ var app = (function () {
     			t138 = space();
     			div41 = element("div");
     			p40 = element("p");
-    			t139 = text("We occasionally run promotions, to hear about these special discounts please sign up to our Newsletter ");
+    			t139 = text("We occasionally run promotions, to hear about these special discounts please ");
     			a1 = element("a");
-    			a1.textContent = "at the bottom of the screen";
+    			a1.textContent = "sign up to our newsletter";
     			t141 = text(".");
     			t142 = space();
     			details17 = element("details");
@@ -8363,7 +8364,7 @@ var app = (function () {
     			attr_dev(summary16, "class", "svelte-15odnod");
     			add_location(summary16, file$5, 200, 4, 7916);
     			attr_dev(a1, "href", "#footer");
-    			add_location(a1, file$5, 202, 112, 8109);
+    			add_location(a1, file$5, 202, 86, 8083);
     			attr_dev(p40, "class", "svelte-15odnod");
     			add_location(p40, file$5, 202, 6, 8003);
     			attr_dev(div41, "class", "details-wrapper svelte-15odnod");
@@ -8371,87 +8372,87 @@ var app = (function () {
     			attr_dev(details16, "class", "svelte-15odnod");
     			add_location(details16, file$5, 199, 2, 7902);
     			attr_dev(summary17, "class", "svelte-15odnod");
-    			add_location(summary17, file$5, 206, 4, 8204);
+    			add_location(summary17, file$5, 206, 4, 8176);
     			attr_dev(p41, "class", "svelte-15odnod");
-    			add_location(p41, file$5, 208, 6, 8314);
+    			add_location(p41, file$5, 208, 6, 8286);
     			if (img16.src !== (img16_src_value = "images/settings.png")) attr_dev(img16, "src", img16_src_value);
     			attr_dev(img16, "alt", "settings icon");
     			attr_dev(img16, "class", "svelte-15odnod");
-    			add_location(img16, file$5, 210, 8, 8478);
+    			add_location(img16, file$5, 210, 8, 8450);
     			attr_dev(p42, "class", "svelte-15odnod");
-    			add_location(p42, file$5, 212, 10, 8584);
+    			add_location(p42, file$5, 212, 10, 8556);
     			attr_dev(p43, "class", "svelte-15odnod");
-    			add_location(p43, file$5, 213, 10, 8629);
+    			add_location(p43, file$5, 213, 10, 8601);
     			attr_dev(p44, "class", "svelte-15odnod");
-    			add_location(p44, file$5, 214, 10, 8715);
+    			add_location(p44, file$5, 214, 10, 8687);
     			attr_dev(div42, "class", "iconed-text-wrapper svelte-15odnod");
-    			add_location(div42, file$5, 211, 8, 8540);
+    			add_location(div42, file$5, 211, 8, 8512);
     			attr_dev(div43, "class", "iconed-text svelte-15odnod");
-    			add_location(div43, file$5, 209, 6, 8444);
+    			add_location(div43, file$5, 209, 6, 8416);
     			attr_dev(a2, "href", "/terms-of-service.html");
-    			add_location(a2, file$5, 217, 255, 9047);
+    			add_location(a2, file$5, 217, 255, 9019);
     			attr_dev(p45, "class", "svelte-15odnod");
-    			add_location(p45, file$5, 217, 6, 8798);
+    			add_location(p45, file$5, 217, 6, 8770);
     			attr_dev(div44, "class", "details-wrapper svelte-15odnod");
-    			add_location(div44, file$5, 207, 4, 8278);
+    			add_location(div44, file$5, 207, 4, 8250);
     			attr_dev(details17, "class", "svelte-15odnod");
-    			add_location(details17, file$5, 205, 2, 8190);
+    			add_location(details17, file$5, 205, 2, 8162);
     			attr_dev(summary18, "class", "svelte-15odnod");
-    			add_location(summary18, file$5, 221, 4, 9146);
+    			add_location(summary18, file$5, 221, 4, 9118);
     			attr_dev(p46, "class", "svelte-15odnod");
-    			add_location(p46, file$5, 223, 6, 9269);
+    			add_location(p46, file$5, 223, 6, 9241);
     			attr_dev(div45, "class", "details-wrapper svelte-15odnod");
-    			add_location(div45, file$5, 222, 4, 9233);
+    			add_location(div45, file$5, 222, 4, 9205);
     			attr_dev(details18, "class", "svelte-15odnod");
-    			add_location(details18, file$5, 220, 2, 9132);
+    			add_location(details18, file$5, 220, 2, 9104);
     			attr_dev(summary19, "class", "svelte-15odnod");
-    			add_location(summary19, file$5, 227, 4, 9495);
+    			add_location(summary19, file$5, 227, 4, 9467);
     			attr_dev(a3, "href", "/terms-of-service.html");
-    			add_location(a3, file$5, 229, 88, 9658);
+    			add_location(a3, file$5, 229, 88, 9630);
     			attr_dev(a4, "href", "/privacy-policy.html");
-    			add_location(a4, file$5, 229, 146, 9716);
+    			add_location(a4, file$5, 229, 146, 9688);
     			attr_dev(p47, "class", "svelte-15odnod");
-    			add_location(p47, file$5, 229, 6, 9576);
+    			add_location(p47, file$5, 229, 6, 9548);
     			attr_dev(div46, "class", "details-wrapper svelte-15odnod");
-    			add_location(div46, file$5, 228, 4, 9540);
+    			add_location(div46, file$5, 228, 4, 9512);
     			attr_dev(details19, "class", "svelte-15odnod");
-    			add_location(details19, file$5, 226, 2, 9481);
+    			add_location(details19, file$5, 226, 2, 9453);
     			attr_dev(section2, "class", "faq-section svelte-15odnod");
     			add_location(section2, file$5, 186, 0, 7420);
     			attr_dev(h33, "class", "svelte-15odnod");
-    			add_location(h33, file$5, 234, 2, 9838);
+    			add_location(h33, file$5, 234, 2, 9810);
     			attr_dev(summary20, "class", "svelte-15odnod");
-    			add_location(summary20, file$5, 236, 4, 9887);
+    			add_location(summary20, file$5, 236, 4, 9859);
     			if (img17.src !== (img17_src_value = "images/settings.png")) attr_dev(img17, "src", img17_src_value);
     			attr_dev(img17, "alt", "settings icon");
     			attr_dev(img17, "class", "svelte-15odnod");
-    			add_location(img17, file$5, 239, 8, 10006);
+    			add_location(img17, file$5, 239, 8, 9978);
     			attr_dev(p48, "class", "svelte-15odnod");
-    			add_location(p48, file$5, 241, 10, 10112);
+    			add_location(p48, file$5, 241, 10, 10084);
     			attr_dev(p49, "class", "svelte-15odnod");
-    			add_location(p49, file$5, 242, 10, 10157);
+    			add_location(p49, file$5, 242, 10, 10129);
     			attr_dev(p50, "class", "svelte-15odnod");
-    			add_location(p50, file$5, 243, 10, 10246);
+    			add_location(p50, file$5, 243, 10, 10218);
     			attr_dev(div47, "class", "iconed-text-wrapper svelte-15odnod");
-    			add_location(div47, file$5, 240, 8, 10068);
+    			add_location(div47, file$5, 240, 8, 10040);
     			attr_dev(div48, "class", "iconed-text svelte-15odnod");
-    			add_location(div48, file$5, 238, 6, 9972);
+    			add_location(div48, file$5, 238, 6, 9944);
     			attr_dev(div49, "class", "details-wrapper svelte-15odnod");
-    			add_location(div49, file$5, 237, 4, 9936);
+    			add_location(div49, file$5, 237, 4, 9908);
     			attr_dev(details20, "class", "svelte-15odnod");
-    			add_location(details20, file$5, 235, 2, 9873);
+    			add_location(details20, file$5, 235, 2, 9845);
     			attr_dev(summary21, "class", "svelte-15odnod");
-    			add_location(summary21, file$5, 249, 4, 10376);
+    			add_location(summary21, file$5, 249, 4, 10348);
     			attr_dev(a5, "href", "mailto:info@lemmichat.com?subject='Contact from Website'");
-    			add_location(a5, file$5, 252, 29, 10487);
+    			add_location(a5, file$5, 252, 29, 10459);
     			attr_dev(p51, "class", "svelte-15odnod");
-    			add_location(p51, file$5, 251, 6, 10454);
+    			add_location(p51, file$5, 251, 6, 10426);
     			attr_dev(div50, "class", "details-wrapper svelte-15odnod");
-    			add_location(div50, file$5, 250, 4, 10418);
+    			add_location(div50, file$5, 250, 4, 10390);
     			attr_dev(details21, "class", "svelte-15odnod");
-    			add_location(details21, file$5, 248, 2, 10362);
+    			add_location(details21, file$5, 248, 2, 10334);
     			attr_dev(section3, "class", "faq-section svelte-15odnod");
-    			add_location(section3, file$5, 233, 0, 9806);
+    			add_location(section3, file$5, 233, 0, 9778);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
