@@ -655,7 +655,7 @@ var app = (function () {
 
     var dlv_umd = createCommonjsModule(function (module, exports) {
     !function(t,n){module.exports=function(t,n,e,i,o){for(n=n.split?n.split("."):n,i=0;i<n.length;i++)t=t?t[n[i]]:o;return t===o?e:t};}();
-    //# sourceMappingURL=dlv.umd.js.map
+
     });
 
     /*! *****************************************************************************
@@ -4857,7 +4857,6 @@ var app = (function () {
     // Make sure locales are always lowercase
     const locales = {
       'en': "English",
-      'en-gb': "English (UK)",
       'en-us': "English (US)",
     };
 
@@ -4866,7 +4865,7 @@ var app = (function () {
       if (Object.keys(locales).includes(locale.toLowerCase())) {
         return locale.toLowerCase();
       } else {
-        return 'en-gb';
+        return 'en';
       }
     };
 
