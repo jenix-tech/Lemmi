@@ -348,7 +348,7 @@
 
   .mock-up {
     max-height: 100%;
-    width: 100%;
+    width: 95%;
   }
 
   .anatomy-wrapper {

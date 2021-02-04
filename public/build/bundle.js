@@ -655,7 +655,7 @@ var app = (function () {
 
     var dlv_umd = createCommonjsModule(function (module, exports) {
     !function(t,n){module.exports=function(t,n,e,i,o){for(n=n.split?n.split("."):n,i=0;i<n.length;i++)t=t?t[n[i]]:o;return t===o?e:t};}();
-
+    //# sourceMappingURL=dlv.umd.js.map
     });
 
     /*! *****************************************************************************
@@ -5444,7 +5444,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			img = element("img");
-    			attr_dev(img, "class", "carousel-item svelte-13sqoya");
+    			attr_dev(img, "class", "carousel-item svelte-eeer41");
     			if (img.src !== (img_src_value = /*src*/ ctx[15])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Screenshot of Lemmi running on iOS");
     			add_location(img, file$1, 68, 12, 2171);
@@ -5504,15 +5504,15 @@ var app = (function () {
     			t4 = space();
     			if (img.src !== (img_src_value = /*usp*/ ctx[12].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*usp*/ ctx[12].title);
-    			attr_dev(img, "class", "svelte-13sqoya");
+    			attr_dev(img, "class", "svelte-eeer41");
     			add_location(img, file$1, 89, 10, 2848);
-    			attr_dev(div0, "class", "usp-image-wrapper svelte-13sqoya");
+    			attr_dev(div0, "class", "usp-image-wrapper svelte-eeer41");
     			add_location(div0, file$1, 88, 8, 2806);
-    			attr_dev(p0, "class", "usp-title svelte-13sqoya");
+    			attr_dev(p0, "class", "usp-title svelte-eeer41");
     			add_location(p0, file$1, 91, 8, 2911);
-    			attr_dev(p1, "class", "usp-description svelte-13sqoya");
+    			attr_dev(p1, "class", "usp-description svelte-eeer41");
     			add_location(p1, file$1, 92, 8, 2970);
-    			attr_dev(div1, "class", "usp svelte-13sqoya");
+    			attr_dev(div1, "class", "usp svelte-eeer41");
     			add_location(div1, file$1, 87, 6, 2780);
     		},
     		m: function mount(target, anchor) {
@@ -5584,15 +5584,15 @@ var app = (function () {
     			p1 = element("p");
     			t3 = text(t3_value);
     			t4 = space();
-    			attr_dev(img, "class", "anatomy-icon svelte-13sqoya");
+    			attr_dev(img, "class", "anatomy-icon svelte-eeer41");
     			if (img.src !== (img_src_value = /*item*/ ctx[9].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*item*/ ctx[9].title);
     			add_location(img, file$1, 103, 10, 3325);
     			add_location(p0, file$1, 105, 12, 3437);
     			add_location(p1, file$1, 106, 12, 3483);
-    			attr_dev(div0, "class", "anatomy-text svelte-13sqoya");
+    			attr_dev(div0, "class", "anatomy-text svelte-eeer41");
     			add_location(div0, file$1, 104, 10, 3398);
-    			attr_dev(div1, "class", "anatomy-item reversed svelte-13sqoya");
+    			attr_dev(div1, "class", "anatomy-item reversed svelte-eeer41");
     			add_location(div1, file$1, 102, 8, 3279);
     		},
     		m: function mount(target, anchor) {
@@ -5775,53 +5775,53 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h20, "class", "svelte-13sqoya");
+    			attr_dev(h20, "class", "svelte-eeer41");
     			add_location(h20, file$1, 50, 2, 1348);
-    			attr_dev(p0, "class", "svelte-13sqoya");
+    			attr_dev(p0, "class", "svelte-eeer41");
     			add_location(p0, file$1, 51, 2, 1384);
-    			attr_dev(section0, "class", "home-intro svelte-13sqoya");
+    			attr_dev(section0, "class", "home-intro svelte-eeer41");
     			add_location(section0, file$1, 49, 0, 1317);
-    			attr_dev(h21, "class", "svelte-13sqoya");
+    			attr_dev(h21, "class", "svelte-eeer41");
     			add_location(h21, file$1, 56, 6, 1529);
-    			attr_dev(p1, "class", "svelte-13sqoya");
+    			attr_dev(p1, "class", "svelte-eeer41");
     			add_location(p1, file$1, 57, 6, 1573);
-    			attr_dev(button0, "class", "svelte-13sqoya");
+    			attr_dev(button0, "class", "svelte-eeer41");
     			add_location(button0, file$1, 58, 6, 1618);
-    			attr_dev(p2, "class", "home-freetrial__smallprint svelte-13sqoya");
+    			attr_dev(p2, "class", "home-freetrial__smallprint svelte-eeer41");
     			add_location(p2, file$1, 59, 6, 1711);
-    			attr_dev(div0, "class", "home-freetrial__text svelte-13sqoya");
+    			attr_dev(div0, "class", "home-freetrial__text svelte-eeer41");
     			add_location(div0, file$1, 55, 4, 1488);
-    			attr_dev(div1, "class", "carousel-container svelte-13sqoya");
+    			attr_dev(div1, "class", "carousel-container svelte-eeer41");
     			add_location(div1, file$1, 66, 8, 2052);
-    			attr_dev(div2, "class", "carousel_image svelte-13sqoya");
+    			attr_dev(div2, "class", "carousel_image svelte-eeer41");
     			add_location(div2, file$1, 62, 6, 1848);
-    			attr_dev(div3, "class", "home-freetrial__carousel svelte-13sqoya");
+    			attr_dev(div3, "class", "home-freetrial__carousel svelte-eeer41");
     			add_location(div3, file$1, 61, 4, 1803);
-    			attr_dev(div4, "class", "wrapper svelte-13sqoya");
+    			attr_dev(div4, "class", "wrapper svelte-eeer41");
     			add_location(div4, file$1, 54, 2, 1462);
-    			attr_dev(section1, "class", "home-freetrial svelte-13sqoya");
+    			attr_dev(section1, "class", "home-freetrial svelte-eeer41");
     			add_location(section1, file$1, 53, 0, 1427);
-    			attr_dev(p3, "class", "svelte-13sqoya");
+    			attr_dev(p3, "class", "svelte-eeer41");
     			add_location(p3, file$1, 79, 2, 2511);
-    			attr_dev(button1, "class", "svelte-13sqoya");
+    			attr_dev(button1, "class", "svelte-eeer41");
     			add_location(button1, file$1, 80, 2, 2545);
-    			attr_dev(section2, "class", "blurb svelte-13sqoya");
+    			attr_dev(section2, "class", "blurb svelte-eeer41");
     			add_location(section2, file$1, 78, 0, 2485);
-    			attr_dev(h3, "class", "svelte-13sqoya");
+    			attr_dev(h3, "class", "svelte-eeer41");
     			add_location(h3, file$1, 84, 2, 2673);
-    			attr_dev(div5, "class", "usp-wrapper svelte-13sqoya");
+    			attr_dev(div5, "class", "usp-wrapper svelte-eeer41");
     			add_location(div5, file$1, 85, 2, 2708);
-    			attr_dev(section3, "class", "help svelte-13sqoya");
+    			attr_dev(section3, "class", "help svelte-eeer41");
     			add_location(section3, file$1, 83, 0, 2648);
-    			attr_dev(img, "class", "mock-up svelte-13sqoya");
+    			attr_dev(img, "class", "mock-up svelte-eeer41");
     			if (img.src !== (img_src_value = "images/anatomy.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Anatomy of the Lemmi app");
     			add_location(img, file$1, 99, 4, 3118);
-    			attr_dev(div6, "class", "anatomy-wrapper svelte-13sqoya");
+    			attr_dev(div6, "class", "anatomy-wrapper svelte-eeer41");
     			add_location(div6, file$1, 100, 4, 3200);
-    			attr_dev(div7, "class", "wrapper svelte-13sqoya");
+    			attr_dev(div7, "class", "wrapper svelte-eeer41");
     			add_location(div7, file$1, 98, 2, 3092);
-    			attr_dev(section4, "class", "anatomy svelte-13sqoya");
+    			attr_dev(section4, "class", "anatomy svelte-eeer41");
     			add_location(section4, file$1, 97, 0, 3064);
     		},
     		l: function claim(nodes) {
