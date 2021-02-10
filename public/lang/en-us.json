@@ -9,9 +9,9 @@
       "text2":"This assistive text-to-speech (AAC) app provides a tool to communicate more easily, allowing users the independence to fully take part in conversations, and to share their thoughts and needs clearly with others."
     },
     "freetrial":{
-      "title":"Get a weeks FREE trial",
+      "title":"Get Lemmi for FREE",
       "subtitle":"Customizable and ad-free, try Lemmi today!",
-      "button":"Get 1 week free",
+      "button":"Download",
       "description":"From only $3.58/month on a yearly plan. Terms of Service apply.",
       "images":[
         "images/chat.png",
@@ -31,7 +31,7 @@
         {
           "image":"/images/communicate-with-ease.svg",
           "title":"Communicate with ease",
-          "description":"Type your own words or select from over 600 other options which the app will read aloud."
+          "description":"Select from a variety of options which the app will read aloud."
         },
         {
           "image":"/images/keep-up-with-conversations.svg",
@@ -164,17 +164,19 @@
     "features":[
       {
         "title":"Chat",
-        "description":"Users can type their own words or select from over 600+ words and phrases which the app will read aloud.",
+        "description":"Let Lemmi do the talking! Build sentences from a rich collection of word and phrase options which, once chosen, the app will read aloud for you",
+        "pro": "Upgrade to Lemmi Pro to add text directly in the speech bar.",
         "image":"images/chat-hand.png"
       },
       {
         "title":"Personalize",
-        "description":"Add unlimited custom words, sentences, and photos. The ability to add familiar faces and phrases can help provide visual prompts and bring the app to life.",
+        "description":"Add custom words, sentences and photos via the dictionary menu. The use of familiar faces and phrases gives visual prompts and brings the app to life.",
+        "pro":"Upgrade to Lemmi Pro for unlimited personal entries.",
         "image":"images/personalise-hand.png"
       },
       {
         "title":"Save time",
-        "description":"Suggested word prompts are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
+        "description":"Suggested words are shown under the speech bar. These are automated phrases, or words that have been previously used in succession, and are a great way to keep the conversation flowing.",
         "image":"images/save-time-hand.png"
       },
       {
@@ -194,18 +196,63 @@
     "subscription":"We offer two subscription plans:",
     "plans":[
       {
-        "title":"Monthly",
-        "price":"$4.49 per month"
+        "title":"Lemmi",
+        "price":"FREE",
+        "features": [
+          {
+            "icon": "images/unlimited-entries.svg",
+            "text": "2 custom word and image entries"
+          },
+          {
+            "icon": "images/direct-input.svg",
+            "text": "Predictive speech functionality"
+          },
+          {
+            "icon": "images/many-words.svg",
+            "text": "600+ pre-programmed word options"
+          },
+          {
+            "icon": "images/many-categories.svg",
+            "text": "5 word library categories"
+          },
+          {
+            "icon": "images/no-ads.svg",
+            "text": "No ads"
+          }
+        ]
       },
       {
-        "title":"Yearly",
-        "price":"$42.99 per year",
-        "perMonth":"(Just $3.58 per month!)",
-        "save":"Save 22%",
-        "popular":"Most Popular"
+        "title":"Lemmi Pro",
+        "price":"$2.99",
+        "priceSubtext":"per month, billed annually or $3.99 billed monthly",
+        "features": [
+          {
+            "icon": "images/unlimited-entries.svg",
+            "text": "Unlimited custom word and image entries"
+          },
+          {
+            "icon": "images/direct-input.svg",
+            "text": "Direct text input within the speech bar"
+          },
+          {
+            "icon": "images/many-words.svg",
+            "text": "600+ pre-programmed word options"
+          },
+          {
+            "icon": "images/many-categories.svg",
+            "text": "Over 30 useful word library categories"
+          },
+          {
+            "icon": "images/no-ads.svg",
+            "text": "No ads"
+          },
+          {
+            "icon": "images/customer-support.svg",
+            "text": "Priority customer support"
+          }
+        ]
       }
     ],
-    "billing":"Billed after 7 day FREE trial",
     "whatsIncluded":"What's included?",
     "included":[
       "Offline availability - once downloaded, Lemmi does not require an internet connection",
@@ -233,7 +280,7 @@
     "instagram":"https://www.instagram.com/lemmichat"
   },
   "faqs":{
-    "yearlyCost": "Yearly - users pay $42.99 per year ($3.58 per month, saving 22%)",
-    "monthlyCost": "Monthly - users pay $4.49 per month on a rolling contract"
+    "yearlyCost": "Yearly - users pay $35.99 per year ($2.99 per month, saving 24%)",
+    "monthlyCost": "Monthly - users pay $3.99 per month on a rolling contract"
   }
 }

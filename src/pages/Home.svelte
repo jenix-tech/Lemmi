@@ -56,8 +56,8 @@
     <div class="home-freetrial__text">
       <h2>{$_('home.freetrial.title')}</h2>
       <p>{$_('home.freetrial.subtitle')}</p>
-      <button on:click={handleClickNavigation(pages.pricing, true)}>Get 1 week free</button>
-      <p class="home-freetrial__smallprint">{$_('home.freetrial.description')}</p>
+      <button on:click={handleClickNavigation(pages.pricing, true)}>{$_('home.freetrial.button')}</button>
+      <!-- <p class="home-freetrial__smallprint">{$_('home.freetrial.description')}</p> -->
     </div>
     <div class="home-freetrial__carousel">
       <div class="carousel_image">

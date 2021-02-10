@@ -23,7 +23,7 @@
     [pages.contact]: Contact
   };
 
-  let page = pages.home;
+  let page = pages.pricing;
   let handleClickNavigation = (selected, scrollToTop = false) => {
     page = selected;
     if (scrollToTop) {

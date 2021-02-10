@@ -189,20 +189,44 @@
   <details>
     <summary>How much does Lemmi cost?</summary>
     <div class="details-wrapper">
-      <p>Lemmi is a subscription based app with two payment options:</p>
+      <p><b>Lemmi is completely FREE</b></p>
+      <p>If you want to unlock further capabilities, <b>Lemmi Pro</b> is subscription based with two payment options:</p>
       <div>
         <p><b>{$_('faqs.yearlyCost')}</b></p>
         <p><b>{$_('faqs.monthlyCost')}</b></p>
       </div>
-      <p>Note: Both options come with a 7-day FREE trial and you can upgrade your subscription at any time.</p>
+      <p>Note: You can upgrade or downgrade your subscription at any time.</p>
     </div>
   </details>
   <details>
+    <summary>What is the difference between Lemmi and Lemmi Pro</summary>
+    <div class="details-wrapper">
+      <p>Lemmi offers a basic sample of functions found in the full version of Lemmi Pro.</p>
+      <p><b>Basic features available in Lemmi:</b></p>
+      <ul class="feature-list">
+        <li>2x custom word & image entries</li>
+        <li>Predictive text functionality</li>
+        <li>Basic pre-programmed word options</li>
+        <li>5 word library categories</li>
+        <li>No ads</li>
+      </ul>
+      <br />
+      <p><b>Additional features available in Lemmi Pro:</b></p>
+      <ul class="feature-list">
+        <li>Unlimited custom word & image entries</li>
+        <li>600+ pre-programmed word options</li>
+        <li>30 word library categories</li>
+        <li>Direct text input within the speech bar</li>
+        <li>Priority customer support</li>
+      </ul>
+    </div>
+  </details>
+  <!-- <details>
     <summary>Do you offer any discounts?</summary>
     <div class="details-wrapper">
       <p>We occasionally run promotions, to hear about these special discounts please <a href="#footer">sign up to our newsletter</a>.</p>
     </div>
-  </details>
+  </details> -->
   <details>
     <summary>How do I manage or cancel my subscription renewal?</summary>
     <div class="details-wrapper">
@@ -326,7 +350,10 @@
     flex-direction: column;
   }
 
-  
+  .feature-list {
+    list-style: initial;
+    margin-left: 20px;
+  }
 
   @media screen and (min-width: 768px) {
     .faq-section {

@@ -23,13 +23,18 @@
         {/if}
         <h1 class="title">{plan.title}</h1>
         <h2 class="price">{plan.price}</h2>
-        {#if plan.perMonth}
-          <p class="perMonth">{plan.perMonth}</p>
+        {#if plan.priceSubtext}
+          <h5 class="price-subtext">{plan.priceSubtext}</h5>
+        {:else}
+          <div class="price-spacer" />
         {/if}
-        <p class="billing">{$_('pricing.billing')}</p>
-        {#if plan.save}
-          <h5 class="saving">{plan.save.toUpperCase()}</h5>
-        {/if}
+        <hr class="plan-break" />
+        {#each plan.features as feature}
+          <div class="feature">
+            <img src={feature.icon} alt={feature.text} />
+            <p>{feature.text}</p>
+          </div>
+        {/each}
       </div>
     {/each}
   </div>
@@ -72,6 +77,11 @@
     font-weight: 600;
   }
 
+  .plan-break {
+    width: 80%;
+    opacity: 0.5;
+  }
+
   .subscriptions {
     max-width: 800px;
     margin: 0 auto;
@@ -104,7 +114,7 @@
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 10px;
-    height: 20rem;
+    height: 27rem;
   }
 
   .popular {
@@ -127,7 +137,7 @@
 
   .plan h1 {
     color: #25548c;
-    margin-top: 20%;
+    margin-top: 5%;
   }
 
   .plan h2 {
@@ -139,27 +149,36 @@
     font-size: 0.8rem;
   }
 
-  .perMonth {
-    margin-top: 3px;
-    margin-bottom: -6%;
+  h2.price {
+    margin: 5px 0;
   }
 
-  .billing {
-    margin-top: 20%;
+  .price-subtext {
+    opacity: 0.6;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    height: 2rem;
   }
 
-  .saving {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 7%;
-    height: 25px;
-    color: #ffffff;
-    background-color: #4EAF7C;
-    width: 45%;
-    border-radius: 40px;
+  .price-spacer {
+    height: 2rem;
+  }
+
+  .feature {
     display: flex;
-    justify-content: center;
+    width: 85%;
     align-items: center;
+    margin: 5px 0;
+  }
+
+  .feature img {
+    width: 30px;
+    margin-right: 15px;
+  }
+
+  .feature p {
+    font-size: 1rem;
   }
 
   .included {
@@ -218,24 +237,20 @@
     }
     .plan {
       width: 100%;
-      height: 13rem;
+      height: 30rem;
       margin: 0 0 30px 0;
     }
 
     .plan h1 {
-      margin-top: 3rem;
-    }
-
-    .billing {
-      margin-top: 2rem;
-    }
-
-    .saving {
-      margin-bottom: 3%;
+      margin-top: 1rem;
     }
     
     .store-icons {
       flex-direction: column;
+    }
+
+    .feature p {
+      font-size: 1.2rem;
     }
   }
 </style>
