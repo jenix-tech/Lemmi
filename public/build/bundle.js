@@ -10034,7 +10034,7 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file$8, 36, 2, 1036);
+    			add_location(main, file$8, 36, 2, 1033);
     		},
     		m: function mount(target, anchor) {
     			mount_component(header, target, anchor);
@@ -10195,7 +10195,7 @@ var app = (function () {
     		[pages.contact]: Contact
     	};
 
-    	let page = pages.pricing;
+    	let page = pages.home;
 
     	let handleClickNavigation = (selected, scrollToTop = false) => {
     		$$invalidate(0, page = selected);
