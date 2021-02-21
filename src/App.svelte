@@ -23,7 +23,7 @@
     [pages.contact]: Contact
   };
 
-  let page = window.location.href.includes('/FAQs') ? pages.faqs : pages.home;
+  let page = window.location.href.includes(`/${pages.faqs.toLowerCase()}`) ? pages.faqs : pages.home;
   let handleClickNavigation = (selected, scrollToTop = false) => {
     page = selected;
     if (scrollToTop) {
