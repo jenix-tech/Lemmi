@@ -281,6 +281,7 @@
   },
   "faqs":{
     "yearlyCost": "Yearly - users pay $35.99 per year ($2.99 per month, saving 24%)",
-    "monthlyCost": "Monthly - users pay $3.99 per month on a rolling contract"
+    "monthlyCost": "Monthly - users pay $3.99 per month on a rolling contract",
+    "customisation": "2. Customization"
   }
 }

@@ -80,7 +80,7 @@
   </details>
 </section>
 <section class="faq-section">
-  <h3>2. Customisation</h3>
+  <h3>{$_('faqs.customisation')}</h3>
   <details>
     <summary>How do I add custom entry words and images?</summary>
     <div class="details-wrapper">
