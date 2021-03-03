@@ -269,7 +269,7 @@
     "newsletter":{
       "heading":"Keep up to date with Lemmi's latest updates and offers",
       "button":"Subscribe",
-      "success":"You have been successfully subscribed!",
+      "success":"Success! We've sent you an email to verify your subscription. Please check your Junk if it doesn't arrive shortly!",
       "error":"Something went wrong - please check your email and try again. If you continue to have difficulties, please reach out on our contact page."
     }
   },
